@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/DineDrop%20Landing.html" }
+  ]
+}
