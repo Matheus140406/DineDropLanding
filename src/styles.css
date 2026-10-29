@@ -1,4 +1,3 @@
-/* DineDrop landing. Estilos de layout ficam inline no HTML; aqui: base, estados e movimento. */
 body {
 margin:0;
 background:#FBF6EE}
@@ -36,13 +35,11 @@ body{-webkit-font-smoothing:antialiased}
 .plan-btn{background:transparent;color:#2B211A}
 .plan-btn[aria-pressed="true"]{background:#2B211A;color:#FBF6EE}
 
-/* Revelar ao rolar */
 .js [data-r]{opacity:0;transform:translateY(40px);transition:opacity 1.3s cubic-bezier(.22,.61,.36,1),transform 1.3s cubic-bezier(.22,.61,.36,1),box-shadow .6s ease}
 .js [data-r].is-in{opacity:1;transform:none}
 .js [data-r].done{transition:transform .6s cubic-bezier(.22,.61,.36,1),box-shadow .6s ease,background-color .5s ease}
 @media (prefers-reduced-motion:reduce){.js [data-r]{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
-/* Hover e foco gerados a partir do HTML original */
 .dd1:hover{color:#C8601A !important}
 .dd2:hover{color:#C8601A !important}
 .dd3:hover{color:#C8601A !important}
