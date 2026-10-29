@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /entrar
+Disallow: /painel
+Disallow: /admin
+
+Sitemap: https://dinedrop-landing.vercel.app/sitemap.xml

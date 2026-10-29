@@ -1,0 +1,113 @@
+/* DineDrop landing. Estilos de layout ficam inline no HTML; aqui: base, estados e movimento. */
+body {
+margin:0;
+background:#FBF6EE}
+html {
+scroll-behavior:smooth;
+scroll-padding-top:72px}
+a {
+color:#B4531A}
+a:hover {
+color:#F57C00}
+summary {
+cursor:pointer;
+list-style:none}
+summary::-webkit-details-marker {
+display:none}
+a,button,summary {
+transition:background-color .5s ease,color .5s ease,border-color .5s ease,box-shadow .6s ease,transform .6s cubic-bezier(.22,.61,.36,1)}
+div[style*="min-height"] {
+transition:transform .6s cubic-bezier(.22,.61,.36,1),box-shadow .6s ease}
+details p {
+animation:ddf .7s ease both}
+@keyframes ddf {
+from {
+opacity:0;
+transform:translateY(-6px)}
+to {
+opacity:1;
+transform:none}
+}
+
+
+[hidden]{display:none !important}
+body{-webkit-font-smoothing:antialiased}
+:focus-visible{outline:2px solid #F57C00;outline-offset:3px}
+.plan-btn{background:transparent;color:#2B211A}
+.plan-btn[aria-pressed="true"]{background:#2B211A;color:#FBF6EE}
+
+/* Revelar ao rolar */
+.js [data-r]{opacity:0;transform:translateY(40px);transition:opacity 1.3s cubic-bezier(.22,.61,.36,1),transform 1.3s cubic-bezier(.22,.61,.36,1),box-shadow .6s ease}
+.js [data-r].is-in{opacity:1;transform:none}
+.js [data-r].done{transition:transform .6s cubic-bezier(.22,.61,.36,1),box-shadow .6s ease,background-color .5s ease}
+@media (prefers-reduced-motion:reduce){.js [data-r]{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* Hover e foco gerados a partir do HTML original */
+.dd1:hover{color:#C8601A !important}
+.dd2:hover{color:#C8601A !important}
+.dd3:hover{color:#C8601A !important}
+.dd4:hover{color:#C8601A !important}
+.dd5:hover{color:#C8601A !important}
+.dd6:hover{background:#2B211A !important;color:#FBF6EE !important}
+.dd7:hover{background:#FBF6EE !important;color:#2B211A !important;transform:translateY(-2px) !important}
+.dd8:hover{background:#15130F !important;color:#F57C00 !important}
+.dd9:hover{transform:translateY(-6px) !important;box-shadow:0 24px 48px rgba(43,33,26,.18) !important}
+.dd10:hover{transform:translateY(-6px) !important;box-shadow:0 24px 48px rgba(43,33,26,.18) !important}
+.dd11:hover{transform:translateY(-6px) !important;box-shadow:0 24px 48px rgba(43,33,26,.18) !important}
+.dd12:hover{transform:translateY(-6px) !important;box-shadow:0 24px 48px rgba(43,33,26,.18) !important}
+.dd13:hover{transform:translateY(-6px) !important;box-shadow:0 24px 48px rgba(43,33,26,.18) !important}
+.dd14:hover{transform:translateY(-6px) !important;box-shadow:0 24px 48px rgba(43,33,26,.18) !important}
+.dd15:hover{transform:translateY(-6px) !important;box-shadow:0 24px 48px rgba(43,33,26,.18) !important}
+.dd16:hover{transform:translateY(-6px) !important;box-shadow:0 24px 48px rgba(43,33,26,.18) !important}
+.dd17:hover{transform:translateY(-6px) !important;box-shadow:0 24px 48px rgba(43,33,26,.18) !important}
+.dd18:hover{transform:translateY(-6px) !important;box-shadow:0 24px 48px rgba(43,33,26,.18) !important}
+.dd19:hover{transform:translateY(-6px) !important;box-shadow:0 24px 48px rgba(43,33,26,.18) !important}
+.dd20:hover{background:#443629 !important;transform:translateY(-4px) !important}
+.dd21:hover{background:#443629 !important;transform:translateY(-4px) !important}
+.dd22:hover{background:#443629 !important;transform:translateY(-4px) !important}
+.dd23:hover{background:#443629 !important;transform:translateY(-4px) !important}
+.dd24:hover{background:#443629 !important;transform:translateY(-4px) !important}
+.dd25:hover{background:#443629 !important;transform:translateY(-4px) !important}
+.dd26:hover{background:#443629 !important;transform:translateY(-4px) !important}
+.dd27:hover{background:#443629 !important;transform:translateY(-4px) !important}
+.dd28:hover{background:#F57C00 !important;color:#15130F !important;border-color:#F57C00 !important}
+.dd29:hover{background:#F57C00 !important;color:#15130F !important;border-color:#F57C00 !important}
+.dd30:hover{background:#F57C00 !important;color:#15130F !important;border-color:#F57C00 !important}
+.dd31:hover{background:#F57C00 !important;color:#15130F !important;border-color:#F57C00 !important}
+.dd32:hover{background:#F57C00 !important;color:#15130F !important;border-color:#F57C00 !important}
+.dd33:hover{background:#F57C00 !important;color:#15130F !important;border-color:#F57C00 !important}
+.dd34:hover{background:#F57C00 !important;color:#15130F !important;border-color:#F57C00 !important}
+.dd35:hover{background:#F57C00 !important;color:#15130F !important;border-color:#F57C00 !important}
+.dd36:hover{background:#F57C00 !important;color:#15130F !important;border-color:#F57C00 !important}
+.dd37:hover{background:#F57C00 !important;color:#15130F !important;border-color:#F57C00 !important}
+.dd38:hover{background:#F57C00 !important;color:#15130F !important;border-color:#F57C00 !important}
+.dd39:hover{background:#F57C00 !important;color:#15130F !important;border-color:#F57C00 !important}
+.dd40:hover{background:#F57C00 !important;color:#15130F !important;border-color:#F57C00 !important}
+.dd41:focus{border-color:#F57C00 !important;outline:none !important}
+.dd42:focus{border-color:#F57C00 !important;outline:none !important}
+.dd43:hover{background:#2B211A !important;color:#FBF6EE !important}
+.dd44:hover{background:#FBF6EE !important;color:#2B211A !important;transform:translateY(-2px) !important}
+.dd45:hover{background:#FDB61A !important}
+.dd46:hover{color:#FDB61A !important}
+.dd47:hover{color:#FDB61A !important}
+.dd48:hover{color:#FDB61A !important}
+.dd49:hover{color:#FDB61A !important}
+.dd50:hover{color:#FDB61A !important}
+.dd51:hover{color:#FDB61A !important}
+.dd52:hover{color:#FDB61A !important}
+.dd53:hover{color:#FDB61A !important}
+.dd54:hover{color:#FDB61A !important}
+.dd55:hover{color:#FDB61A !important}
+.dd56:hover{color:#FDB61A !important}
+.dd57:hover{color:#FDB61A !important}
+.dd58:hover{background:#F57C00 !important;border-color:#F57C00 !important;color:#15130F !important;transform:translateY(-3px) !important}
+.dd59:hover{background:#F57C00 !important;border-color:#F57C00 !important;color:#15130F !important;transform:translateY(-3px) !important}
+.dd60:hover{background:#F57C00 !important;border-color:#F57C00 !important;color:#15130F !important;transform:translateY(-3px) !important}
+.dd61:hover{color:#FDB61A !important}
+.dd62:hover{color:#FDB61A !important}
+.dd63:hover{color:#FDB61A !important}
+.dd64:hover{color:#FDB61A !important}
+.dd65:hover{color:#FDB61A !important}
+.dd66:hover{color:#FDB61A !important}
+.dd67:hover{color:#FDB61A !important}
+.dd68:hover{color:#FDB61A !important}

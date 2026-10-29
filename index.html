@@ -3,584 +3,83 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add("js")</script>
 <title>Cardápio digital com QR Code, pedidos e delivery próprio | DineDrop</title>
 <meta name="description" content="Cardápio digital para pizzaria, hamburgueria, restaurante, bar e lanchonete. QR Code na mesa, cupons, relatórios e delivery próprio. Teste grátis por 17 dias, sem cartão.">
-<meta name="keywords" content="cardápio digital, QR Code cardápio, cardápio para pizzaria, cardápio para restaurante, delivery próprio, gestão de pedidos">
-<link rel="canonical" href="https://dinedrop.com.br/">
-<link rel="alternate" hreflang="pt-BR" href="https://dinedrop.com.br/">
+<meta name="keywords" content="cardápio digital, QR Code cardápio, cardápio para pizzaria, cardápio para hamburgueria, sistema de pedidos para restaurante, delivery próprio, cardápio online, cupom de desconto restaurante">
+<meta name="author" content="Team Dev Tech">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#F57C00">
+<link rel="canonical" href="%VITE_SITE_URL%/">
+<link rel="alternate" hreflang="pt-BR" href="%VITE_SITE_URL%/">
 <link rel="me" href="https://www.instagram.com/teamdevmatheus/">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="DineDrop — Cardápio digital com QR Code, pedidos e delivery próprio">
-<meta property="og:description" content="Cardápio digital para pizzaria, hamburgueria, restaurante, bar e lanchonete. QR Code na mesa, cupons, relatórios e delivery próprio. Teste grátis por 17 dias, sem cartão.">
-<meta property="og:url" content="https://dinedrop.com.br/">
-<meta property="og:locale" content="pt_BR">
-<meta name="twitter:card" content="summary_large_image">
-
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
-
+<meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:site_name" content="DineDrop"><meta property="og:url" content="%VITE_SITE_URL%/">
+<meta property="og:title" content="Cardápio digital com QR Code, pedidos e delivery próprio | DineDrop"><meta property="og:description" content="Cardápio digital para pizzaria, hamburgueria, restaurante, bar e lanchonete. QR Code na mesa, cupons, relatórios e delivery próprio. Teste grátis por 17 dias, sem cartão.">
+<meta property="og:image" content="%VITE_SITE_URL%/img/og-1200x630.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="DineDrop: cardápio digital e painel de pedidos">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Cardápio digital com QR Code, pedidos e delivery próprio | DineDrop"><meta name="twitter:description" content="Cardápio digital para pizzaria, hamburgueria, restaurante, bar e lanchonete. QR Code na mesa, cupons, relatórios e delivery próprio. Teste grátis por 17 dias, sem cartão."><meta name="twitter:image" content="%VITE_SITE_URL%/img/og-1200x630.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Team Dev Tech","url":"%VITE_SITE_URL%/","email":"devteam2026tech@gmail.com","telephone":"+55 61 9235-5047","sameAs":["https://www.instagram.com/teamdevmatheus/"]},{"@type":"WebSite","name":"DineDrop","url":"%VITE_SITE_URL%/","inLanguage":"pt-BR"},{"@type":"SoftwareApplication","name":"DineDrop","applicationCategory":"BusinessApplication","operatingSystem":"Web","inLanguage":"pt-BR","publisher":{"@type":"Organization","name":"Team Dev Tech"},"featureList":["Cardápio digital com QR Code","Cupons de desconto","Cadastro e controle de pedidos","Ativar e inativar produtos","Relatório de vendas","Importação e exportação de cardápio","Delivery e retirada","Food News"],"offers":[{"@type":"Offer","name":"Cliente","price":"49","priceCurrency":"BRL"},{"@type":"Offer","name":"Garçom","price":"89","priceCurrency":"BRL"},{"@type":"Offer","name":"Cozinheiro","price":"297","priceCurrency":"BRL"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O cliente precisa baixar aplicativo?","acceptedAnswer":{"@type":"Answer","text":"Não. O cardápio abre no navegador, pelo link ou pelo QR Code."}},{"@type":"Question","name":"Preciso de computador?","acceptedAnswer":{"@type":"Answer","text":"Não. Funciona no navegador do celular, do tablet ou do computador."}},{"@type":"Question","name":"O DineDrop é fácil de usar?","acceptedAnswer":{"@type":"Answer","text":"Sim. O cadastro tem 6 passos e o painel é feito para quem nunca usou um sistema."}},{"@type":"Question","name":"Quanto tempo leva para começar?","acceptedAnswer":{"@type":"Answer","text":"O cadastro tem 6 passos, e o cardápio pode vir de uma foto ou de uma planilha."}},{"@type":"Question","name":"Tem fidelidade?","acceptedAnswer":{"@type":"Answer","text":"Não. Cancele quando quiser; o plano vale até o fim do período pago."}},{"@type":"Question","name":"Tem teste grátis?","acceptedAnswer":{"@type":"Answer","text":"Sim, 17 dias, sem cartão."}},{"@type":"Question","name":"Como pago a assinatura?","acceptedAnswer":{"@type":"Answer","text":"Por Pix, gerado no painel. Não há cobrança automática no cartão."}},{"@type":"Question","name":"O dinheiro dos pedidos vai para onde?","acceptedAnswer":{"@type":"Answer","text":"No Pix, direto na chave do restaurante. No Mercado Pago, na conta do restaurante, descontada a tarifa do próprio Mercado Pago."}},{"@type":"Question","name":"Posso trocar de plano?","acceptedAnswer":{"@type":"Answer","text":"Para um plano maior, na hora, pagando só a diferença. Para um menor, na renovação."}},{"@type":"Question","name":"Meus dados ficam comigo?","acceptedAnswer":{"@type":"Answer","text":"Sim. Você baixa tudo pelo painel e pode pedir a exclusão da conta."}}]}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="icon" type="image/png" href="/img/dinedrop-icon.png">
 </head>
 <body>
-
-<header class="site-header">
-  <div class="container site-header__row">
-    <a href="#topo" id="topo" class="brand">
-      <img src="images/logo-dinedrop.png" alt="Logo do DineDrop" width="38" height="38">
-      DineDrop
-    </a>
-
-    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-
-    <nav class="nav" aria-label="Principal">
-      <a href="#vantagens">Vantagens</a>
-      <a href="#nichos">Nichos</a>
-      <a href="#como">Como funciona</a>
-      <a href="#planos">Planos</a>
-      <a href="#perguntas">Perguntas</a>
-      <a class="btn btn--primary" href="https://dinedrop-app.vercel.app" target="_blank" rel="noopener">Comece grátis por 17 dias</a>
-    </nav>
-  </div>
-</header>
-
+<div style="background:#FBF6EE;color:#2B211A;font-family:'DM Sans',sans-serif;overflow-x:hidden">
+<header id="topo" style="position:sticky;top:0;z-index:50;background:rgba(251,246,238,.94);backdrop-filter:blur(10px);border-bottom:1px solid transparent;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(20px,6vw,96px);flex-wrap:wrap"><a href="#topo" title="DineDrop, início" style="display:flex;align-items:center;gap:12px;text-decoration:none"><img src="/img/dinedrop-icon.png" alt="Logo do DineDrop" width="40" height="40" style="width:40px;height:40px;border-radius:10px"><span style="font-size:24px;font-weight:700;letter-spacing:-.025em;color:#C8601A">DineDrop</span></a><nav aria-label="Principal" style="display:flex;align-items:center;gap:26px;font-size:15px;flex-wrap:wrap"><a href="#vantagens" title="Vantagens do DineDrop" style="color:#2B211A;text-decoration:none" class="dd1">Vantagens</a><a href="#nichos" title="Nichos atendidos" style="color:#2B211A;text-decoration:none" class="dd2">Nichos</a><a href="#como" title="Como funciona" style="color:#2B211A;text-decoration:none" class="dd3">Como funciona</a><a href="#planos" title="Planos e preços" style="color:#2B211A;text-decoration:none" class="dd4">Planos</a><a href="#perguntas" title="Perguntas frequentes" style="color:#2B211A;text-decoration:none" class="dd5">Perguntas</a><a href="#conta" title="Comece grátis por 17 dias" style="background:#F57C00;color:#15130F;text-decoration:none;font-weight:700;border-radius:999px;padding:11px 20px" class="dd6">Comece grátis por 17 dias</a></nav><div id="prog" style="position:absolute;left:0;bottom:-1px;height:3px;width:0;background:#F57C00"></div></header>
 <main>
-
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="container hero__grid">
-      <div data-reveal>
-        <p class="eyebrow">Cardápio digital e gestão de pedidos</p>
-        <h1>Seu cardápio no celular do cliente. Seus pedidos num painel só.</h1>
-        <p class="lede">Cardápio digital, QR Code na mesa, delivery próprio e retirada, com mensalidade fixa e sem fidelidade.</p>
-
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="https://dinedrop-app.vercel.app" target="_blank" rel="noopener">Comece grátis por 17 dias</a>
-          <a class="btn btn--outline" href="#planos">Ver planos</a>
-        </div>
-
-        <div class="hero__trust">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sem cartão de crédito. Sem fidelidade.</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sem comissão por pedido.</span>
-        </div>
-      </div>
-
-      <div class="hero__art" data-reveal>
-        <div class="hero__art-frame">
-          <img src="images/mockup-painel.png" alt="Painel do DineDrop com a lista de pedidos" loading="eager">
-        </div>
-        <img class="hero__mascot" src="images/pierre-comemorando.svg" alt="Pierre, o mascote do DineDrop, comemorando" width="92" height="98">
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== STATS ===== -->
-  <section class="stats">
-    <div class="container stats__row">
-      <div class="stat"><strong>17 dias</strong><span>de teste grátis</span></div>
-      <div class="stat"><strong>Sem cartão</strong><span>para começar</span></div>
-      <div class="stat"><strong>Sem fidelidade</strong><span>cancele quando quiser</span></div>
-      <div class="stat"><strong>6 passos</strong><span>de cadastro</span></div>
-    </div>
-  </section>
-
-  <!-- ===== NICHE TICKER ===== -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker__track">
-      <span class="ticker__chip">Pizzarias</span>
-      <span class="ticker__chip">Hamburguerias</span>
-      <span class="ticker__chip">Restaurantes</span>
-      <span class="ticker__chip">Bares</span>
-      <span class="ticker__chip">Lanchonetes</span>
-      <span class="ticker__chip">Marmitarias</span>
-      <span class="ticker__chip">Cafeterias</span>
-      <span class="ticker__chip">Padarias</span>
-      <span class="ticker__chip">Food trucks</span>
-      <span class="ticker__chip">Docerias</span>
-      <span class="ticker__chip">Açaiterias</span>
-      <span class="ticker__chip" aria-hidden="true">Pizzarias</span>
-      <span class="ticker__chip" aria-hidden="true">Hamburguerias</span>
-      <span class="ticker__chip" aria-hidden="true">Restaurantes</span>
-      <span class="ticker__chip" aria-hidden="true">Bares</span>
-      <span class="ticker__chip" aria-hidden="true">Lanchonetes</span>
-      <span class="ticker__chip" aria-hidden="true">Marmitarias</span>
-      <span class="ticker__chip" aria-hidden="true">Cafeterias</span>
-      <span class="ticker__chip" aria-hidden="true">Padarias</span>
-      <span class="ticker__chip" aria-hidden="true">Food trucks</span>
-      <span class="ticker__chip" aria-hidden="true">Docerias</span>
-      <span class="ticker__chip" aria-hidden="true">Açaiterias</span>
-    </div>
-  </div>
-
-  <!-- ===== DEMO CTA ===== -->
-  <section class="section section--tight">
-    <div class="container">
-      <div class="demo" data-reveal>
-        <div>
-          <p class="eyebrow eyebrow--light">Teste agora</p>
-          <h3>Aponte a câmera e peça como o seu cliente pediria</h3>
-          <p>Sem aplicativo e sem cadastro: só nome e WhatsApp. Esse é o cardápio de teste, e você pode ajustar as cores e colocar o logo do seu restaurante.</p>
-          <div class="hero__actions" style="margin-top:22px">
-            <a class="btn btn--on-night" href="https://dinedrop-app.vercel.app" target="_blank" rel="noopener">Testar cardápio de exemplo</a>
-          </div>
-        </div>
-        <div class="demo__qr">
-          <img src="images/qrcode-teste.png" alt="QR Code do cardápio de teste do DineDrop">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== VANTAGENS ===== -->
-  <section class="section" id="vantagens">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">Vantagens</p>
-        <h2>Tudo o que o restaurante usa no dia a dia, num lugar só</h2>
-        <p class="lede">Do pedido do cliente ao relatório do mês, sem planilha, sem caderno e sem aplicativo para baixar.</p>
-      </div>
-
-      <div class="features">
-        <article class="feature feature--span2" data-reveal>
-          <div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
-          <h4>Relatório de vendas</h4>
-          <p>Faturamento, ticket médio, itens mais vendidos e horário de pico. Exporte em PDF e CSV para o contador.</p>
-        </article>
-
-        <article class="feature" data-reveal>
-          <div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41 13.42 20.58a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.2" fill="currentColor" stroke="none"/></svg></div>
-          <h4>Cupons de desconto</h4>
-          <p>Atraia e faça o cliente voltar. O desconto é validado na hora do pedido.</p>
-        </article>
-
-        <article class="feature" data-reveal>
-          <div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg></div>
-          <h4>Cadastro e controle de pedidos</h4>
-          <p>Todo pedido registrado, com mesa, delivery ou retirada e status até a entrega. Pedido novo toca um som.</p>
-        </article>
-
-        <article class="feature" data-reveal>
-          <div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="8" cy="12" r="3" fill="currentColor" stroke="none"/></svg></div>
-          <h4>Ativar e inativar produtos</h4>
-          <p>Acabou o prato? Inative com um toque e ative quando voltar. Sem reimprimir nada.</p>
-        </article>
-
-        <article class="feature" data-reveal>
-          <div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
-          <h4>Importar e exportar o cardápio</h4>
-          <p>Importe de uma foto ou planilha e exporte seus dados quando quiser.</p>
-        </article>
-
-        <article class="feature feature--span2" data-reveal>
-          <div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-          <h4>Sua marca no cardápio</h4>
-          <p>Ajuste as cores, a fonte e a capa, e coloque o logo do restaurante. Veja a prévia antes de salvar.</p>
-        </article>
-
-        <article class="feature" data-reveal>
-          <div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></div>
-          <h4>QR Code por mesa</h4>
-          <p>Gere os QR Codes em PDF, um por mesa e um para o cardápio geral.</p>
-        </article>
-
-        <article class="feature" data-reveal>
-          <div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
-          <h4>Food News</h4>
-          <p>Um canal de novidades dentro do painel, que avisa o que mudou na plataforma.</p>
-        </article>
-
-        <article class="feature" data-reveal>
-          <div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h4>Equipe com permissões</h4>
-          <p>Cada pessoa com login próprio, painel do garçom e da cozinha.</p>
-        </article>
-
-        <article class="feature" data-reveal>
-          <div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="14" height="13"/><polygon points="15 8 19 8 22 11 22 16 15 16 15 8"/><circle cx="5.5" cy="18.5" r="2.3"/><circle cx="18" cy="18.5" r="2.3"/></svg></div>
-          <h4>Delivery e retirada</h4>
-          <p>Taxa por bairro, pedido mínimo, entregador com código de entrega e horário estimado para retirar.</p>
-        </article>
-
-        <article class="feature" data-reveal>
-          <div class="feature__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
-          <h4>Pix e Mercado Pago</h4>
-          <p>Pix direto na chave do restaurante, ou cartão e Pix pelo Mercado Pago.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== DORES ===== -->
-  <section class="section section--tight" style="background:var(--cream-soft)" id="dores">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">As dores de quem vende comida</p>
-        <h2>Você reconhece alguma dessas dores?</h2>
-        <p class="lede">Sexta, 20h: o celular apita com áudios, o garçom anota no papel, o motoboy liga perguntando o endereço e a mesa 7 ainda espera para pedir. Essa rotina tem causa, e cada pedaço dela tem solução.</p>
-      </div>
-
-      <div class="pains">
-        <div class="pain" data-reveal>
-          <span class="pain__num">Dor 01</span>
-          <h4>Pedidos perdidos no WhatsApp</h4>
-          <p>Áudio, print e item esquecido. O prato errado vai para a mesa e ninguém sabe de quem foi o erro.</p>
-          <div class="pain__fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Com o DineDrop:</strong> o cliente monta o pedido item por item e ele chega organizado no painel.</span></div>
-        </div>
-        <div class="pain" data-reveal>
-          <span class="pain__num">Dor 02</span>
-          <h4>A comissão do app de entrega</h4>
-          <p>Quanto mais você vende, mais paga. E o cliente é do aplicativo, não seu.</p>
-          <div class="pain__fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Com o DineDrop:</strong> delivery pelo seu link, com mensalidade fixa.</span></div>
-        </div>
-        <div class="pain" data-reveal>
-          <span class="pain__num">Dor 03</span>
-          <h4>O garçom não dá conta</h4>
-          <p>Mesa cheia, cliente levantando a mão e pedido que demora a chegar à cozinha.</p>
-          <div class="pain__fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Com o DineDrop:</strong> QR na mesa — o cliente pede sozinho e chama o garçom pelo celular.</span></div>
-        </div>
-        <div class="pain" data-reveal>
-          <span class="pain__num">Dor 04</span>
-          <h4>Cardápio de papel desatualizado</h4>
-          <p>Preço mudou, o prato acabou, e a gráfica cobra para reimprimir.</p>
-          <div class="pain__fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Com o DineDrop:</strong> mudou no painel, mudou na hora para todo mundo.</span></div>
-        </div>
-        <div class="pain" data-reveal>
-          <span class="pain__num">Dor 05</span>
-          <h4>Vender o que já acabou</h4>
-          <p>O cliente pede, a cozinha avisa que não tem, e a experiência estraga.</p>
-          <div class="pain__fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Com o DineDrop:</strong> inative o produto com um toque e ative quando voltar.</span></div>
-        </div>
-        <div class="pain" data-reveal>
-          <span class="pain__num">Dor 06</span>
-          <h4>Motoboy sem controle</h4>
-          <p>"Já saiu?", "Entregou?". Você só descobre quando o cliente reclama.</p>
-          <div class="pain__fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Com o DineDrop:</strong> entregador com código de entrega e status do pedido em tempo real.</span></div>
-        </div>
-        <div class="pain" data-reveal>
-          <span class="pain__num">Dor 07</span>
-          <h4>Não saber o que dá lucro</h4>
-          <p>Sem número na mão, você decide no feeling: o que vende, que horas lota.</p>
-          <div class="pain__fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Com o DineDrop:</strong> relatório de vendas, ticket médio e horário de pico.</span></div>
-        </div>
-        <div class="pain" data-reveal>
-          <span class="pain__num">Dor 08</span>
-          <h4>Cliente que não volta</h4>
-          <p>Você atende bem, e na semana seguinte ele pede em outro lugar.</p>
-          <div class="pain__fix"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Com o DineDrop:</strong> cupons de desconto para trazer o cliente de volta.</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== NICHOS ===== -->
-  <section class="section" id="nichos">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">Nichos atendidos</p>
-        <h2>Do carrinho de lanche ao restaurante cheio</h2>
-      </div>
-
-      <div class="niches">
-        <div class="niche-card" data-reveal>
-          <span class="niche-card__tag">Negócios pequenos</span>
-          <h3>Comece sem complicar</h3>
-          <p>Para quem está começando ou toca o negócio sozinho: cardápio no ar a partir de uma foto, QR Code para imprimir e pedido organizado desde o primeiro dia.</p>
-          <ul>
-            <li>Food trucks e carrinhos</li>
-            <li>Marmitarias</li>
-            <li>Docerias e confeitarias</li>
-            <li>Cafeterias</li>
-            <li>Açaiterias</li>
-            <li>Lanchonetes</li>
-            <li>Padarias</li>
-          </ul>
-          <p class="tiny">Plano Cliente.</p>
-        </div>
-
-        <div class="niche-card niche-card--accent" data-reveal>
-          <span class="niche-card__tag">Operações grandes</span>
-          <h3>Salão cheio, equipe e entregadores</h3>
-          <p>Para quem tem muitas mesas, equipe com funções diferentes e delivery em volume: conta da mesa, juntar e transferir mesas, entregadores e relatórios.</p>
-          <ul>
-            <li>Restaurantes com salão</li>
-            <li>Bares</li>
-            <li>Pizzarias</li>
-            <li>Hamburguerias</li>
-            <li>Cantinas e self-service</li>
-            <li>Operações de delivery com entregadores</li>
-          </ul>
-          <p class="tiny">Planos Garçom e Cozinheiro.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== COMO FUNCIONA ===== -->
-  <section class="section section--tight" style="background:var(--cream-soft)" id="como">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">Como funciona</p>
-        <h2>No ar em 6 passos de cadastro</h2>
-      </div>
-
-      <div class="steps">
-        <div class="step" data-reveal>
-          <span class="step__num">01</span>
-          <h4>Cadastre e importe o cardápio</h4>
-          <p>Tire uma foto do cardápio ou envie uma planilha. A IA sugere descrição e categoria, e nada muda sem a sua escolha.</p>
-        </div>
-        <div class="step" data-reveal>
-          <span class="step__num">02</span>
-          <h4>Imprima os QR Codes e compartilhe o link</h4>
-          <p>Um QR para cada mesa e um para o cardápio geral, em PDF.</p>
-        </div>
-        <div class="step" data-reveal>
-          <span class="step__num">03</span>
-          <h4>Receba os pedidos no painel</h4>
-          <p>Pedido novo toca um som. Você acompanha do preparo até a entrega.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CALCULADORA ===== -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">Faça a conta</p>
-        <h2>Quanto a comissão custa por mês?</h2>
-        <p class="lede">Se você vende por aplicativo de entrega que cobra comissão, coloque seus números e veja quanto fica com você.</p>
-      </div>
-
-      <div class="calc" data-reveal data-calc>
-        <div>
-          <div class="calc__field">
-            <label>Quanto você vende por mês <output data-calc-revenue-out></output></label>
-            <input type="range" min="1000" max="60000" step="500" value="15000" data-calc-revenue>
-          </div>
-          <div class="calc__field">
-            <label>Comissão que você paga hoje <output data-calc-fee-out></output></label>
-            <input type="range" min="5" max="30" step="1" value="20" data-calc-fee>
-          </div>
-          <p class="calc__note">Estimativa. Tarifas de pagamento (Pix ou cartão) não incluídas.</p>
-        </div>
-
-        <div class="calc__result">
-          <div class="calc__result-row"><span>Comissão por mês</span><strong data-calc-month>—</strong></div>
-          <div class="calc__result-row"><span>Comissão por ano</span><strong data-calc-year>—</strong></div>
-          <div class="calc__result-row"><span>Plano Garçom, mensalidade fixa</span><strong>R$ 89</strong></div>
-          <div class="calc__highlight">
-            <span style="font-size:13px">Você economizaria até</span>
-            <div class="big" data-calc-save-month>—</div>
-            <span style="font-size:12.5px;opacity:.85" data-calc-save-year>—</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PLANOS ===== -->
-  <section class="section" id="planos" style="background:var(--cream-soft)">
-    <div class="container">
-      <div class="section-head center" data-reveal>
-        <p class="eyebrow">Planos</p>
-        <h2>Escolha o seu plano</h2>
-
-        <div class="billing-toggle" data-billing-toggle data-billing="mensal">
-          <span class="billing-toggle__pill"></span>
-          <button type="button" data-mode="mensal" class="is-active">Mensal</button>
-          <button type="button" data-mode="anual">Anual <span class="billing-toggle__save">-17%</span></button>
-        </div>
-      </div>
-
-      <div class="plans">
-        <div class="plan" data-reveal>
-          <h3>Cliente</h3>
-          <p>Para quem está começando</p>
-          <div class="plan__price"><span>R$</span> <span data-price data-mensal="49" data-anual="39">49</span><span>/mês</span></div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>1 unidade, até 50 produtos</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Mesa, delivery e retirada</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>QR Codes para imprimir</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Importação por foto ou planilha, 2 por mês</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Pix na chave do restaurante</li>
-          </ul>
-          <a class="btn btn--outline btn--block" href="https://dinedrop-app.vercel.app" target="_blank" rel="noopener">Comece grátis por 17 dias</a>
-        </div>
-
-        <div class="plan plan--featured" data-reveal>
-          <span class="plan__badge">Mais escolhido</span>
-          <h3>Garçom</h3>
-          <p>Serviço completo, do salão à entrega</p>
-          <div class="plan__price"><span>R$</span> <span data-price data-mensal="89" data-anual="69">89</span><span>/mês</span></div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Tudo do Cliente</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Produtos ilimitados, 20 importações por mês</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Equipe de até 3 pessoas</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Cupons de desconto</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Cartão e Pix pelo Mercado Pago</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Entregas e entregadores</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Relatórios em PDF e CSV</li>
-          </ul>
-          <a class="btn btn--primary btn--block" href="https://dinedrop-app.vercel.app" target="_blank" rel="noopener">Comece grátis por 17 dias</a>
-        </div>
-
-        <div class="plan" data-reveal>
-          <h3>Cozinheiro</h3>
-          <p>Para quem comanda a cozinha toda</p>
-          <div class="plan__price"><span>R$</span> <span data-price data-mensal="297" data-anual="197">297</span><span>/mês</span></div>
-          <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Tudo do Garçom</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Equipe e importações ilimitadas</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Marca própria no cardápio, sem "por DineDrop"</li>
-          </ul>
-          <a class="btn btn--outline btn--block" href="https://dinedrop-app.vercel.app" target="_blank" rel="noopener">Comece grátis por 17 dias</a>
-        </div>
-      </div>
-      <p style="text-align:center;margin-top:28px;font-size:13.5px">Sem fidelidade. Pagamento por Pix, gerado no painel.</p>
-    </div>
-  </section>
-
-  <!-- ===== LGPD ===== -->
-  <section class="section" id="lgpd">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">Seus dados · LGPD</p>
-        <h2>Os dados da sua cozinha são seus</h2>
-        <p class="lede">Tratamos os dados conforme a Lei Geral de Proteção de Dados (LGPD).</p>
-        <div class="lgpd__links">
-          <a href="#">Termos de Uso</a>
-          <a href="#">Política de Privacidade</a>
-        </div>
-      </div>
-
-      <div class="lgpd">
-        <div class="lgpd-item" data-reveal>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <h4>Baixe tudo</h4>
-          <p>Exporte todos os dados da conta pelo painel, quando quiser.</p>
-        </div>
-        <div class="lgpd-item" data-reveal>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>
-          <h4>Peça a exclusão</h4>
-          <p>A exclusão da conta é pedida direto no painel.</p>
-        </div>
-        <div class="lgpd-item" data-reveal>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          <h4>Documento protegido</h4>
-          <p>O CPF ou CNPJ nunca fica guardado em texto aberto.</p>
-        </div>
-        <div class="lgpd-item" data-reveal>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <h4>Foto do cardápio</h4>
-          <p>A foto enviada para importar é lida e não fica salva.</p>
-        </div>
-        <div class="lgpd-item" data-reveal>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a7.5 7.5 0 0 1 13 0"/></svg>
-          <h4>Cliente com o mínimo</h4>
-          <p>O cliente do seu restaurante informa só nome e WhatsApp.</p>
-        </div>
-        <div class="lgpd-item" data-reveal>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <h4>Acesso protegido</h4>
-          <p>Cada restaurante só vê os próprios dados.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section class="section" id="perguntas" style="background:var(--cream-soft)">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <p class="eyebrow">Perguntas frequentes</p>
-        <h2>Antes de começar</h2>
-      </div>
-
-      <div class="faq">
-        <details class="faq-item"><summary>O cliente precisa baixar aplicativo? <span class="plus">+</span></summary><p>Não. O cardápio abre no navegador, pelo link ou pelo QR Code.</p></details>
-        <details class="faq-item"><summary>Preciso de computador? <span class="plus">+</span></summary><p>Não. Funciona no navegador do celular, do tablet ou do computador.</p></details>
-        <details class="faq-item"><summary>O DineDrop é fácil de usar? <span class="plus">+</span></summary><p>Sim. O cadastro tem 6 passos e o painel é feito para quem nunca usou um sistema.</p></details>
-        <details class="faq-item"><summary>Quanto tempo leva para começar? <span class="plus">+</span></summary><p>O cadastro tem 6 passos, e o cardápio pode vir de uma foto ou de uma planilha.</p></details>
-        <details class="faq-item"><summary>Tem fidelidade? <span class="plus">+</span></summary><p>Não. Cancele quando quiser; o plano vale até o fim do período pago.</p></details>
-        <details class="faq-item"><summary>Tem teste grátis? <span class="plus">+</span></summary><p>Sim, 17 dias, sem cartão.</p></details>
-        <details class="faq-item"><summary>Como pago a assinatura? <span class="plus">+</span></summary><p>Por Pix, gerado no painel. Não há cobrança automática no cartão.</p></details>
-        <details class="faq-item"><summary>O dinheiro dos pedidos vai para onde? <span class="plus">+</span></summary><p>No Pix, direto na chave do restaurante. No Mercado Pago, na conta do restaurante, descontada a tarifa do próprio Mercado Pago.</p></details>
-        <details class="faq-item"><summary>Posso trocar de plano? <span class="plus">+</span></summary><p>Para um plano maior, na hora, pagando só a diferença. Para um menor, na renovação.</p></details>
-        <details class="faq-item"><summary>Meus dados ficam comigo? <span class="plus">+</span></summary><p>Sim. Você baixa tudo pelo painel e pode pedir a exclusão da conta.</p></details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA FINAL ===== -->
-  <section class="section" id="conta">
-    <div class="container">
-      <div class="cta-final" data-reveal>
-        <div>
-          <h2>Comece grátis por 17 dias</h2>
-          <p>Sem cartão e sem fidelidade. Crie o cardápio, imprima os QR Codes e receba o primeiro pedido.</p>
-        </div>
-        <a class="btn btn--primary" href="https://dinedrop-app.vercel.app" target="_blank" rel="noopener">Criar minha conta</a>
-      </div>
-    </div>
-  </section>
-
+<section style="background:#F57C00;color:#15130F;overflow:hidden;padding:clamp(64px,9vw,128px) clamp(20px,6vw,96px);padding-top:clamp(40px,6vw,88px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:56px;align-items:center">
+ <div>
+  <div data-r="1" data-d="0" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:24px">Cardápio digital e gestão de pedidos</div>
+  <h1 data-r="1" data-d="100" style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(46px,7vw,100px);line-height:.98;letter-spacing:-.03em;margin:0">Seu cardápio no celular do cliente. Seus pedidos num painel só.</h1>
+  <p data-r="1" data-d="200" style="font-size:clamp(18px,1.9vw,23px);line-height:1.5;max-width:560px;margin:26px 0 0">Cardápio digital, QR Code na mesa, delivery próprio e retirada, com mensalidade fixa e sem fidelidade.</p>
+  <div data-r="1" data-d="300" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:36px"><a href="#conta" title="Comece grátis por 17 dias" style="display:inline-block;text-decoration:none;font-weight:700;border-radius:999px;font-size:17px;background:#2B211A;color:#FBF6EE;padding:17px 30px;" class="dd7">Comece grátis por 17 dias</a><a href="#planos" title="Ver planos" style="display:inline-block;text-decoration:none;font-weight:700;border-radius:999px;font-size:17px;border:2px solid #15130F;color:#15130F;padding:15px 28px" class="dd8">Ver planos</a></div>
+  <div data-r="1" data-d="400" style="font-size:15px;margin-top:20px;font-weight:500">Sem cartão de crédito. Sem fidelidade.</div>
+  <div id="sc-semComissao" hidden><div style="font-size:18px;font-weight:700;margin-top:10px">Sem comissão por pedido.</div></div>
+ </div>
+ <div data-r="1" data-d="200" style="position:relative;min-height:480px;display:flex;justify-content:center">
+  <img data-par="0.06" src="/img/print-painel.png" alt="Painel do DineDrop com a lista de pedidos" width="560" style="position:absolute;right:0;top:10px;width:min(100%,580px);border-radius:16px;box-shadow:0 30px 60px rgba(43,33,26,.35)">
+  <img data-par="-0.05" src="/img/print-cardapio.png" alt="Cardápio digital do restaurante aberto no celular" width="230" style="position:relative;width:min(46%,230px);margin-top:150px;margin-right:auto;border-radius:30px;border:6px solid #2B211A;box-shadow:0 30px 60px rgba(43,33,26,.4)">
+ </div>
+</section>
+<div data-r="1" data-d="0" style="display:flex;flex-wrap:wrap;gap:24px 40px;padding:36px clamp(20px,6vw,96px);background:#FFFDF8;border-bottom:1px solid #E8E0D2"><div style="flex:1 1 200px"><div style="font-family:'Fraunces',serif;font-size:clamp(26px,2.6vw,34px);font-weight:500">17 dias</div><div style="font-size:15px;color:#5E4E42;margin-top:2px">de teste grátis</div></div><div style="flex:1 1 200px"><div style="font-family:'Fraunces',serif;font-size:clamp(26px,2.6vw,34px);font-weight:500">Sem cartão</div><div style="font-size:15px;color:#5E4E42;margin-top:2px">para começar</div></div><div style="flex:1 1 200px"><div style="font-family:'Fraunces',serif;font-size:clamp(26px,2.6vw,34px);font-weight:500">Sem fidelidade</div><div style="font-size:15px;color:#5E4E42;margin-top:2px">cancele quando quiser</div></div><div style="flex:1 1 200px"><div style="font-family:'Fraunces',serif;font-size:clamp(26px,2.6vw,34px);font-weight:500">6 passos</div><div style="font-size:15px;color:#5E4E42;margin-top:2px">de cadastro</div></div></div>
+<div style="background:#2B211A;color:#FBF6EE;overflow:hidden;padding:22px 0"><div id="mq" style="display:flex;gap:40px;width:max-content"><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Pizzarias<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Hamburguerias<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Restaurantes<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Bares<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Lanchonetes<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Marmitarias<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Cafeterias<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Padarias<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Food trucks<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Docerias<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Açaiterias<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Pizzarias<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Hamburguerias<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Restaurantes<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Bares<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Lanchonetes<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Marmitarias<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Cafeterias<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Padarias<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Food trucks<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Docerias<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span><span style="font-family:'Fraunces',serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:40px">Açaiterias<span style="width:10px;height:10px;border-radius:50%;background:#F57C00"></span></span></div></div>
+<section style="padding:clamp(64px,9vw,128px) clamp(20px,6vw,96px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:48px;align-items:center">
+ <div data-r="1" data-d="0" style="display:flex;align-items:center;gap:32px;flex-wrap:wrap"><img src="/img/qr-demo.png" alt="QR Code do cardápio de teste do DineDrop" width="168" height="168" style="width:168px;height:168px;border-radius:16px;border:1px solid #E8E0D2;background:#fff;padding:10px"><img src="/mascote/rato-oferecendo.svg" alt="Pierre, o chef mascote do DineDrop" width="170" style="width:170px"></div>
+ <div data-r="1" data-d="100"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#B4531A;margin-bottom:14px">Teste agora</div><h2 style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(36px,5vw,68px);line-height:1.03;letter-spacing:-.02em;margin:0">Aponte a câmera e peça como o seu cliente pediria</h2><p style="font-size:19px;line-height:1.55;color:#5E4E42;margin:20px 0 0;max-width:520px">Sem aplicativo e sem cadastro: só nome e WhatsApp. Esse é o cardápio de teste, e você pode ajustar as cores e colocar o logo do seu restaurante.</p></div></section>
+<section id="vantagens" style="background:#F3E9DA;padding:clamp(64px,9vw,128px) clamp(20px,6vw,96px)"><div data-r="1" data-d="0" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#B4531A;margin-bottom:14px">Vantagens</div><h2 data-r="1" data-d="80" style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(36px,5vw,68px);line-height:1.03;letter-spacing:-.02em;margin:0;max-width:880px;margin-bottom:20px">Tudo o que o restaurante usa no dia a dia, num lugar só</h2><p data-r="1" data-d="120" style="font-size:19px;line-height:1.55;color:#5E4E42;max-width:620px;margin:0 0 56px">Do pedido do cliente ao relatório do mês, sem planilha, sem caderno e sem aplicativo para baixar.</p><div style="display:flex;flex-wrap:wrap;gap:20px"><div data-r="1" data-d="60" style="flex:2 1 520px;background:#2B211A;color:#FBF6EE;border-radius:28px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:24px;min-height:340px" class="dd9"><div style="width:52px;height:52px;border-radius:16px;background:#F57C00;color:#2B211A;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="color:#2B211A"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V11M10 20V4M16 20v-6M22 20H2"/></svg></span></div><div><div style="display:flex;gap:8px;align-items:flex-end;height:96px;max-width:420px"><div style="flex:1;height:40%;background:#F57C00;border-radius:6px 6px 2px 2px;opacity:0.7"></div><div style="flex:1;height:62%;background:#F57C00;border-radius:6px 6px 2px 2px;opacity:0.81"></div><div style="flex:1;height:48%;background:#F57C00;border-radius:6px 6px 2px 2px;opacity:0.74"></div><div style="flex:1;height:80%;background:#F57C00;border-radius:6px 6px 2px 2px;opacity:0.9"></div><div style="flex:1;height:56%;background:#F57C00;border-radius:6px 6px 2px 2px;opacity:0.78"></div><div style="flex:1;height:92%;background:#F57C00;border-radius:6px 6px 2px 2px;opacity:0.96"></div><div style="flex:1;height:70%;background:#F57C00;border-radius:6px 6px 2px 2px;opacity:0.85"></div></div><div style="display:flex;gap:8px;margin-top:12px"><span style="border:1px solid #6B5B4E;border-radius:999px;padding:3px 12px;font-size:12px;font-family:'JetBrains Mono',monospace">PDF</span><span style="border:1px solid #6B5B4E;border-radius:999px;padding:3px 12px;font-size:12px;font-family:'JetBrains Mono',monospace">CSV</span></div></div><div style="margin-top:auto"><div style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(30px,3.4vw,44px);line-height:1.08;letter-spacing:-.01em">Relatório de vendas</div><p style="font-size:18px;line-height:1.55;margin:12px 0 0;opacity:.92;max-width:520px">Faturamento, ticket médio, itens mais vendidos e horário de pico. Exporte em PDF e CSV para o contador.</p></div></div><div data-r="1" data-d="120" style="flex:1 1 300px;background:#F57C00;color:#15130F;border-radius:28px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:24px;min-height:250px" class="dd10"><div style="width:52px;height:52px;border-radius:16px;background:#15130F;color:#F57C00;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="color:#FBF6EE"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4z"/><path d="M14 7v10" stroke-dasharray="2 2"/></svg></span></div><div><div style="border:2px dashed #15130F;border-radius:14px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;max-width:300px"><span style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:500">BEMVINDO</span><span style="font-size:13px;font-weight:700">Exemplo</span></div></div><div style="margin-top:auto"><div style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,2.4vw,30px);line-height:1.08;letter-spacing:-.01em">Cupons de desconto</div><p style="font-size:16px;line-height:1.55;margin:12px 0 0;opacity:.92;max-width:520px">Atraia e faça o cliente voltar. O desconto é validado na hora do pedido.</p></div></div><div data-r="1" data-d="180" style="flex:1 1 300px;background:#F3E9DA;color:#2B211A;border-radius:28px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:24px;min-height:250px" class="dd11"><div style="width:52px;height:52px;border-radius:16px;background:#2B211A;color:#F3E9DA;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="color:#F3E9DA"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9zM9 12h6M9 16h4"/></svg></span></div><div style="margin-top:auto"><div style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,2.4vw,30px);line-height:1.08;letter-spacing:-.01em">Cadastro e controle de pedidos</div><p style="font-size:16px;line-height:1.55;margin:12px 0 0;opacity:.92;max-width:520px">Todo pedido registrado, com mesa, delivery ou retirada e status até a entrega. Pedido novo toca um som.</p></div></div><div data-r="1" data-d="240" style="flex:1 1 300px;background:#FFFDF8;color:#2B211A;border-radius:28px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:24px;min-height:250px" class="dd12"><div style="width:52px;height:52px;border-radius:16px;background:#2B211A;color:#FFFDF8;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="color:#FFFDF8"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5"/><circle cx="16" cy="12" r="3"/></svg></span></div><div><div style="display:grid;gap:10px;max-width:300px"><div style="display:flex;justify-content:space-between;align-items:center;background:#F3E9DA;border-radius:12px;padding:10px 14px;font-size:15px;"><span>Pizza grande</span><span style="width:40px;height:22px;border-radius:999px;background:#1F4F42;position:relative"><span style="position:absolute;top:3px;right:3px;width:16px;height:16px;border-radius:50%;background:#FFFDF8"></span></span></div><div style="display:flex;justify-content:space-between;align-items:center;background:#F3E9DA;border-radius:12px;padding:10px 14px;font-size:15px;opacity:.7"><span>Torta de limão</span><span style="width:40px;height:22px;border-radius:999px;background:#B9A892;position:relative"><span style="position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#FFFDF8"></span></span></div></div></div><div style="margin-top:auto"><div style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,2.4vw,30px);line-height:1.08;letter-spacing:-.01em">Ativar e inativar produtos</div><p style="font-size:16px;line-height:1.55;margin:12px 0 0;opacity:.92;max-width:520px">Acabou o prato? Inative com um toque e ative quando voltar. Sem reimprimir nada.</p></div></div><div data-r="1" data-d="300" style="flex:1 1 300px;background:#1F4F42;color:#FBF6EE;border-radius:28px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:24px;min-height:250px" class="dd13"><div style="width:52px;height:52px;border-radius:16px;background:#FDB61A;color:#1F4F42;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="color:#1F4F42"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg></span></div><div style="margin-top:auto"><div style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,2.4vw,30px);line-height:1.08;letter-spacing:-.01em">Importar e exportar o cardápio</div><p style="font-size:16px;line-height:1.55;margin:12px 0 0;opacity:.92;max-width:520px">Importe de uma foto ou planilha e exporte seus dados quando quiser.</p></div></div><div data-r="1" data-d="360" style="flex:2 1 520px;background:#FFFDF8;color:#2B211A;border-radius:28px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:24px;min-height:340px" class="dd14"><div style="width:52px;height:52px;border-radius:16px;background:#F57C00;color:#FFFDF8;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="color:#FFFDF8"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.5 0 2-1 1.5-2.2-.6-1.4.2-2.8 1.7-2.8H18a3 3 0 0 0 3-3C21 6.6 17 3 12 3z"/><circle cx="8" cy="11" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16" cy="10" r="1"/></svg></span></div><div><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><span style="width:44px;height:44px;border-radius:50%;background:#F57C00;border:2px solid #FFFDF8;box-shadow:0 0 0 1px #DCCDB7"></span><span style="width:44px;height:44px;border-radius:50%;background:#2B211A;border:2px solid #FFFDF8;box-shadow:0 0 0 1px #DCCDB7"></span><span style="width:44px;height:44px;border-radius:50%;background:#1F4F42;border:2px solid #FFFDF8;box-shadow:0 0 0 1px #DCCDB7"></span><span style="width:44px;height:44px;border-radius:50%;background:#C8601A;border:2px solid #FFFDF8;box-shadow:0 0 0 1px #DCCDB7"></span><span style="width:44px;height:44px;border-radius:50%;background:#FDB61A;border:2px solid #FFFDF8;box-shadow:0 0 0 1px #DCCDB7"></span><span style="border:2px dashed #C9B8A0;border-radius:12px;padding:10px 18px;font-family:'JetBrains Mono',monospace;font-size:13px;color:#5E4E42">SEU LOGO</span></div></div><div style="margin-top:auto"><div style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(30px,3.4vw,44px);line-height:1.08;letter-spacing:-.01em">Sua marca no cardápio</div><p style="font-size:18px;line-height:1.55;margin:12px 0 0;opacity:.92;max-width:520px">Ajuste as cores, a fonte e a capa, e coloque o logo do restaurante. Veja a prévia antes de salvar.</p></div></div><div data-r="1" data-d="420" style="flex:1 1 300px;background:#F3E9DA;color:#2B211A;border-radius:28px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:24px;min-height:250px" class="dd15"><div style="width:52px;height:52px;border-radius:16px;background:#2B211A;color:#F3E9DA;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="color:#F3E9DA"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM20 14v7M14 20h3"/></svg></span></div><div style="margin-top:auto"><div style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,2.4vw,30px);line-height:1.08;letter-spacing:-.01em">QR Code por mesa</div><p style="font-size:16px;line-height:1.55;margin:12px 0 0;opacity:.92;max-width:520px">Gere os QR Codes em PDF, um por mesa e um para o cardápio geral.</p></div></div><div data-r="1" data-d="480" style="flex:1 1 300px;background:#F57C00;color:#15130F;border-radius:28px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:24px;min-height:250px" class="dd16"><div style="width:52px;height:52px;border-radius:16px;background:#15130F;color:#F57C00;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="color:#FBF6EE"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-2 2M8 9h5M8 13h5"/></svg></span></div><div style="margin-top:auto"><div style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,2.4vw,30px);line-height:1.08;letter-spacing:-.01em">Food News</div><p style="font-size:16px;line-height:1.55;margin:12px 0 0;opacity:.92;max-width:520px">Um canal de novidades dentro do painel, que avisa o que mudou na plataforma.</p></div></div><div data-r="1" data-d="540" style="flex:1 1 300px;background:#2B211A;color:#FBF6EE;border-radius:28px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:24px;min-height:250px" class="dd17"><div style="width:52px;height:52px;border-radius:16px;background:#F57C00;color:#2B211A;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="color:#2B211A"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.5 3-6 6-6s6 2.5 6 6M17 5a3 3 0 0 1 0 6M21 20c0-2.5-1.5-4.5-4-5.5"/></svg></span></div><div style="margin-top:auto"><div style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,2.4vw,30px);line-height:1.08;letter-spacing:-.01em">Equipe com permissões</div><p style="font-size:16px;line-height:1.55;margin:12px 0 0;opacity:.92;max-width:520px">Cada pessoa com login próprio, painel do garçom e da cozinha.</p></div></div><div data-r="1" data-d="600" style="flex:1 1 300px;background:#FFFDF8;color:#2B211A;border-radius:28px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:24px;min-height:250px" class="dd18"><div style="width:52px;height:52px;border-radius:16px;background:#F57C00;color:#FFFDF8;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="color:#FFFDF8"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17h5l3-8h3M9 9h3"/></svg></span></div><div style="margin-top:auto"><div style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,2.4vw,30px);line-height:1.08;letter-spacing:-.01em">Delivery e retirada</div><p style="font-size:16px;line-height:1.55;margin:12px 0 0;opacity:.92;max-width:520px">Taxa por bairro, pedido mínimo, entregador com código de entrega e horário estimado para retirar.</p></div></div><div data-r="1" data-d="660" style="flex:1 1 300px;background:#F3E9DA;color:#2B211A;border-radius:28px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:24px;min-height:250px" class="dd19"><div style="width:52px;height:52px;border-radius:16px;background:#2B211A;color:#F3E9DA;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="color:#F3E9DA"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 9-9 9-9-9z"/></svg></span></div><div style="margin-top:auto"><div style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(24px,2.4vw,30px);line-height:1.08;letter-spacing:-.01em">Pix e Mercado Pago</div><p style="font-size:16px;line-height:1.55;margin:12px 0 0;opacity:.92;max-width:520px">Pix direto na chave do restaurante, ou cartão e Pix pelo Mercado Pago.</p></div></div></div></section>
+<section id="dores" style="background:#2B211A;color:#FBF6EE;padding:clamp(64px,9vw,128px) clamp(20px,6vw,96px)"><div data-r="1" data-d="0" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A;margin-bottom:14px">As dores de quem vende comida</div><h2 data-r="1" data-d="80" style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(36px,5vw,68px);line-height:1.03;letter-spacing:-.02em;margin:0;max-width:900px;margin-bottom:24px">Você reconhece alguma dessas dores?</h2><p data-r="1" data-d="120" style="font-size:clamp(18px,1.8vw,21px);line-height:1.65;color:#D9C8B2;max-width:740px;margin:0 0 56px">Sexta, 20h: o celular apita com áudios, o garçom anota no papel, o motoboy liga perguntando o endereço e a mesa 7 ainda espera para pedir. Essa rotina tem causa, e cada pedaço dela tem solução.</p><div style="display:flex;flex-wrap:wrap;gap:20px"><div data-r="1" data-d="0" style="flex:1 1 440px;background:#3A2E25;border-radius:24px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px" class="dd20"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#F57C00">Dor 01</div><div style="font-family:'Fraunces',serif;font-size:clamp(26px,2.6vw,34px);font-weight:500;line-height:1.1">Pedidos perdidos no WhatsApp</div><div style="font-size:17px;line-height:1.55;color:#D9C8B2">Áudio, print e item esquecido. O prato errado vai para a mesa e ninguém sabe de quem foi o erro.</div><div style="border-top:1px solid #5A4A3D;padding-top:16px;margin-top:auto"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A;font-size:11px;margin-bottom:6px">Com o DineDrop</div><div style="font-size:17px;line-height:1.5;font-weight:700">O cliente monta o pedido item por item e ele chega organizado no painel.</div></div></div><div data-r="1" data-d="100" style="flex:1 1 440px;background:#3A2E25;border-radius:24px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px" class="dd21"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#F57C00">Dor 02</div><div style="font-family:'Fraunces',serif;font-size:clamp(26px,2.6vw,34px);font-weight:500;line-height:1.1">A comissão do app de entrega</div><div style="font-size:17px;line-height:1.55;color:#D9C8B2">Quanto mais você vende, mais paga. E o cliente é do aplicativo, não seu.</div><div style="border-top:1px solid #5A4A3D;padding-top:16px;margin-top:auto"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A;font-size:11px;margin-bottom:6px">Com o DineDrop</div><div style="font-size:17px;line-height:1.5;font-weight:700">Delivery pelo seu link, com mensalidade fixa.</div></div></div><div data-r="1" data-d="0" style="flex:1 1 440px;background:#3A2E25;border-radius:24px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px" class="dd22"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#F57C00">Dor 03</div><div style="font-family:'Fraunces',serif;font-size:clamp(26px,2.6vw,34px);font-weight:500;line-height:1.1">O garçom não dá conta</div><div style="font-size:17px;line-height:1.55;color:#D9C8B2">Mesa cheia, cliente levantando a mão e pedido que demora a chegar à cozinha.</div><div style="border-top:1px solid #5A4A3D;padding-top:16px;margin-top:auto"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A;font-size:11px;margin-bottom:6px">Com o DineDrop</div><div style="font-size:17px;line-height:1.5;font-weight:700">QR na mesa: o cliente pede sozinho e chama o garçom pelo celular.</div></div></div><div data-r="1" data-d="100" style="flex:1 1 440px;background:#3A2E25;border-radius:24px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px" class="dd23"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#F57C00">Dor 04</div><div style="font-family:'Fraunces',serif;font-size:clamp(26px,2.6vw,34px);font-weight:500;line-height:1.1">Cardápio de papel desatualizado</div><div style="font-size:17px;line-height:1.55;color:#D9C8B2">Preço mudou, o prato acabou, e a gráfica cobra para reimprimir.</div><div style="border-top:1px solid #5A4A3D;padding-top:16px;margin-top:auto"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A;font-size:11px;margin-bottom:6px">Com o DineDrop</div><div style="font-size:17px;line-height:1.5;font-weight:700">Mudou no painel, mudou na hora para todo mundo.</div></div></div><div data-r="1" data-d="0" style="flex:1 1 440px;background:#3A2E25;border-radius:24px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px" class="dd24"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#F57C00">Dor 05</div><div style="font-family:'Fraunces',serif;font-size:clamp(26px,2.6vw,34px);font-weight:500;line-height:1.1">Vender o que já acabou</div><div style="font-size:17px;line-height:1.55;color:#D9C8B2">O cliente pede, a cozinha avisa que não tem, e a experiência estraga.</div><div style="border-top:1px solid #5A4A3D;padding-top:16px;margin-top:auto"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A;font-size:11px;margin-bottom:6px">Com o DineDrop</div><div style="font-size:17px;line-height:1.5;font-weight:700">Inative o produto com um toque e ative quando voltar.</div></div></div><div data-r="1" data-d="100" style="flex:1 1 440px;background:#3A2E25;border-radius:24px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px" class="dd25"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#F57C00">Dor 06</div><div style="font-family:'Fraunces',serif;font-size:clamp(26px,2.6vw,34px);font-weight:500;line-height:1.1">Motoboy sem controle</div><div style="font-size:17px;line-height:1.55;color:#D9C8B2">"Já saiu?", "Entregou?". Você só descobre quando o cliente reclama.</div><div style="border-top:1px solid #5A4A3D;padding-top:16px;margin-top:auto"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A;font-size:11px;margin-bottom:6px">Com o DineDrop</div><div style="font-size:17px;line-height:1.5;font-weight:700">Entregador com código de entrega e status do pedido em tempo real.</div></div></div><div data-r="1" data-d="0" style="flex:1 1 440px;background:#3A2E25;border-radius:24px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px" class="dd26"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#F57C00">Dor 07</div><div style="font-family:'Fraunces',serif;font-size:clamp(26px,2.6vw,34px);font-weight:500;line-height:1.1">Não saber o que dá lucro</div><div style="font-size:17px;line-height:1.55;color:#D9C8B2">Sem número na mão, você decide no feeling: o que vende, que horas lota.</div><div style="border-top:1px solid #5A4A3D;padding-top:16px;margin-top:auto"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A;font-size:11px;margin-bottom:6px">Com o DineDrop</div><div style="font-size:17px;line-height:1.5;font-weight:700">Relatório de vendas, ticket médio e horário de pico.</div></div></div><div data-r="1" data-d="100" style="flex:1 1 440px;background:#3A2E25;border-radius:24px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:14px" class="dd27"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#F57C00">Dor 08</div><div style="font-family:'Fraunces',serif;font-size:clamp(26px,2.6vw,34px);font-weight:500;line-height:1.1">Cliente que não volta</div><div style="font-size:17px;line-height:1.55;color:#D9C8B2">Você atende bem, e na semana seguinte ele pede em outro lugar.</div><div style="border-top:1px solid #5A4A3D;padding-top:16px;margin-top:auto"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A;font-size:11px;margin-bottom:6px">Com o DineDrop</div><div style="font-size:17px;line-height:1.5;font-weight:700">Cupons de desconto para trazer o cliente de volta.</div></div></div></div></section>
+<section id="nichos" style="padding:clamp(64px,9vw,128px) clamp(20px,6vw,96px)"><div data-r="1" data-d="0" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#B4531A;margin-bottom:14px">Nichos atendidos</div><h2 data-r="1" data-d="80" style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(36px,5vw,68px);line-height:1.03;letter-spacing:-.02em;margin:0;max-width:860px;margin-bottom:56px">Do carrinho de lanche ao restaurante cheio</h2>
+<div style="display:flex;flex-wrap:wrap;gap:24px">
+ <div data-r="1" data-d="0" style="flex:1 1 380px;background:#FFFDF8;border:1px solid #E8E0D2;border-radius:28px;padding:clamp(28px,3.4vw,48px)"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#B4531A">Negócios pequenos</div><div style="font-family:'Fraunces',serif;font-size:clamp(28px,3vw,40px);font-weight:500;line-height:1.1;margin:12px 0 16px">Comece sem complicar</div><p style="font-size:17px;line-height:1.6;color:#5E4E42;margin:0 0 28px">Para quem está começando ou toca o negócio sozinho: cardápio no ar a partir de uma foto, QR Code para imprimir e pedido organizado desde o primeiro dia. Plano Cliente.</p><div style="display:flex;flex-wrap:wrap;gap:10px;color:#2B211A"><a id="nicho-food-truck" href="#nicho-food-truck" title="Cardápio digital para food trucks e carrinhos" style="text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:10px 20px;font-size:17px;font-weight:500" class="dd28">Food trucks e carrinhos</a><a id="nicho-marmitaria" href="#nicho-marmitaria" title="Cardápio digital para marmitarias" style="text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:10px 20px;font-size:17px;font-weight:500" class="dd29">Marmitarias</a><a id="nicho-doceria" href="#nicho-doceria" title="Cardápio digital para docerias e confeitarias" style="text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:10px 20px;font-size:17px;font-weight:500" class="dd30">Docerias e confeitarias</a><a id="nicho-cafeteria" href="#nicho-cafeteria" title="Cardápio digital para cafeterias" style="text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:10px 20px;font-size:17px;font-weight:500" class="dd31">Cafeterias</a><a id="nicho-acai" href="#nicho-acai" title="Cardápio digital para açaiterias" style="text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:10px 20px;font-size:17px;font-weight:500" class="dd32">Açaiterias</a><a id="nicho-lanchonete" href="#nicho-lanchonete" title="Cardápio digital para lanchonetes" style="text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:10px 20px;font-size:17px;font-weight:500" class="dd33">Lanchonetes</a><a id="nicho-padaria" href="#nicho-padaria" title="Cardápio digital para padarias" style="text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:10px 20px;font-size:17px;font-weight:500" class="dd34">Padarias</a></div></div>
+ <div data-r="1" data-d="120" style="flex:1 1 380px;background:#2B211A;color:#FBF6EE;border-radius:28px;padding:clamp(28px,3.4vw,48px)"><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A">Operações grandes</div><div style="font-family:'Fraunces',serif;font-size:clamp(28px,3vw,40px);font-weight:500;line-height:1.1;margin:12px 0 16px">Salão cheio, equipe e entregadores</div><p style="font-size:17px;line-height:1.6;color:#D9C8B2;margin:0 0 28px">Para quem tem muitas mesas, equipe com funções diferentes e delivery em volume: conta da mesa, juntar e transferir mesas, entregadores e relatórios. Planos Garçom e Cozinheiro.</p><div style="display:flex;flex-wrap:wrap;gap:10px"><a id="nicho-restaurante" href="#nicho-restaurante" title="Cardápio digital para restaurantes com salão" style="text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:10px 20px;font-size:17px;font-weight:500" class="dd35">Restaurantes com salão</a><a id="nicho-bar" href="#nicho-bar" title="Cardápio digital para bares" style="text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:10px 20px;font-size:17px;font-weight:500" class="dd36">Bares</a><a id="nicho-pizzaria" href="#nicho-pizzaria" title="Cardápio digital para pizzarias" style="text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:10px 20px;font-size:17px;font-weight:500" class="dd37">Pizzarias</a><a id="nicho-hamburgueria" href="#nicho-hamburgueria" title="Cardápio digital para hamburguerias" style="text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:10px 20px;font-size:17px;font-weight:500" class="dd38">Hamburguerias</a><a id="nicho-cantina" href="#nicho-cantina" title="Cardápio digital para cantinas e self-service" style="text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:10px 20px;font-size:17px;font-weight:500" class="dd39">Cantinas e self-service</a><a id="nicho-delivery" href="#nicho-delivery" title="Cardápio digital para operações de delivery com entregadores" style="text-decoration:none;color:inherit;border:1px solid currentColor;border-radius:999px;padding:10px 20px;font-size:17px;font-weight:500" class="dd40">Operações de delivery com entregadores</a></div></div>
+</div></section>
+<section id="como" style="background:#F3E9DA;padding:clamp(64px,9vw,128px) clamp(20px,6vw,96px)"><div data-r="1" data-d="0" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#B4531A;margin-bottom:14px">Como funciona</div><h2 data-r="1" data-d="80" style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(36px,5vw,68px);line-height:1.03;letter-spacing:-.02em;margin:0;margin-bottom:56px;max-width:780px">No ar em 6 passos de cadastro</h2><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px;align-items:center"><div style="display:grid;gap:40px"><div data-r="1" data-d="0" style="display:grid;grid-template-columns:64px 1fr;gap:20px"><div style="font-family:'JetBrains Mono',monospace;font-size:44px;color:#F57C00;line-height:1">1</div><div><div style="font-family:'Fraunces',serif;font-size:30px;font-weight:500;line-height:1.1">Cadastre e importe o cardápio</div><p style="font-size:17px;line-height:1.6;color:#5E4E42;margin:10px 0 0">Tire uma foto do cardápio ou envie uma planilha. A IA sugere descrição e categoria, e nada muda sem a sua escolha.</p></div></div><div data-r="1" data-d="100" style="display:grid;grid-template-columns:64px 1fr;gap:20px"><div style="font-family:'JetBrains Mono',monospace;font-size:44px;color:#F57C00;line-height:1">2</div><div><div style="font-family:'Fraunces',serif;font-size:30px;font-weight:500;line-height:1.1">Imprima os QR Codes e compartilhe o link</div><p style="font-size:17px;line-height:1.6;color:#5E4E42;margin:10px 0 0">Um QR para cada mesa e um para o cardápio geral, em PDF.</p></div></div><div data-r="1" data-d="200" style="display:grid;grid-template-columns:64px 1fr;gap:20px"><div style="font-family:'JetBrains Mono',monospace;font-size:44px;color:#F57C00;line-height:1">3</div><div><div style="font-family:'Fraunces',serif;font-size:30px;font-weight:500;line-height:1.1">Receba os pedidos no painel</div><p style="font-size:17px;line-height:1.6;color:#5E4E42;margin:10px 0 0">Pedido novo toca um som. Você acompanha do preparo até a entrega.</p></div></div></div><div data-r="1" data-d="150" style="display:flex;justify-content:center;background:#F57C00;border-radius:32px;padding:40px"><img src="/img/print-escolha.png" alt="Tela do cardápio para escolher delivery ou retirada" width="260" style="width:min(100%,260px);border-radius:28px;border:6px solid #2B211A;box-shadow:0 24px 48px rgba(43,33,26,.3)"></div></div></section>
+<section style="background:#2B211A;color:#FBF6EE;padding:clamp(64px,9vw,128px) clamp(20px,6vw,96px)"><div data-r="1" data-d="0" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A;margin-bottom:14px">Faça a conta</div><h2 data-r="1" data-d="80" style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(36px,5vw,68px);line-height:1.03;letter-spacing:-.02em;margin:0;margin-bottom:16px;max-width:820px">Quanto a comissão custa por mês?</h2><p data-r="1" data-d="100" style="font-size:19px;line-height:1.5;color:#D9C8B2;margin:0 0 44px;max-width:640px">Se você vende por aplicativo de entrega que cobra comissão, coloque seus números e veja quanto fica com você.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:56px;align-items:start"><div data-r="1" data-d="0" style="display:grid;gap:22px"><label style="display:grid;gap:8px;font-size:16px">Quanto você vende por mês<input type="text" inputmode="numeric" id="fat" value="20.000" autocomplete="off" style="font:inherit;font-family:'JetBrains Mono',monospace;font-size:26px;padding:14px 18px;border-radius:14px;border:1px solid #6B5B4E;background:#3A2E25;color:#FBF6EE" class="dd41"></label><label style="display:grid;gap:8px;font-size:16px">Comissão que você paga hoje (%)<input type="text" inputmode="decimal" id="com" value="15" autocomplete="off" style="font:inherit;font-family:'JetBrains Mono',monospace;font-size:26px;padding:14px 18px;border-radius:14px;border:1px solid #6B5B4E;background:#3A2E25;color:#FBF6EE" class="dd42"></label></div>
+<div data-r="1" data-d="120"><div style="display:flex;align-items:baseline;gap:12px"><span style="font-size:17px">Comissão por mês</span><span style="flex:1;border-bottom:2px dotted #8A7766;transform:translateY(-5px)"></span><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#FDB61A"><span data-out="comissaoMes">R$ 3.000</span></span></div><div style="display:flex;align-items:baseline;gap:12px;margin-top:12px"><span style="font-size:17px">Comissão por ano</span><span style="flex:1;border-bottom:2px dotted #8A7766;transform:translateY(-5px)"></span><span style="font-family:'JetBrains Mono',monospace;font-size:24px;color:#FDB61A"><span data-out="comissaoAno">R$ 36.000</span></span></div><div style="display:flex;align-items:baseline;gap:12px;margin-top:12px"><span style="font-size:17px">Plano Garçom, mensalidade fixa</span><span style="flex:1;border-bottom:2px dotted #8A7766;transform:translateY(-5px)"></span><span style="font-family:'JetBrains Mono',monospace;font-size:24px">R$ 89</span></div>
+<div style="border-top:2px dashed #8A7766;margin-top:28px;padding-top:28px"><div id="sc-economiza"><div style="font-family:'Fraunces',serif;font-size:clamp(32px,3.8vw,52px);line-height:1.08;font-weight:500">Você economizaria até <span style="color:#F57C00"><span data-out="economiaMes">R$ 2.911</span></span> por mês</div><div style="font-family:'Fraunces',serif;font-size:clamp(22px,2.4vw,30px);margin-top:10px;color:#D9C8B2"><span data-out="economiaAno">R$ 34.932</span> por ano</div></div><div id="sc-naoEconomiza" hidden><div style="font-family:'Fraunces',serif;font-size:clamp(24px,2.8vw,34px);line-height:1.2;font-weight:500">Com esse volume, a comissão ainda sai mais barata. O DineDrop compensa quando o faturamento cresce.</div></div><div style="font-size:14px;color:#D9C8B2;margin-top:18px">Estimativa. Tarifas de pagamento (Pix ou cartão) não incluídas.</div></div></div></div></section>
+<section id="planos" style="padding:clamp(64px,9vw,128px) clamp(20px,6vw,96px)"><div data-r="1" data-d="0" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#B4531A;margin-bottom:14px">Planos</div><div style="display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:56px"><h2 data-r="1" data-d="80" style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(36px,5vw,68px);line-height:1.03;letter-spacing:-.02em;margin:0">Escolha o seu plano</h2><div style="display:inline-flex;border:1px solid #2B211A;border-radius:999px;padding:4px;gap:4px"><button type="button" class="plan-btn" data-plan="mensal" aria-pressed="true" style="font:inherit;font-size:15px;font-weight:700;border:0;border-radius:999px;padding:10px 24px;cursor:pointer">Mensal</button><button type="button" class="plan-btn" data-plan="anual" aria-pressed="false" style="font:inherit;font-size:15px;font-weight:700;border:0;border-radius:999px;padding:10px 24px;cursor:pointer">Anual</button></div></div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px;align-items:start">
+<div data-r="1" data-d="0" style="padding:8px 0"><div style="font-family:'Fraunces',serif;font-size:36px;font-weight:500">Cliente</div><div style="font-size:16px;color:#5E4E42;margin-top:4px">Para quem está começando</div><div style="font-family:'JetBrains Mono',monospace;font-size:36px;margin:22px 0 0"><span data-price data-m="49" data-a="39">R$ 49</span><span style="font-size:15px;color:#5E4E42">/mês</span></div><div style="display:grid;gap:12px;margin-top:26px;font-size:16px"><div style="display:flex;gap:10px"><span>1 unidade, até 50 produtos</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div><div style="display:flex;gap:10px"><span>Mesa, delivery e retirada</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div><div style="display:flex;gap:10px"><span>QR Codes para imprimir</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div><div style="display:flex;gap:10px"><span>Importação por foto ou planilha, 2 por mês</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div><div style="display:flex;gap:10px"><span>Pix na chave do restaurante</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div></div></div>
+<div data-r="1" data-d="120" style="position:relative;background:#FFFDF8;padding:36px 28px 52px;box-shadow:0 24px 52px rgba(43,33,26,.18);transform:translateY(-12px)"><div style="position:absolute;left:0;right:0;bottom:-11px;height:12px;background:radial-gradient(circle at 9px 0,transparent 8px,#FFFDF8 8.5px) repeat-x;background-size:18px 12px"></div><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:#5E4E42">COMANDA Nº 02</span><span style="background:#EAF3EF;color:#1F4F42;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:700">Mais escolhido</span></div><div style="font-family:'Fraunces',serif;font-size:46px;font-weight:500;margin-top:14px">Garçom</div><div style="font-size:16px;color:#5E4E42;margin-top:4px">Serviço completo, do salão à entrega</div><div style="font-family:'JetBrains Mono',monospace;font-size:42px;margin:22px 0 0"><span data-price data-m="89" data-a="69">R$ 89</span><span style="font-size:15px;color:#5E4E42">/mês</span></div><div style="display:grid;gap:12px;margin-top:26px;font-size:16px;border-top:2px dashed #C9B8A0;padding-top:24px"><div style="display:flex;gap:10px"><span>Tudo do Cliente</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div><div style="display:flex;gap:10px"><span>Produtos ilimitados, 20 importações por mês</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div><div style="display:flex;gap:10px"><span>Equipe de até 3 pessoas</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div><div style="display:flex;gap:10px"><span>Cupons de desconto</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div><div style="display:flex;gap:10px"><span>Cartão e Pix pelo Mercado Pago</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div><div style="display:flex;gap:10px"><span>Entregas e entregadores</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div><div style="display:flex;gap:10px"><span>Relatórios em PDF e CSV</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div></div><a href="#conta" title="Comece grátis por 17 dias" style="display:block;text-align:center;margin-top:28px;background:#F57C00;color:#15130F;text-decoration:none;font-weight:700;border-radius:999px;padding:15px;font-size:16px" class="dd43">Comece grátis por 17 dias</a></div>
+<div data-r="1" data-d="240" style="padding:8px 0"><div style="font-family:'Fraunces',serif;font-size:36px;font-weight:500">Cozinheiro</div><div style="font-size:16px;color:#5E4E42;margin-top:4px">Para quem comanda a cozinha toda</div><div style="font-family:'JetBrains Mono',monospace;font-size:36px;margin:22px 0 0"><span data-price data-m="297" data-a="197">R$ 297</span><span style="font-size:15px;color:#5E4E42">/mês</span></div><div style="display:grid;gap:12px;margin-top:26px;font-size:16px"><div style="display:flex;gap:10px"><span>Tudo do Garçom</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div><div style="display:flex;gap:10px"><span>Equipe e importações ilimitadas</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div><div style="display:flex;gap:10px"><span>Marca própria no cardápio, sem "por DineDrop"</span><span style="flex:1;border-bottom:2px dotted #C9B8A0;transform:translateY(-5px)"></span></div></div></div></div>
+<p style="font-size:15px;color:#5E4E42;margin:48px 0 0">Sem fidelidade. Pagamento por Pix, gerado no painel.</p></section>
+<section id="lgpd" style="background:#F3E9DA;padding:clamp(64px,9vw,128px) clamp(20px,6vw,96px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:56px"><div><div data-r="1" data-d="0" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#B4531A;margin-bottom:14px">Seus dados · LGPD</div><h2 data-r="1" data-d="80" style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(36px,5vw,68px);line-height:1.03;letter-spacing:-.02em;margin:0">Os dados da sua cozinha são seus</h2><p data-r="1" data-d="120" style="font-size:18px;line-height:1.55;color:#5E4E42;margin:20px 0 0;max-width:420px">Tratamos os dados conforme a Lei Geral de Proteção de Dados (LGPD).</p><div data-r="1" data-d="160" style="display:flex;gap:24px;flex-wrap:wrap;margin-top:28px;font-size:16px"><a href="#" title="Termos de Uso do DineDrop" style="color:#B4531A;font-weight:700">Termos de Uso</a><a href="#" title="Política de Privacidade do DineDrop" style="color:#B4531A;font-weight:700">Política de Privacidade</a></div></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));column-gap:36px"><div data-r="1" data-d="0" style="border-top:1px solid #DCCDB7;padding:22px 0"><div style="font-family:'Fraunces',serif;font-size:22px;font-weight:500">Baixe tudo</div><div style="font-size:16px;line-height:1.55;color:#5E4E42;margin-top:6px">Exporte todos os dados da conta pelo painel, quando quiser.</div></div><div data-r="1" data-d="70" style="border-top:1px solid #DCCDB7;padding:22px 0"><div style="font-family:'Fraunces',serif;font-size:22px;font-weight:500">Peça a exclusão</div><div style="font-size:16px;line-height:1.55;color:#5E4E42;margin-top:6px">A exclusão da conta é pedida direto no painel.</div></div><div data-r="1" data-d="140" style="border-top:1px solid #DCCDB7;padding:22px 0"><div style="font-family:'Fraunces',serif;font-size:22px;font-weight:500">Documento protegido</div><div style="font-size:16px;line-height:1.55;color:#5E4E42;margin-top:6px">O CPF ou CNPJ nunca fica guardado em texto aberto.</div></div><div data-r="1" data-d="210" style="border-top:1px solid #DCCDB7;padding:22px 0"><div style="font-family:'Fraunces',serif;font-size:22px;font-weight:500">Foto do cardápio</div><div style="font-size:16px;line-height:1.55;color:#5E4E42;margin-top:6px">A foto enviada para importar é lida e não fica salva.</div></div><div data-r="1" data-d="280" style="border-top:1px solid #DCCDB7;padding:22px 0"><div style="font-family:'Fraunces',serif;font-size:22px;font-weight:500">Cliente com o mínimo</div><div style="font-size:16px;line-height:1.55;color:#5E4E42;margin-top:6px">O cliente do seu restaurante informa só nome e WhatsApp.</div></div><div data-r="1" data-d="350" style="border-top:1px solid #DCCDB7;padding:22px 0"><div style="font-family:'Fraunces',serif;font-size:22px;font-weight:500">Acesso protegido</div><div style="font-size:16px;line-height:1.55;color:#5E4E42;margin-top:6px">Cada restaurante só vê os próprios dados.</div></div></div></section>
+<section id="perguntas" style="padding:clamp(64px,9vw,128px) clamp(20px,6vw,96px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:56px"><div><div data-r="1" data-d="0" style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#B4531A;margin-bottom:14px">Perguntas frequentes</div><h2 data-r="1" data-d="80" style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(36px,5vw,68px);line-height:1.03;letter-spacing:-.02em;margin:0">Antes de começar</h2><img src="/mascote/rato-pensando.svg" alt="Pierre, o mascote, pensando" width="220" style="width:min(60%,220px);margin-top:32px"></div><div><details style="border-top:1px solid #DCCDB7;padding:22px 0"><summary style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;display:flex;justify-content:space-between;gap:16px"><span>O cliente precisa baixar aplicativo?</span><span style="color:#F57C00">+</span></summary><p style="font-size:17px;line-height:1.6;color:#5E4E42;margin:12px 0 0;max-width:620px">Não. O cardápio abre no navegador, pelo link ou pelo QR Code.</p></details><details style="border-top:1px solid #DCCDB7;padding:22px 0"><summary style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;display:flex;justify-content:space-between;gap:16px"><span>Preciso de computador?</span><span style="color:#F57C00">+</span></summary><p style="font-size:17px;line-height:1.6;color:#5E4E42;margin:12px 0 0;max-width:620px">Não. Funciona no navegador do celular, do tablet ou do computador.</p></details><details style="border-top:1px solid #DCCDB7;padding:22px 0"><summary style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;display:flex;justify-content:space-between;gap:16px"><span>O DineDrop é fácil de usar?</span><span style="color:#F57C00">+</span></summary><p style="font-size:17px;line-height:1.6;color:#5E4E42;margin:12px 0 0;max-width:620px">Sim. O cadastro tem 6 passos e o painel é feito para quem nunca usou um sistema.</p></details><details style="border-top:1px solid #DCCDB7;padding:22px 0"><summary style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;display:flex;justify-content:space-between;gap:16px"><span>Quanto tempo leva para começar?</span><span style="color:#F57C00">+</span></summary><p style="font-size:17px;line-height:1.6;color:#5E4E42;margin:12px 0 0;max-width:620px">O cadastro tem 6 passos, e o cardápio pode vir de uma foto ou de uma planilha.</p></details><details style="border-top:1px solid #DCCDB7;padding:22px 0"><summary style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;display:flex;justify-content:space-between;gap:16px"><span>Tem fidelidade?</span><span style="color:#F57C00">+</span></summary><p style="font-size:17px;line-height:1.6;color:#5E4E42;margin:12px 0 0;max-width:620px">Não. Cancele quando quiser; o plano vale até o fim do período pago.</p></details><details style="border-top:1px solid #DCCDB7;padding:22px 0"><summary style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;display:flex;justify-content:space-between;gap:16px"><span>Tem teste grátis?</span><span style="color:#F57C00">+</span></summary><p style="font-size:17px;line-height:1.6;color:#5E4E42;margin:12px 0 0;max-width:620px">Sim, 17 dias, sem cartão.</p></details><details style="border-top:1px solid #DCCDB7;padding:22px 0"><summary style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;display:flex;justify-content:space-between;gap:16px"><span>Como pago a assinatura?</span><span style="color:#F57C00">+</span></summary><p style="font-size:17px;line-height:1.6;color:#5E4E42;margin:12px 0 0;max-width:620px">Por Pix, gerado no painel. Não há cobrança automática no cartão.</p></details><details style="border-top:1px solid #DCCDB7;padding:22px 0"><summary style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;display:flex;justify-content:space-between;gap:16px"><span>O dinheiro dos pedidos vai para onde?</span><span style="color:#F57C00">+</span></summary><p style="font-size:17px;line-height:1.6;color:#5E4E42;margin:12px 0 0;max-width:620px">No Pix, direto na chave do restaurante. No Mercado Pago, na conta do restaurante, descontada a tarifa do próprio Mercado Pago.</p></details><details style="border-top:1px solid #DCCDB7;padding:22px 0"><summary style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;display:flex;justify-content:space-between;gap:16px"><span>Posso trocar de plano?</span><span style="color:#F57C00">+</span></summary><p style="font-size:17px;line-height:1.6;color:#5E4E42;margin:12px 0 0;max-width:620px">Para um plano maior, na hora, pagando só a diferença. Para um menor, na renovação.</p></details><details style="border-top:1px solid #DCCDB7;border-bottom:1px solid #DCCDB7;padding:22px 0"><summary style="font-family:'Fraunces',serif;font-size:24px;font-weight:500;display:flex;justify-content:space-between;gap:16px"><span>Meus dados ficam comigo?</span><span style="color:#F57C00">+</span></summary><p style="font-size:17px;line-height:1.6;color:#5E4E42;margin:12px 0 0;max-width:620px">Sim. Você baixa tudo pelo painel e pode pedir a exclusão da conta.</p></details></div></section>
+<section id="conta" style="padding:clamp(64px,9vw,128px) clamp(20px,6vw,96px);padding-top:0"><div data-r="1" data-d="0" style="background:#F57C00;color:#15130F;border-radius:40px;padding:clamp(40px,7vw,96px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:32px;align-items:center;position:relative;overflow:hidden"><div><h2 style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(36px,5vw,68px);line-height:1.03;letter-spacing:-.02em;margin:0">Comece grátis por 17 dias</h2><p style="font-size:20px;line-height:1.5;margin:18px 0 32px;max-width:480px">Sem cartão e sem fidelidade. Crie o cardápio, imprima os QR Codes e receba o primeiro pedido.</p><a href="https://dinedrop-app.vercel.app" title="Criar minha conta" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none;font-weight:700;border-radius:999px;font-size:17px;background:#2B211A;color:#FBF6EE;padding:17px 30px;" class="dd44">Criar minha conta</a></div><div style="display:flex;justify-content:center"><img src="/mascote/rato-comemorando.svg" alt="Pierre, o mascote, comemorando" width="300" style="width:min(100%,300px)"></div></div></section>
 </main>
-
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-top__title">Quer um site, app ou sistema para o seu negócio?</div>
-      <a class="btn btn--primary" href="https://wa.me/556192355047?text=Ol%C3%A1!%20Vim%20pela%20landing%20page%20do%20DineDrop%20e%20queria%20saber%20mais%20sobre%20o%20card%C3%A1pio%20digital%20e%20como%20testar%20a%20plataforma." title="Falar com a Team Dev Tech no WhatsApp" target="_blank" rel="noopener">Falar com a Team Dev Tech</a>
-    </div>
-
-    <div class="footer-grid">
-      <div>
-        <h5>Navegação</h5>
-        <ul>
-          <li><a href="#vantagens">Vantagens</a></li>
-          <li><a href="#como">Como funciona</a></li>
-          <li><a href="#planos">Planos</a></li>
-          <li><a href="#nichos">Nichos</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Legal</h5>
-        <ul>
-          <li><a href="#">Termos de Uso</a></li>
-          <li><a href="#">Política de Privacidade</a></li>
-          <li><a href="#lgpd">LGPD e seus dados</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Team Dev Tech</h5>
-        <div class="footer-social">
-          <a href="mailto:devteam2026tech@gmail.com?subject=Contato%20via%20landing%20page%20do%20DineDrop&body=Ol%C3%A1%2C%20equipe%20Dev%20Team%20Tech%21%0A%0AVim%20pela%20landing%20page%20do%20DineDrop%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." title="E-mail: devteam2026tech@gmail.com" aria-label="E-mail">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-          </a>
-          <a href="https://wa.me/556192355047?text=Ol%C3%A1!%20Vim%20pela%20landing%20page%20do%20DineDrop%20e%20queria%20saber%20mais%20sobre%20o%20card%C3%A1pio%20digital%20e%20como%20testar%20a%20plataforma." title="WhatsApp: +55 61 9235-5047" aria-label="WhatsApp" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.6-5A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 9c0 3 3 6 6 6l1.2-1.4-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"/></svg>
-          </a>
-          <a href="https://ig.me/m/teamdevmatheus" title="Instagram: @teamdevmatheus" aria-label="Instagram" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© 2026 DineDrop — um produto da Dev Team Tech.</span>
-      <a href="https://www.devteamtech.com.br" target="_blank" rel="noopener">devteamtech.com.br</a>
-    </div>
-  </div>
+<footer style="background:#2B211A;color:#D9C8B2;padding:clamp(64px,9vw,128px) clamp(20px,6vw,96px);padding-bottom:28px">
+ <div style="display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:end;padding-bottom:48px;border-bottom:1px solid #4A3C31"><div style="font-family:'Fraunces',serif;font-size:clamp(30px,4vw,56px);line-height:1.05;color:#FBF6EE;max-width:680px">Quer um site, app ou sistema para o seu negócio?</div><a href="https://wa.me/556192355047" title="Falar com a Team Dev Tech no WhatsApp" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none;font-weight:700;border-radius:999px;font-size:17px;background:#F57C00;color:#15130F;padding:17px 30px" class="dd45">Falar com a Team Dev Tech</a></div>
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:40px;padding:48px 0">
+  <div style="grid-column:span 2;min-width:min(100%,260px);max-width:360px"><div style="display:flex;align-items:center;gap:12px"><img src="/img/dinedrop-icon.png" alt="Logo do DineDrop" width="40" height="40" style="width:40px;height:40px;border-radius:10px"><span style="font-size:24px;font-weight:700;color:#F57C00">DineDrop</span></div><p style="font-size:15px;line-height:1.65;margin:16px 0 0">Cardápio digital, pedidos na mesa, delivery próprio e retirada num painel só, com mensalidade fixa.</p></div>
+  <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A;margin-bottom:18px">Produto</div><div style="display:grid;gap:11px;font-size:15px"><a href="#vantagens" title="Vantagens"  style="color:#E9DCC8;text-decoration:none" class="dd46">Vantagens</a><a href="#como" title="Como funciona"  style="color:#E9DCC8;text-decoration:none" class="dd47">Como funciona</a><a href="#planos" title="Planos"  style="color:#E9DCC8;text-decoration:none" class="dd48">Planos</a><a href="#perguntas" title="Perguntas"  style="color:#E9DCC8;text-decoration:none" class="dd49">Perguntas</a></div></div>
+  <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A;margin-bottom:18px">Nichos</div><div style="display:grid;gap:11px;font-size:15px"><a href="#nicho-pizzaria" title="Pizzarias"  style="color:#E9DCC8;text-decoration:none" class="dd50">Pizzarias</a><a href="#nicho-hamburgueria" title="Hamburguerias"  style="color:#E9DCC8;text-decoration:none" class="dd51">Hamburguerias</a><a href="#nicho-restaurante" title="Restaurantes e bares"  style="color:#E9DCC8;text-decoration:none" class="dd52">Restaurantes e bares</a><a href="#nicho-food-truck" title="Food trucks"  style="color:#E9DCC8;text-decoration:none" class="dd53">Food trucks</a><a href="#nichos" title="Todos os nichos"  style="color:#E9DCC8;text-decoration:none" class="dd54">Todos os nichos</a></div></div>
+  <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A;margin-bottom:18px">Legal</div><div style="display:grid;gap:11px;font-size:15px"><a href="#" title="Termos de Uso"  style="color:#E9DCC8;text-decoration:none" class="dd55">Termos de Uso</a><a href="#" title="Política de Privacidade"  style="color:#E9DCC8;text-decoration:none" class="dd56">Política de Privacidade</a><a href="#lgpd" title="LGPD e seus dados"  style="color:#E9DCC8;text-decoration:none" class="dd57">LGPD e seus dados</a></div></div>
+  <div><div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#FDB61A;margin-bottom:18px">Team Dev Tech</div><div style="display:flex;gap:12px"><a href="mailto:devteam2026tech@gmail.com" title="E-mail: devteam2026tech@gmail.com" aria-label="E-mail: devteam2026tech@gmail.com"  style="width:46px;height:46px;border-radius:50%;border:1px solid #6B5B4E;color:#E9DCC8;display:flex;align-items:center;justify-content:center;text-decoration:none" class="dd58"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a><a href="https://wa.me/556192355047" title="WhatsApp: +55 61 9235-5047" aria-label="WhatsApp: +55 61 9235-5047" target="_blank" rel="noopener" style="width:46px;height:46px;border-radius:50%;border:1px solid #6B5B4E;color:#E9DCC8;display:flex;align-items:center;justify-content:center;text-decoration:none" class="dd59"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.6-5A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 9c0 3 3 6 6 6l1.2-1.4-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"/></svg></a><a href="https://www.instagram.com/teamdevmatheus/" title="Instagram: @teamdevmatheus" aria-label="Instagram: @teamdevmatheus" target="_blank" rel="me noopener" style="width:46px;height:46px;border-radius:50%;border:1px solid #6B5B4E;color:#E9DCC8;display:flex;align-items:center;justify-content:center;text-decoration:none" class="dd60"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg></a></div><div style="font-size:14px;line-height:1.5;margin-top:16px;color:#B9A892">Sites, apps e sistemas sob medida.</div></div>
+ </div>
+ <div style="display:flex;gap:18px;flex-wrap:wrap;padding-bottom:28px"><a href="#vantagens" title="#cardapiodigital" style="color:#B9A892;text-decoration:none;font-size:14px" class="dd61">#cardapiodigital</a><a href="#como" title="#qrcodenamesa" style="color:#B9A892;text-decoration:none;font-size:14px" class="dd62">#qrcodenamesa</a><a href="#planos" title="#deliveryproprio" style="color:#B9A892;text-decoration:none;font-size:14px" class="dd63">#deliveryproprio</a><a href="#nichos" title="#pedidosonline" style="color:#B9A892;text-decoration:none;font-size:14px" class="dd64">#pedidosonline</a><a href="#nichos" title="#restaurantes" style="color:#B9A892;text-decoration:none;font-size:14px" class="dd65">#restaurantes</a><a href="#nichos" title="#pizzaria" style="color:#B9A892;text-decoration:none;font-size:14px" class="dd66">#pizzaria</a><a href="#nichos" title="#hamburgueria" style="color:#B9A892;text-decoration:none;font-size:14px" class="dd67">#hamburgueria</a><a href="#nichos" title="#foodtruck" style="color:#B9A892;text-decoration:none;font-size:14px" class="dd68">#foodtruck</a></div>
+ <div style="border-top:1px solid #4A3C31;padding-top:24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:#B9A892"><span>© 2026 DineDrop. Feito pela Team Dev Tech.</span><span>Os contatos acima são comerciais, para criação de sites, apps e sistemas. Não são canal de suporte do DineDrop.</span></div>
 </footer>
-
-<script src="js/main.js"></script>
+</div>
+<script type="module" src="/src/main.js"></script>
 </body>
 </html>
