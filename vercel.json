@@ -1,4 +1,7 @@
 {
+  "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "dinedrop-landing.vercel.app" }], "destination": "https://site.appdinedrop.com/:path*", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",

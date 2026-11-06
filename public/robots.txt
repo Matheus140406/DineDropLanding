@@ -4,4 +4,4 @@ Disallow: /entrar
 Disallow: /painel
 Disallow: /admin
 
-Sitemap: https://dinedrop-landing.vercel.app/sitemap.xml
+Sitemap: __SITE_URL__/sitemap.xml
