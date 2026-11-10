@@ -10,7 +10,7 @@ export function initMotion() {
     const y = window.scrollY;
     const h = document.documentElement.scrollHeight - window.innerHeight;
     if (prog) prog.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
-    if (head) head.style.borderBottomColor = y > 10 ? '#E8E0D2' : 'transparent';
+    if (head) head.classList.toggle('is-scrolled', y > 10);
     if (!reduce) pars.forEach((p) => { p.style.translate = '0 ' + y * parseFloat(p.dataset.par) + 'px'; });
   };
   window.addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(update); } }, { passive: true });

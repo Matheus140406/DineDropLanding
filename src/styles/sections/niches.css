@@ -1,0 +1,66 @@
+.niches__title {
+  max-width: 860px;
+  margin-bottom: 56px;
+}
+
+.niches__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.niches__card {
+  flex: 1 1 380px;
+  background: var(--color-ivory);
+  border: 1px solid var(--color-border);
+  border-radius: 28px;
+  padding: clamp(28px, 3.4vw, 48px);
+}
+
+.niches__eyebrow {
+  color: var(--color-rust);
+}
+
+.niches__card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 12px 0 16px;
+}
+
+.niches__text {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-muted);
+  margin: 0 0 28px;
+}
+
+.niches__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.niches__chips--light {
+  color: var(--color-ink);
+}
+
+.niches__card--dark {
+  flex: 1 1 380px;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  border-radius: 28px;
+  padding: clamp(28px, 3.4vw, 48px);
+}
+
+.niches__eyebrow--dark {
+  color: var(--color-gold);
+}
+
+.niches__text--dark {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-on-ink);
+  margin: 0 0 28px;
+}

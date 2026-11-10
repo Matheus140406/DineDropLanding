@@ -1,0 +1,12 @@
+.section {
+  padding: var(--section-space) var(--gutter);
+}
+
+.section--sand {
+  background: var(--color-sand);
+}
+
+.section--dark {
+  background: var(--color-ink);
+  color: var(--color-cream);
+}

@@ -1,0 +1,32 @@
+.cta {
+  padding-top: 0;
+}
+
+.cta__box {
+  background: var(--color-orange);
+  color: var(--color-black);
+  border-radius: 40px;
+  padding: clamp(40px, 7vw, 96px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 32px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta__text {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 18px 0 32px;
+  max-width: 480px;
+}
+
+.cta__visual {
+  display: flex;
+  justify-content: center;
+}
+
+.cta__mascot {
+  width: min(100%, 300px);
+}

@@ -1,0 +1,26 @@
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand--link {
+  text-decoration: none;
+}
+
+.brand__name {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-orange);
+}
+
+.brand__name--header {
+  letter-spacing: -.025em;
+  color: var(--color-terracotta);
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}

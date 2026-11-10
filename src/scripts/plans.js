@@ -1,5 +1,5 @@
 export function initPlans() {
-  const btns = [...document.querySelectorAll('.plan-btn')];
+  const btns = [...document.querySelectorAll('.plans__toggle-btn')];
   const prices = [...document.querySelectorAll('[data-price]')];
   const set = (plan) => {
     btns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.plan === plan)));

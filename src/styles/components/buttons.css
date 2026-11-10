@@ -1,0 +1,44 @@
+.btn {
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+}
+
+.btn--dark {
+  display: inline-block;
+  font-size: 17px;
+  background: var(--color-ink);
+  color: var(--color-cream);
+  padding: 17px 30px;
+}
+
+.btn--outline {
+  display: inline-block;
+  font-size: 17px;
+  border: 2px solid var(--color-black);
+  color: var(--color-black);
+  padding: 15px 28px;
+}
+
+.btn--accent {
+  display: inline-block;
+  font-size: 17px;
+  background: var(--color-orange);
+  color: var(--color-black);
+  padding: 17px 30px;
+}
+
+.btn--dark:hover {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  transform: translateY(-2px);
+}
+
+.btn--outline:hover {
+  background: var(--color-black);
+  color: var(--color-orange);
+}
+
+.btn--accent:hover {
+  background: var(--color-gold);
+}
