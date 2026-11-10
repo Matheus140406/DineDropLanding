@@ -1,0 +1,41 @@
+.privacy {
+  background: var(--color-sand);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: 56px;
+}
+
+.privacy__lead {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--color-muted);
+  margin: 20px 0 0;
+  max-width: 420px;
+}
+
+.privacy__links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  font-size: 16px;
+}
+
+.privacy__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  column-gap: 36px;
+}
+
+.privacy__item-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.privacy__item-text {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--color-muted);
+  margin-top: 6px;
+}

@@ -1,0 +1,15 @@
+.chip {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-pill);
+  padding: 10px 20px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.chip:hover {
+  background: var(--color-orange);
+  color: var(--color-black);
+  border-color: var(--color-orange);
+}

@@ -1,0 +1,134 @@
+.site-footer {
+  background: var(--color-ink);
+  color: var(--color-on-ink);
+  padding-bottom: 28px;
+}
+
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  align-items: end;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--color-line-on-ink);
+}
+
+.footer__headline {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 4vw, 56px);
+  line-height: 1.05;
+  color: var(--color-cream);
+  max-width: 680px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: 40px;
+  padding: 48px 0;
+}
+
+.footer__brand {
+  grid-column: span 2;
+  min-width: min(100%, 260px);
+  max-width: 360px;
+}
+
+.footer__about {
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 16px 0 0;
+}
+
+.footer__heading {
+  color: var(--color-gold);
+  margin-bottom: 18px;
+}
+
+.footer__links {
+  display: grid;
+  gap: 11px;
+  font-size: 15px;
+}
+
+.footer__link {
+  color: var(--color-on-ink-link);
+  text-decoration: none;
+}
+
+.footer__social {
+  display: flex;
+  gap: 12px;
+}
+
+.footer__social-link {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-on-ink);
+  color: var(--color-on-ink-link);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.footer__social-note {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 16px;
+  color: var(--color-on-ink-soft);
+}
+
+.footer__tags {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding-bottom: 28px;
+}
+
+.footer__tag {
+  color: var(--color-on-ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer__legal {
+  border-top: 1px solid var(--color-line-on-ink);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--color-on-ink-soft);
+}
+
+.footer__link:hover,
+.footer__tag:hover {
+  color: var(--color-gold);
+}
+
+.footer__social-link:hover {
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+  color: var(--color-black);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 720px) {
+  .footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 20px;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+
+  .footer__grid a {
+    overflow-wrap: anywhere;
+  }
+}

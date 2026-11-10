@@ -1,11 +1,10 @@
-import './styles.css';
-import { FLAGS } from './config.js';
-import { initReveal } from './reveal.js';
-import { initCalculator } from './calculator.js';
-import { initPlans } from './plans.js';
-import { initMotion } from './motion.js';
+import './styles/main.css';
+import { FLAGS } from './scripts/config.js';
+import { initReveal } from './scripts/reveal.js';
+import { initCalculator } from './scripts/calculator.js';
+import { initPlans } from './scripts/plans.js';
+import { initMotion } from './scripts/motion.js';
 
-// O script rodou: desliga a rede de segurança do CSS e deixa o reveal no controle
 document.documentElement.classList.add('js-ok');
 
 const flag = document.getElementById('sc-semComissao');

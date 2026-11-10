@@ -1,0 +1,29 @@
+.marquee {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  overflow: hidden;
+  padding: 22px 0;
+}
+
+.marquee__track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+}
+
+.marquee__item {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.4vw, 44px);
+  font-weight: 500;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.marquee__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-orange);
+}

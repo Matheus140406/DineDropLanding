@@ -1,0 +1,62 @@
+.pains__title {
+  max-width: 900px;
+  margin-bottom: 24px;
+}
+
+.pains__lead {
+  font-size: clamp(18px, 1.8vw, 21px);
+  line-height: 1.65;
+  color: var(--color-on-ink);
+  max-width: 740px;
+  margin: 0 0 56px;
+}
+
+.pain {
+  flex: 1 1 440px;
+  background: var(--color-ink-soft);
+  border-radius: 24px;
+  padding: clamp(24px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pain__number {
+  color: var(--color-orange);
+}
+
+.pain__title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 2.6vw, 34px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.pain__text {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--color-on-ink);
+}
+
+.pain__solution {
+  border-top: 1px solid var(--color-line-on-ink-strong);
+  padding-top: 16px;
+  margin-top: auto;
+}
+
+.pain__solution-label {
+  color: var(--color-gold);
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.pain__solution-text {
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.pain:hover {
+  background: var(--color-ink-hover);
+  transform: translateY(-4px);
+}

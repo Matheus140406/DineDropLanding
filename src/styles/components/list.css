@@ -1,0 +1,8 @@
+.divided-item {
+  border-top: 1px solid var(--color-border-strong);
+  padding: 22px 0;
+}
+
+.divided-item--last {
+  border-bottom: 1px solid var(--color-border-strong);
+}

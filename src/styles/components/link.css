@@ -1,0 +1,4 @@
+.link--accent {
+  color: var(--color-rust);
+  font-weight: 700;
+}
