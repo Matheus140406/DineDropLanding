@@ -30,6 +30,8 @@ transform:none}
 
 
 [hidden]{display:none !important}
+picture{display:contents}
+img{max-width:100%;height:auto}
 body{-webkit-font-smoothing:antialiased}
 :focus-visible{outline:2px solid #F57C00;outline-offset:3px}
 .plan-btn{background:transparent;color:#2B211A}
@@ -37,6 +39,9 @@ body{-webkit-font-smoothing:antialiased}
 
 .js [data-r]{opacity:0;transform:translateY(40px);transition:opacity 1.3s cubic-bezier(.22,.61,.36,1),transform 1.3s cubic-bezier(.22,.61,.36,1),box-shadow .6s ease}
 .js [data-r].is-in{opacity:1;transform:none}
+/* Rede de segurança: se o script não rodar (celular lento, navegador de app, erro), mostra tudo depois de 2,5 s em vez de deixar textos e imagens invisíveis */
+.js:not(.js-ok) [data-r]{animation:ddmostra .6s ease 2.5s forwards}
+@keyframes ddmostra{to{opacity:1;transform:none}}
 .js [data-r].done{transition:transform .6s cubic-bezier(.22,.61,.36,1),box-shadow .6s ease,background-color .5s ease}
 @media (prefers-reduced-motion:reduce){.js [data-r]{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 

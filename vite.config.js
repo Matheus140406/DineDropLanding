@@ -2,10 +2,10 @@ import { defineConfig } from 'vite';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-// Endereços (05/11/2026): o app e os cardápios em appdinedrop.com; a landing em site.appdinedrop.com.
+// Endereços (10/11/2026): o app e os cardápios em appdinedrop.com; a landing em www.dinedrop.com.br (dinedrop.com.br redireciona para o www na Vercel).
 // Os links do index.html usam %VITE_APP_URL% e %VITE_SITE_URL%; na hospedagem, basta definir as variáveis. Sem elas, valem estes padrões.
 process.env.VITE_APP_URL ||= 'https://appdinedrop.com';
-process.env.VITE_SITE_URL ||= 'https://site.appdinedrop.com';
+process.env.VITE_SITE_URL ||= 'https://www.dinedrop.com.br';
 
 // robots.txt e sitemap.xml (em public/) levam __SITE_URL__: troca pelo endereço da landing depois do build
 const enderecoNosArquivos = () => ({

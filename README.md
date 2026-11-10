@@ -22,19 +22,19 @@ src/motion.js       barra de progresso, parallax, faixa de nichos, mascote
 src/calculator.js   calculadora "Faça a conta"
 src/plans.js        alternância Mensal/Anual
 src/styles.css      base, hover, foco e movimento
-public/             imagens, mascote, robots.txt, sitemap.xml
+public/             imagens (PNG + WebP leve), mascote, robots.txt, sitemap.xml
 ```
 
 ## Domínio
 
-Mude `VITE_SITE_URL` no `.env` (canonical, og:url, og:image e JSON-LD). Troque também o domínio em `public/robots.txt` e `public/sitemap.xml`.
+A landing fica em `https://www.dinedrop.com.br` (Vercel; `dinedrop.com.br` redireciona para o www). O endereço vem de `VITE_SITE_URL` no `.env` e entra no canonical, og:url, og:image, JSON-LD, `robots.txt` e `sitemap.xml`.
 
 ## Pendências
 
 - Links de Termos de Uso e Política de Privacidade (hoje `#`, aguardando as páginas legais).
 - Ligar "Sem comissão por pedido": `FLAGS.semComissao` em `src/config.js` (só depois de conferir a taxa de 5%).
 - Trocar os prints por um restaurante demo e conferir o QR de teste.
-- Cadastrar o site no Google Search Console e enviar o sitemap.
+- Search Console: propriedade de domínio `dinedrop.com.br` criada; falta o registro TXT `google-site-verification=…` no DNS do Registro.br. A meta tag no `index.html` já verifica a propriedade de prefixo `https://www.dinedrop.com.br/`. Depois, enviar `sitemap.xml`.
 
 ## Deploy
 
