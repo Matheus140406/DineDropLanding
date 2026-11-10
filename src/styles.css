@@ -113,3 +113,33 @@ body{-webkit-font-smoothing:antialiased}
 .dd66:hover{color:#FDB61A !important}
 .dd67:hover{color:#FDB61A !important}
 .dd68:hover{color:#FDB61A !important}
+
+/* Celular e tablet estreito */
+/* Topo fixo numa linha só até tablet: logo + botão (os atalhos ficam no rodapé) */
+@media (max-width:980px){
+  #topo{flex-wrap:nowrap !important}
+  #topo nav .dd1,#topo nav .dd2,#topo nav .dd3,#topo nav .dd4,#topo nav .dd5{display:none}
+  #topo nav .dd6{white-space:nowrap}
+}
+@media (max-width:720px){
+  #topo{padding-top:10px !important;padding-bottom:10px !important}
+  .so-desk{display:none}
+  #topo nav .dd6{padding:10px 16px !important;font-size:14px}
+  #topo > a span{font-size:21px !important}
+  /* Cards de vantagens sem altura mínima de desktop (sobrava espaço vazio) */
+  #vantagens [data-r][style*="min-height"]{min-height:0 !important}
+  /* Rodapé: duas colunas, marca ocupando a linha toda (o span 2 criava coluna fora da tela) */
+  .rodape-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:32px 20px !important}
+  .rodape-marca{grid-column:1 / -1 !important;max-width:none !important}
+  .rodape-grid a{overflow-wrap:anywhere}
+}
+/* Lista dos planos: pontilhado alinhado na última linha do texto, inclusive com a etiqueta "No forno" */
+#planos div[style*="display:flex;gap:10px"]{align-items:flex-end !important}
+#planos div[style*="display:flex;gap:10px"] > span[style*="dotted"]{min-width:14px}
+#planos div[style*="display:flex;gap:10px"] > span[style*="white-space:nowrap"]{align-self:flex-end !important}
+@media (max-width:360px){
+  #topo{gap:10px !important}
+  #topo > a{gap:8px !important}
+  #topo > a span{font-size:18px !important}
+  #topo nav .dd6{padding:9px 12px !important;font-size:13px}
+}
