@@ -9,35 +9,36 @@ import { secaoNichos, gerarPaginasNichos } from './scripts/paginas-nichos.mjs';
 process.env.VITE_APP_URL ||= 'https://appdinedrop.com';
 process.env.VITE_SITE_URL ||= 'https://www.dinedrop.com.br';
 
-// Cardápios de exemplo da seção "Teste agora" (um por vertente): VITE_DEMO_MESA, VITE_DEMO_DELIVERY e VITE_DEMO_BALCAO (do .env ou da hospedagem).
-// Vazio = mostra o espaço reservado, sem QR. O de mesa usa o cardápio de teste que já existia (/mexico); delivery e balcão esperam os cardápios de exemplo serem criados no app.
+// Cardápio de exemplo da seção "Teste agora": VITE_DEMO (padrão: o restaurante de demonstração /devteam2026tech).
+// Opcional: VITE_DEMO_MESA, VITE_DEMO_DELIVERY e VITE_DEMO_BALCAO põem um QR próprio em cada vertente; vazios, a vertente fica só com o texto.
 const demos = (env) => {
   const app = (env.VITE_APP_URL || process.env.VITE_APP_URL).replace(/\/$/, '');
-  return { mesa: env.VITE_DEMO_MESA ?? `${app}/mexico`, delivery: env.VITE_DEMO_DELIVERY ?? '', balcao: env.VITE_DEMO_BALCAO ?? '' };
+  return { principal: env.VITE_DEMO || `${app}/devteam2026tech`, mesa: env.VITE_DEMO_MESA || '', delivery: env.VITE_DEMO_DELIVERY || '', balcao: env.VITE_DEMO_BALCAO || '' };
 };
-const NOMES = { mesa: 'restaurante e bar', delivery: 'delivery', balcao: 'retirada no balcão' };
+const NOMES = { principal: 'demonstração', mesa: 'restaurante e bar', delivery: 'delivery', balcao: 'retirada no balcão' };
 const esc = (t) => t.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+const qrSvg = async (url, nome) => (await QRCode.toString(url, { type: 'svg', margin: 0, errorCorrectionLevel: 'M', color: { dark: '#2B211A', light: '#FFFFFF' } }))
+  .replace('<svg ', `<svg role="img" aria-label="QR Code do cardápio de exemplo de ${nome}" `);
 
-// Troca <!--demo:mesa--> (e os outros) pelo QR em SVG + botão, ou pelo espaço reservado
+// Troca <!--demo:principal--> e <!--demo:mesa|delivery|balcao--> pelos QR Codes, e <!--nichos--> pela lista de nichos
 const cardapiosDeExemplo = () => {
   let env = {};
   return {
-  name: 'cardapios-de-exemplo',
-  configResolved(config) { env = config.env; },
-  async transformIndexHtml(html) {
-    for (const [chave, url] of Object.entries(demos(env))) {
-      let bloco;
-      if (url) {
-        const svg = (await QRCode.toString(url, { type: 'svg', margin: 0, errorCorrectionLevel: 'M', color: { dark: '#2B211A', light: '#FFFFFF' } }))
-          .replace('<svg ', `<svg role="img" aria-label="QR Code do cardápio de exemplo de ${NOMES[chave]}" `);
-        bloco = `<div class="demo-qr"><div class="qr">${svg}</div><a class="btn btn--contorno btn--p" href="${esc(url)}" target="_blank" rel="noopener" title="Abrir o cardápio de exemplo de ${NOMES[chave]}">Abrir o exemplo</a></div>`;
-      } else {
-        bloco = `<p class="demo-vazio" data-demo-pendente="${chave}">O cardápio de exemplo deste nicho está sendo preparado. Enquanto isso, <a href="#conta">crie o seu e teste por 2 semanas</a>.</p>`;
+    name: 'cardapios-de-exemplo',
+    configResolved(config) { env = config.env; },
+    async transformIndexHtml(html) {
+      for (const [chave, url] of Object.entries(demos(env))) {
+        let bloco = '';
+        if (url && chave === 'principal') {
+          const curto = esc(url.replace(/^https?:\/\//, ''));
+          bloco = `<div class="exp-qr"><div class="qr qr--g">${await qrSvg(url, NOMES[chave])}</div><p class="exp-url">${curto}</p><a class="btn btn--cafe btn--bloco" href="${esc(url)}" target="_blank" rel="noopener" title="Abrir o cardápio de exemplo">Abrir o cardápio de exemplo</a></div>`;
+        } else if (url) {
+          bloco = `<div class="demo-qr"><div class="qr">${await qrSvg(url, NOMES[chave])}</div><a class="btn btn--contorno btn--p" href="${esc(url)}" target="_blank" rel="noopener" title="Abrir o cardápio de exemplo de ${NOMES[chave]}">Abrir o exemplo</a></div>`;
+        }
+        html = html.replace(`<!--demo:${chave}-->`, bloco);
       }
-      html = html.replace(`<!--demo:${chave}-->`, bloco);
-    }
-    return html.replace('<!--nichos-->', secaoNichos());
-  },
+      return html.replace('<!--nichos-->', secaoNichos());
+    },
   };
 };
 

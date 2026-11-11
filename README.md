@@ -42,9 +42,7 @@ A landing fica em `https://www.dinedrop.com.br` (Vercel; `dinedrop.com.br` redir
 - Links de Termos de Uso e Política de Privacidade (hoje `#`, aguardando as páginas legais).
 - Ligar "Sem comissão por pedido": `FLAGS.semComissao` em `src/config.js` (só depois de conferir a taxa de 5%).
 - Trocar os prints por um restaurante demo.
-- Cardápios de exemplo da seção "Teste agora" (3 vertentes). O QR é gerado no build a partir de:
-  `VITE_DEMO_MESA` (padrão: `VITE_APP_URL/mexico`), `VITE_DEMO_DELIVERY` e `VITE_DEMO_BALCAO` (vazios = espaço reservado, sem QR).
-  Falta criar no app os cardápios de exemplo de delivery (pizzaria/hamburgueria/marmitaria) e de retirada no balcão (lanchonete/açaí/cafeteria) e preencher as duas variáveis.
+- Cardápio de exemplo da seção "Teste agora": `VITE_DEMO` (padrão: `https://appdinedrop.com/devteam2026tech`). Opcional: `VITE_DEMO_MESA`, `VITE_DEMO_DELIVERY` e `VITE_DEMO_BALCAO` para um QR próprio em cada vertente.
 - Search Console: propriedade de domínio `dinedrop.com.br` criada; falta o registro TXT `google-site-verification=…` no DNS do Registro.br. A meta tag no `index.html` já verifica a propriedade de prefixo `https://www.dinedrop.com.br/`. Depois, enviar `sitemap.xml`.
 
 ## Deploy

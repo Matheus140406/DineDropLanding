@@ -62,21 +62,7 @@ ${base.assets}
 <body>
 ${base.sprite}
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
-<header id="topo" class="topo rolou">
- <div class="topo-in">
-  <a href="/" class="logo logo--p" title="DineDrop, página inicial"><img src="/img/dinedrop-icon.webp" alt="" width="36" height="36" decoding="async"><span>DineDrop</span></a>
-  <nav id="menu" class="nav" aria-label="Principal">
-   <a href="/#vantagens">Vantagens</a>
-   <a href="/#nichos">Nichos</a>
-   <a href="/#como">Como funciona</a>
-   <a href="/#planos">Planos</a>
-   <a href="/#perguntas">Perguntas</a>
-  </nav>
-  <a href="${app}" class="btn btn--laranja btn--p topo-cta" title="Comece com 2 semanas grátis" target="_blank" rel="noopener">2 semanas grátis</a>
-  <button type="button" class="menu-btn" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu"><svg width="24" height="24" aria-hidden="true"><use href="#i-menu"/></svg></button>
- </div>
- <div id="prog" class="prog"></div>
-</header>
+${base.cabecalho}
 
 <main id="conteudo">
 <section class="sec nicho-topo">
@@ -147,6 +133,7 @@ export function gerarPaginasNichos(dist, site, app) {
     fontes: [...idx.matchAll(/<link rel="preconnect"[^>]*>|<link rel="stylesheet" href="https:\/\/fonts[^>]*>/g)].map((m) => m[0]).join('\n'),
     assets: [...idx.matchAll(/<script type="module" crossorigin src="\/assets\/[^"]+"><\/script>|<link rel="stylesheet" crossorigin href="\/assets\/[^"]+">/g)].map((m) => m[0]).join('\n'),
     sprite: pega(/<svg width="0" height="0"[\s\S]*?<\/svg>\n?/, 'sprite'),
+    cabecalho: pega(/<header id="topo" class="topo">[\s\S]*?<\/header>/, 'cabeçalho').replace('<a href="#conteudo"', '<a href="/"').replace(/<a href="#/g, '<a href="/#'),
     rodape: pega(/<footer class="rodape">[\s\S]*?<\/footer>/, 'rodapé').replace(/<a href="#/g, '<a href="/#'),
   };
   if (!base.assets.includes('.js') || !base.assets.includes('.css')) throw new Error('nichos: CSS/JS do build não encontrados');
