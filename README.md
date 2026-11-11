@@ -19,12 +19,19 @@ src/main.js         ponto de entrada
 src/config.js       flags e preço do plano usado na calculadora
 src/reveal.js       aparecer ao rolar
 src/header.js       cabeçalho fixo: logo pequena ao rolar e menu no celular
+src/abas.js         abas da seção "As dores" (teclado e celular)
+src/nichos.js       nichos: dores, soluções e textos de busca (fonte única)
+scripts/paginas-nichos.mjs  gera a lista de nichos da inicial e as páginas /nichos/<slug>/ + sitemap
 src/motion.js       barra de progresso, parallax, faixa de nichos, mascote
 src/calculator.js   calculadora "Faça a conta"
 src/plans.js        alternância Mensal/Anual
 src/styles.css      todo o visual (celular primeiro): cores, tipografia, raio único, seções
 public/             imagens (PNG + WebP leve), mascote, robots.txt, sitemap.xml
 ```
+
+## Páginas de nicho
+
+Cada nicho de `src/nichos.js` vira `/nichos/<slug>/` no build (título, descrição, canonical, Open Graph e trilha em JSON-LD) e entra no `sitemap.xml`. Para mudar um texto ou criar um nicho, edite só `src/nichos.js`. As páginas existem depois de `npm run build` (use `npm run preview` para vê-las).
 
 ## Domínio
 

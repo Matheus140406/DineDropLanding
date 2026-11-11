@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import QRCode from 'qrcode';
+import { secaoNichos, gerarPaginasNichos } from './scripts/paginas-nichos.mjs';
 
 // Endereços (10/11/2026): o app e os cardápios em appdinedrop.com; a landing em www.dinedrop.com.br (dinedrop.com.br redireciona para o www na Vercel).
 // Os links do index.html usam %VITE_APP_URL% e %VITE_SITE_URL%; na hospedagem, basta definir as variáveis. Sem elas, valem estes padrões.
@@ -35,7 +36,7 @@ const cardapiosDeExemplo = () => {
       }
       html = html.replace(`<!--demo:${chave}-->`, bloco);
     }
-    return html;
+    return html.replace('<!--nichos-->', secaoNichos());
   },
   };
 };
@@ -51,4 +52,12 @@ const enderecoNosArquivos = () => ({
   },
 });
 
-export default defineConfig({ plugins: [cardapiosDeExemplo(), enderecoNosArquivos()], build: { target: 'es2020', assetsInlineLimit: 0 } });
+// Páginas /nichos/<slug>/ (dores e soluções de cada nicho) e entradas no sitemap, depois do build
+const paginasNichos = () => ({
+  name: 'paginas-nichos',
+  closeBundle() {
+    gerarPaginasNichos(resolve('dist'), process.env.VITE_SITE_URL.replace(/\/$/, ''), process.env.VITE_APP_URL.replace(/\/$/, ''));
+  },
+});
+
+export default defineConfig({ plugins: [cardapiosDeExemplo(), enderecoNosArquivos(), paginasNichos()], build: { target: 'es2020', assetsInlineLimit: 0 } });
