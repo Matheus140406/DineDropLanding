@@ -10,6 +10,7 @@
     "check:csp": "vite build && node scripts/conferir-csp.mjs"
   },
   "devDependencies": {
+    "qrcode": "^1.5.4",
     "vite": "^5.4.0"
   }
 }

@@ -10,7 +10,7 @@ export function initMotion() {
     const y = window.scrollY;
     const h = document.documentElement.scrollHeight - window.innerHeight;
     if (prog) prog.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
-    if (head) head.style.borderBottomColor = y > 10 ? '#E8E0D2' : 'transparent';
+    if (head) head.classList.toggle('borda', y > 10);
     if (!reduce) pars.forEach((p) => { p.style.translate = '0 ' + y * parseFloat(p.dataset.par) + 'px'; });
   };
   window.addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(update); } }, { passive: true });
@@ -18,7 +18,7 @@ export function initMotion() {
   if (reduce) return;
 
   const mq = document.getElementById('mq');
-  if (mq) mq.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-50%)' }], { duration: 48000, iterations: Infinity, easing: 'linear' });
+  if (mq) mq.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-50%)' }], { duration: 52000, iterations: Infinity, easing: 'linear' });
   document.querySelectorAll('img[alt^="Pierre"]').forEach((im, k) => im.animate(
     [{ transform: 'translateY(0) rotate(-1.5deg)' }, { transform: 'translateY(-12px) rotate(1.5deg)' }],
     { duration: 3800 + k * 500, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' }
