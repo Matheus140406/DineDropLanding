@@ -41,7 +41,7 @@ function pagina(n, base, site, app) {
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 ${JS_CLASSE}
 <title>${esc(titulo)}</title>
 <meta name="description" content="${esc(n.descricao)}">

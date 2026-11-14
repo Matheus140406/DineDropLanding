@@ -19,6 +19,7 @@ src/main.js         ponto de entrada
 src/config.js       flags e preço do plano usado na calculadora
 src/reveal.js       aparecer ao rolar
 src/header.js       cabeçalho fixo: logo pequena ao rolar e menu no celular
+src/gira.js         palavra que gira na abertura ("Feito para pizzarias / bares...")
 src/abas.js         abas da seção "As dores" (teclado e celular)
 src/nichos.js       nichos: dores, soluções e textos de busca (fonte única)
 scripts/paginas-nichos.mjs  gera a lista de nichos da inicial e as páginas /nichos/<slug>/ + sitemap

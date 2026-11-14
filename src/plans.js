@@ -7,4 +7,7 @@ export function initPlans() {
   };
   btns.forEach((b) => b.addEventListener('click', () => set(b.dataset.plan)));
   set('mensal');
+  // comparativo: aberto no computador, fechado no celular (cada linha vira um bloco, e a tabela fica longa)
+  const comparar = document.querySelector('.comparar');
+  if (comparar && window.matchMedia('(max-width: 760px)').matches) comparar.open = false;
 }
