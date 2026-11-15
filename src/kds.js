@@ -1,0 +1,34 @@
+// Ilustração da Cozinha (KDS): os pedidos andam de Recebido a Em preparo e Pronto.
+// Só anda quando está na tela e a aba está aberta; com movimento reduzido ou sem script, fica parada.
+const PASSO = 2800;
+
+export function initKds() {
+  const tv = document.querySelector('[data-kds]');
+  if (!tv || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const tks = [...tv.querySelectorAll('.tk')];
+  let timer = null;
+
+  const poe = (t, c) => { t.dataset.c = String(c); t.style.setProperty('--c', String(c)); };
+  const passo = () => {
+    tks.forEach((t) => {
+      const c = Number(t.dataset.c);
+      if (c < 2) { poe(t, c + 1); return; }
+      // saiu de "Pronto": some, volta invisível para "Recebido" e entra como pedido novo
+      t.classList.add('sai');
+      setTimeout(() => {
+        t.style.transition = 'transform 0s, opacity .5s ease';
+        poe(t, 0);
+        void t.offsetWidth;
+        t.style.transition = '';
+        requestAnimationFrame(() => t.classList.remove('sai'));
+      }, 650);
+    });
+  };
+  const liga = () => { if (!timer) timer = setInterval(passo, PASSO); };
+  const desliga = () => { clearInterval(timer); timer = null; };
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([e]) => (e.isIntersecting && !document.hidden ? liga() : desliga()), { threshold: 0.25 }).observe(tv);
+    document.addEventListener('visibilitychange', () => { if (document.hidden) desliga(); });
+  } else liga();
+}

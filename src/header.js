@@ -17,7 +17,7 @@ export function initHeader() {
     nav.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && head.classList.contains('aberto')) { set(false); btn.focus(); } });
     document.addEventListener('click', (e) => { if (head.classList.contains('aberto') && !head.contains(e.target)) set(false); });
-    window.matchMedia('(min-width: 1101px)').addEventListener('change', (e) => { if (e.matches) set(false); });
+    window.matchMedia('(min-width: 1181px)').addEventListener('change', (e) => { if (e.matches) set(false); });
   }
 
   // Seção atual destacada no menu (só links da própria página, "#secao")
