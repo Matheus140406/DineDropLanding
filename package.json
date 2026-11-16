@@ -1,15 +1,21 @@
 {
   "name": "dinedrop-landing",
-  "private": true,
   "version": "1.0.0",
+  "private": true,
+  "description": "Landing page do DineDrop: cardápio digital com QR Code, pedidos, delivery próprio e Cozinha (KDS).",
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check:csp": "vite build && node scripts/conferir-csp.mjs"
+    "check:csp": "vite build && node scripts/conferir-csp.mjs",
+    "test": "vite build && node tests/smoke.mjs"
   },
   "devDependencies": {
+    "playwright": "1.63.0",
     "qrcode": "^1.5.4",
     "vite": "^5.4.0"
   }

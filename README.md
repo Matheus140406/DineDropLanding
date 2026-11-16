@@ -1,55 +1,77 @@
 # DineDrop · Landing page
 
-Site estático em HTML, CSS e JavaScript, com Vite. O HTML já vem completo no `index.html`, então o Google lê tudo sem executar script.
+Landing page do DineDrop (cardápio digital com QR Code, pedidos, delivery próprio e Cozinha KDS), publicada em <https://www.dinedrop.com.br>.
 
-## Rodar
+Site estático feito com HTML, CSS e JavaScript, empacotado com [Vite](https://vite.dev). O conteúdo já vem completo no HTML, então buscadores leem tudo sem executar script.
+
+## Começando
+
+Requisitos: Node 20 ou mais novo (o `.nvmrc` indica a versão usada).
 
 ```bash
-npm install
-npm run dev      # http://localhost:5173
-npm run build    # gera dist/
-npm run preview  # testa o build
+npm ci
+npm run dev       # http://localhost:5173
+npm run build     # gera dist/
+npm run preview   # serve o build
+npm test          # build + testes de navegador
 ```
 
 ## Estrutura
 
 ```
-index.html          conteúdo, metatags, Open Graph e JSON-LD
-src/main.js         ponto de entrada
-src/config.js       flags e preço do plano usado na calculadora
-src/reveal.js       aparecer ao rolar
-src/header.js       cabeçalho fixo: logo pequena ao rolar e menu no celular
-src/gira.js         palavra que gira na abertura ("Feito para pizzarias / bares...")
-src/abas.js         abas ("As dores" e "Uma operação, três telas"), com teclado e celular
-src/nichos.js       nichos: dores, soluções e textos de busca (fonte única)
-scripts/paginas-nichos.mjs  gera a lista de nichos da inicial e as páginas /nichos/<slug>/ + sitemap
-src/motion.js       barra de progresso, parallax, faixa de nichos, mascote
-src/calculator.js   calculadora "Faça a conta"
-src/plans.js        alternância Mensal/Anual
-src/styles.css      todo o visual (celular primeiro): cores, tipografia, raio único, seções
-public/             imagens (PNG + WebP leve), mascote, robots.txt, sitemap.xml
+index.html                    conteúdo, metatags, Open Graph e JSON-LD
+src/
+  main.js                     ponto de entrada
+  styles.css                  todo o visual (celular primeiro): tokens, tipografia, seções
+  header.js                   cabeçalho: menu no celular e seção atual destacada
+  motion.js                   barra de progresso e cabeçalho que some ao descer
+  abas.js                     abas acessíveis (três telas e dores)
+  plans.js                    alternância Mensal/Anual
+  calculator.js               calculadora "Faça a conta"
+  kds.js                      ilustração animada da Cozinha (KDS)
+  reveal.js                   aparecer ao rolar (usado só na TV do KDS)
+  nichos.js                   dados dos nichos: dores, soluções e textos de busca
+  config.js                   flags e preço usado na calculadora
+scripts/
+  paginas-nichos.mjs          gera a lista de nichos e as páginas /nichos/<slug>/ + sitemap
+  conferir-csp.mjs            confere o hash do script embutido na CSP
+tests/smoke.mjs               testes de navegador (Playwright)
+public/                       imagens (WebP + fallback), mascote, robots.txt, sitemap.xml
+vercel.json, public/_headers  cabeçalhos de segurança (iguais nas duas hospedagens)
 ```
 
-## Vídeo do cardápio
+## Variáveis de ambiente
 
-A aba "Seu cliente" mostra o cardápio com foto. Para mostrar o vídeo do prato no lugar da imagem, coloque o arquivo em `public/video/cardapio.mp4` (vertical, até uns 10 MB, sem áudio obrigatório) e rode o build: o player aparece sozinho. Sem o arquivo, a imagem continua.
+Definidas no `.env` ou na hospedagem. Sem elas valem os padrões abaixo (veja `.env.example`).
 
-## Páginas de nicho
+| Variável | Padrão | Uso |
+| --- | --- | --- |
+| `VITE_SITE_URL` | `https://www.dinedrop.com.br` | canonical, Open Graph, JSON-LD, `robots.txt` e `sitemap.xml` |
+| `VITE_APP_URL` | `https://appdinedrop.com` | links para o app (entrar, criar conta, Termos e Privacidade) |
+| `VITE_DEMO` | `VITE_APP_URL/devteam2026tech` | cardápio de exemplo do "Teste agora" (o QR é gerado no build) |
+| `VITE_DEMO_MESA`, `VITE_DEMO_DELIVERY`, `VITE_DEMO_BALCAO` | vazio | QR próprio por vertente (opcional) |
 
-Cada nicho de `src/nichos.js` vira `/nichos/<slug>/` no build (título, descrição, canonical, Open Graph e trilha em JSON-LD) e entra no `sitemap.xml`. Para mudar um texto ou criar um nicho, edite só `src/nichos.js`. As páginas existem depois de `npm run build` (use `npm run preview` para vê-las).
+## Conteúdo
 
-## Domínio
+- **Nichos**: cada item de `src/nichos.js` vira `/nichos/<slug>/` no build, com título, descrição, canonical, Open Graph, trilha em JSON-LD e entrada no `sitemap.xml`. Para mudar um texto ou criar um nicho, edite só esse arquivo.
+- **Planos e preços**: ficam no `index.html` (cards e tabela comparativa) e devem bater com as assinaturas do app.
+- **Vídeo do cardápio**: coloque o arquivo em `public/video/cardapio.mp4` (vertical, até uns 10 MB). No build, o player aparece na aba "Seu cliente" no lugar da imagem; sem o arquivo, a imagem continua.
 
-A landing fica em `https://www.dinedrop.com.br` (Vercel; `dinedrop.com.br` redireciona para o www). O endereço vem de `VITE_SITE_URL` no `.env` e entra no canonical, og:url, og:image, JSON-LD, `robots.txt` e `sitemap.xml`.
+## Segurança (CSP)
 
-## Pendências
+A `Content-Security-Policy` libera um único script embutido (a marcação da classe `js` no `<head>`), identificado pelo hash. Se esse script mudar, rode `npm run check:csp`: ele mostra o hash novo para colocar no `vercel.json` e no `public/_headers`, e confere que os dois arquivos têm os mesmos cabeçalhos.
 
-- Links de Termos de Uso e Política de Privacidade (hoje `#`, aguardando as páginas legais).
-- Ligar "Sem comissão por pedido": `FLAGS.semComissao` em `src/config.js` (só depois de conferir a taxa de 5%).
-- Trocar os prints por um restaurante demo.
-- Cardápio de exemplo da seção "Teste agora": `VITE_DEMO` (padrão: `https://appdinedrop.com/devteam2026tech`). Opcional: `VITE_DEMO_MESA`, `VITE_DEMO_DELIVERY` e `VITE_DEMO_BALCAO` para um QR próprio em cada vertente.
-- Search Console: propriedade de domínio `dinedrop.com.br` criada; falta o registro TXT `google-site-verification=…` no DNS do Registro.br. A meta tag no `index.html` já verifica a propriedade de prefixo `https://www.dinedrop.com.br/`. Depois, enviar `sitemap.xml`.
+## Testes e CI
+
+`npm test` gera o build e roda `tests/smoke.mjs`, que abre a página no Chromium e confere: menu, abas, planos, calculadora, perguntas, as 13 páginas de nicho (título, descrição, canonical e JSON-LD) e, em 10 larguras de tela, ausência de rolagem lateral e de sobreposição no cabeçalho.
+
+O GitHub Actions (`.github/workflows/ci.yml`) roda `npm run check:csp` e `npm test` em todo push na `main` e em todo pull request.
 
 ## Deploy
 
-Vercel, Netlify ou Cloudflare Pages: comando `npm run build`, pasta de saída `dist`.
+Vercel (ou Netlify, Cloudflare Pages): comando `npm run build`, pasta de saída `dist`. O endereço antigo da Vercel redireciona para o domínio oficial; `dinedrop.com.br` redireciona para o `www`.
+
+## Pendências
+
+- Ligar "Sem comissão por pedido": `FLAGS.semComissao` em `src/config.js`, só depois de conferir a taxa.
+- Search Console: criar o registro TXT `google-site-verification=…` no DNS e enviar o `sitemap.xml`.
