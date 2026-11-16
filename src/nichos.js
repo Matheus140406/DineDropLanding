@@ -108,7 +108,7 @@ export const NICHOS = [
     intro: 'Com o salão cheio, cada minuto de espera pesa na experiência. O DineDrop leva o pedido da mesa direto para a equipe certa.',
     dores: [
       ['O garçom não dá conta no pico', 'Com o QR na mesa, o cliente pede sozinho e chama o garçom pelo celular.'],
-      ['Comanda de papel que se perde até a cozinha', 'O pedido chega no painel do garçom e da cozinha, com o número da mesa. Com o plano Cozinheiro, ele também aparece no quadro da Cozinha (KDS).'],
+      ['Comanda de papel que se perde até a cozinha', 'O pedido chega no painel do garçom e da cozinha, com o número da mesa.'],
       ['Fechar a conta demora', 'Conta da mesa no painel, com juntar e transferir mesas.'],
     ],
     plano: 'Garçom',
