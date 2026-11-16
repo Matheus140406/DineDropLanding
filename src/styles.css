@@ -397,6 +397,8 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .menu-lista { display: grid; gap: 12px; margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--linha); }
 .menu-lista li { display: flex; align-items: flex-end; gap: 10px; line-height: 1.45; }
 .menu-lista li::before { content: ''; order: 1; flex: 1; min-width: 14px; border-bottom: 2px dotted var(--linha-2); transform: translateY(-6px); }
+.menu-lista .forno { order: 2; font-style: normal; font-weight: 700; font-size: 13px; line-height: 1.4; white-space: nowrap; background: #EFE3CF; color: var(--muted); border-radius: 6px; padding: 2px 8px; }
+.plano .fino { margin-top: 18px; }
 @media (min-width: 1001px) {
   .planos { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: none; gap: 24px; align-items: stretch; }
   .plano .btn--bloco { margin-top: auto; }
