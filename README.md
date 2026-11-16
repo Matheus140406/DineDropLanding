@@ -20,7 +20,7 @@ src/config.js       flags e preço do plano usado na calculadora
 src/reveal.js       aparecer ao rolar
 src/header.js       cabeçalho fixo: logo pequena ao rolar e menu no celular
 src/gira.js         palavra que gira na abertura ("Feito para pizzarias / bares...")
-src/abas.js         abas da seção "As dores" (teclado e celular)
+src/abas.js         abas ("As dores" e "Uma operação, três telas"), com teclado e celular
 src/nichos.js       nichos: dores, soluções e textos de busca (fonte única)
 scripts/paginas-nichos.mjs  gera a lista de nichos da inicial e as páginas /nichos/<slug>/ + sitemap
 src/motion.js       barra de progresso, parallax, faixa de nichos, mascote
@@ -29,6 +29,10 @@ src/plans.js        alternância Mensal/Anual
 src/styles.css      todo o visual (celular primeiro): cores, tipografia, raio único, seções
 public/             imagens (PNG + WebP leve), mascote, robots.txt, sitemap.xml
 ```
+
+## Vídeo do cardápio
+
+A aba "Seu cliente" mostra o cardápio com foto. Para mostrar o vídeo do prato no lugar da imagem, coloque o arquivo em `public/video/cardapio.mp4` (vertical, até uns 10 MB, sem áudio obrigatório) e rode o build: o player aparece sozinho. Sem o arquivo, a imagem continua.
 
 ## Páginas de nicho
 

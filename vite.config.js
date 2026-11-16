@@ -37,7 +37,11 @@ const cardapiosDeExemplo = () => {
         }
         html = html.replace(`<!--demo:${chave}-->`, bloco);
       }
-      return html.replace('<!--nichos-->', secaoNichos());
+      // Vídeo do cardápio: se existir public/video/cardapio.mp4, o player aparece no lugar da imagem; senão, fica a imagem.
+      const video = existsSync(resolve('public/video/cardapio.mp4'))
+        ? `<video class="papel-video" controls playsinline preload="metadata" poster="/img/print-cardapio-720.webp" aria-label="Vídeo do prato aberto no cardápio do DineDrop"><source src="/video/cardapio.mp4" type="video/mp4"></video>`
+        : '';
+      return html.replace('<!--video:cardapio-->', video).replace('<!--nichos-->', secaoNichos());
     },
   };
 };
