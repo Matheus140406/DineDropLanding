@@ -1,10 +1,3 @@
-/* DineDrop · landing
-   Celular primeiro (360px) e cresce com min-width. Regras da casa:
-   - uma escala de tipos, um raio (--r), um raio de botão (--r-btn), sem sombra em cartão
-   - rótulos em frase normal, sem caixa-alta e sem numeração decorativa
-   - movimento só em transform e opacity, curva exponencial, hover só com mouse, tudo para com movimento reduzido
-   - o que dá identidade é o "cardápio": pontilhado entre nome e preço, comanda da cozinha, cores da marca */
-
 :root {
   --laranja: #F57C00;
   --laranja-esc: #C8601A;
@@ -21,8 +14,7 @@
   --linha: #E8E0D2;
   --linha-2: #DCCDB7;
 
-  --serif: 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif; /* fonte dos títulos */
-  --sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --serif: 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif;   --sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   --r: 14px;
   --r-btn: 10px;
@@ -31,8 +23,7 @@
   --sec: clamp(72px, 9vw, 120px);
   --ease: cubic-bezier(.16, 1, .3, 1);
 
-  /* cores que mudam com o fundo da seção (claro, areia, noite, laranja) */
-  --fg: var(--cafe);
+    --fg: var(--cafe);
   --fg-2: var(--muted);
   --rule: var(--linha-2);
   --acc: var(--laranja-txt);
@@ -46,8 +37,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 84px;
   interpolate-size: allow-keywords;
-  /* clip (e não hidden) corta qualquer sobra lateral sem criar outra área de rolagem: o cabeçalho continua fixo */
-  overflow-x: clip;
+    overflow-x: clip;
 }
 
 body {
@@ -79,7 +69,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .pular { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--cafe); color: var(--creme); padding: 12px 18px; border-radius: var(--r-btn); font-weight: 700; text-decoration: none; }
 .pular:focus { top: 12px; color: var(--creme); }
 
-/* ---------- Tipografia: Bricolage Grotesque (estreita e pesada) nos títulos, DM Sans no resto ---------- */
 .h1, .h2, .h3 { font-family: var(--serif); font-weight: 700; font-stretch: 90%; text-wrap: balance; word-spacing: .06em; }
 .h1 { font-weight: 800; font-size: clamp(40px, 22px + 4.5vw, 80px); line-height: .96; letter-spacing: -.022em; }
 .h2 { font-weight: 800; font-size: clamp(32px, 20px + 3.2vw, 56px); line-height: 1.02; letter-spacing: -.02em; }
@@ -91,7 +80,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .fino--centro { text-align: center; margin-top: 40px; }
 .rotulo { font-weight: 700; font-size: 15px; line-height: 1.3; color: var(--acc); }
 
-/* ---------- Logo: grande (abertura) e pequena (cabeçalho e rodapé) ---------- */
 .logo { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; }
 .logo img { flex-shrink: 0; object-fit: contain; display: block; }
 .logo span { font-family: var(--sans); font-weight: 700; letter-spacing: -.03em; line-height: 1; }
@@ -102,7 +90,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .logo--g img { width: clamp(64px, 44px + 5vw, 104px); height: auto; aspect-ratio: 1; }
 .logo--g span { font-size: clamp(34px, 22px + 3.4vw, 60px); color: var(--creme); letter-spacing: -.035em; font-stretch: 90%; }
 
-/* ---------- Botões ---------- */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; text-align: center;
   min-height: 52px; padding: 12px 28px; border-radius: var(--r-btn);
@@ -125,7 +112,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .plano .btn--contorno:hover { background: var(--laranja); border-color: var(--laranja); color: var(--tinta); }
 @media (hover: hover) and (pointer: fine) { .btn:hover { transform: translateY(-1px); } .btn:active { transform: translateY(1px) scale(.985); } }
 
-/* ---------- Cabeçalho: escuro, opaco, some ao descer e volta ao subir ---------- */
 .topo { position: sticky; top: 0; z-index: 50; background: var(--cafe); color: var(--creme); border-bottom: 1px solid transparent; transition: transform .3s var(--ease), border-color .2s ease; }
 .topo.borda { border-bottom-color: #4A3C31; }
 .topo.some { transform: translateY(-101%); }
@@ -180,7 +166,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
   .topo-entrar { display: inline-flex; }
 }
 
-/* ---------- Abertura: fundo noite, celular sobre um prato laranja; entra uma vez ao carregar ---------- */
 .hero { position: relative; background: var(--cafe); color: var(--creme); --fg: var(--creme); --fg-2: var(--muted-escuro); --rule: #4A3C31; --acc: var(--laranja); overflow: hidden; padding-top: clamp(32px, 5vw, 64px); padding-bottom: clamp(56px, 8vw, 104px); }
 .hero-grid { display: grid; gap: 40px; align-items: center; }
 .hero .lead { margin-top: 24px; color: var(--creme); }
@@ -207,7 +192,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
   .hero-tela { animation-delay: 220ms; }
 }
 
-/* ---------- Seções: cada fundo troca as cores do texto ---------- */
 .sec { padding-block: var(--sec); color: var(--fg); }
 .sec--areia { background: var(--areia); }
 .sec--cafe, .sec--noite { background: var(--cafe); color: var(--creme); --fg: var(--creme); --fg-2: var(--muted-escuro); --rule: #4A3C31; --acc: var(--laranja); }
@@ -219,7 +203,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .duas > .cab { margin-bottom: 0; }
 @media (min-width: 901px) { .duas { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 72px; } }
 
-/* ---------- Teste agora ---------- */
 .exp { display: grid; gap: 28px; align-items: center; background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: clamp(24px, 4vw, 48px); margin-bottom: clamp(48px, 6vw, 72px); }
 .exp-passos { display: grid; gap: 22px; }
 .exp-passos li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 16px; align-items: start; }
@@ -249,7 +232,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
   .demo { padding-block: 24px 8px; }
 }
 
-/* ---------- Três telas: cliente, cozinha e dono (abas) ---------- */
 .papeis-lista { display: none; }
 .js-ok .papeis-lista { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 0 calc(-1 * var(--gutter)); padding: 2px var(--gutter) 6px; }
 .js-ok .papeis-lista::-webkit-scrollbar { display: none; }
@@ -279,7 +261,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .papel-vis:has(.papel-video) picture { display: none; }
 @media (min-width: 901px) { .papel { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 56px; } }
 
-/* ---------- TV da Cozinha (ilustração) ---------- */
 .tv { position: relative; background: var(--cafe); border-radius: 18px; padding: clamp(8px, 1.6vw, 14px); box-shadow: var(--sombra-img); }
 .tv::after { content: ''; position: absolute; left: 50%; bottom: -20px; width: 34%; height: 14px; transform: translateX(-50%); background: var(--cafe); border-radius: 0 0 10px 10px; }
 .tv-tela { position: relative; aspect-ratio: 16 / 11; background: var(--cafe-2); border-radius: 10px; padding: clamp(8px, 1.6vw, 14px); overflow: hidden; }
@@ -299,7 +280,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .tk-itens { font-size: clamp(11px, 2.6cqw, 14px); line-height: 1.3; color: var(--muted); }
 @container (max-width: 420px) { .tk-topo span { display: none; } }
 
-/* ---------- Vantagens: a carta do restaurante ---------- */
 .carta { display: grid; gap: 40px; }
 .carta-tit { font-family: var(--serif); font-weight: 700; font-size: clamp(26px, 20px + 1.2vw, 34px); line-height: 1.1; letter-spacing: -.02em; padding-bottom: 14px; border-bottom: 2px solid var(--cafe); }
 .carta dl > div { padding-block: 18px; border-bottom: 1px dashed var(--linha-2); }
@@ -309,7 +289,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .tag { flex-shrink: 0; order: 2; font-weight: 700; font-size: 13px; background: var(--laranja); color: var(--tinta); border-radius: 6px; padding: 2px 8px; line-height: 1.4; }
 @media (min-width: 901px) { .carta { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; } }
 
-/* ---------- Dores: abas, com a dor e a solução lado a lado ---------- */
 .abas-lista { display: none; }
 .abas-paineis { display: grid; gap: 16px; }
 .painel { display: grid; border-radius: var(--r); overflow: hidden; background: var(--cafe-2); }
@@ -338,7 +317,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
   .painel { min-height: 360px; }
 }
 
-/* ---------- Nichos ---------- */
 .nichos { display: grid; gap: 20px; }
 .bloco { display: flex; flex-direction: column; gap: 14px; background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: clamp(24px, 3.4vw, 44px); }
 .bloco > p:not(.demo-tipo) { color: var(--muted); margin-bottom: 12px; }
@@ -359,7 +337,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .chip { display: inline-flex; align-items: center; min-height: 44px; padding: 6px 18px; border: 1px solid currentColor; border-radius: 999px; font-size: 16px; font-weight: 500; line-height: 1.3; color: inherit; text-decoration: none; transition: background-color .15s ease, color .15s ease, border-color .15s ease; }
 .chip:hover { background: var(--laranja); border-color: var(--laranja); color: var(--tinta); }
 
-/* ---------- Página de nicho ---------- */
 .nicho-topo { background: var(--areia); padding-top: clamp(32px, 5vw, 64px); }
 .trilha { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: 16px; color: var(--muted); margin-bottom: 28px; }
 .trilha a { display: inline-flex; align-items: center; min-height: 44px; }
@@ -375,17 +352,18 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .rotulo--escuro { margin-bottom: 16px; }
 @media (min-width: 761px) { .cura { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .cura-dor, .cura-sol { padding: 28px; } }
 
-/* ---------- Como funciona ---------- */
 .como { display: grid; gap: 48px; align-items: center; }
 .passos { display: grid; gap: 32px; }
 .passos li { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 18px; }
 .passo-n { font-family: var(--serif); font-weight: 700; font-size: 48px; line-height: .9; color: var(--laranja-esc); }
 .passos p { color: var(--muted); margin-top: 8px; }
+.como-txt { min-width: 0; }
+.facil { margin-top: 32px; padding-top: 20px; border-top: 1px dashed var(--linha-2); color: var(--muted); max-width: 56ch; }
+.facil strong { color: var(--cafe); }
 .como-img { display: flex; justify-content: center; background: var(--laranja); border-radius: var(--r); padding: clamp(28px, 4vw, 48px); }
 .como-img img { width: min(100%, 260px); border-radius: 28px; border: 6px solid var(--cafe); box-shadow: var(--sombra-img); }
 @media (min-width: 901px) { .como { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 64px; } }
 
-/* ---------- Faça a conta ---------- */
 .calc { display: grid; gap: 44px; align-items: start; }
 .calc-campos { display: grid; gap: 22px; }
 .calc label { display: grid; gap: 8px; font-size: 17px; }
@@ -403,7 +381,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .calc .fino { color: var(--muted-escuro); margin-top: 18px; }
 @media (min-width: 901px) { .calc { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; } }
 
-/* ---------- Planos ---------- */
 .alterna { position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--cafe); border-radius: var(--r-btn); padding: 4px; }
 .alterna::before { content: ''; position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); background: var(--cafe); border-radius: 7px; transition: transform .24s var(--ease); }
 .alterna[data-plano="anual"]::before { transform: translateX(100%); }
@@ -418,11 +395,13 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .plano-nome { font-family: var(--serif); font-weight: 700; font-size: clamp(30px, 24px + 1.2vw, 38px); line-height: 1.05; letter-spacing: -.025em; }
 .plano-para { color: var(--muted); margin-top: 6px; }
 .preco { font-family: var(--serif); font-weight: 700; font-size: clamp(34px, 28px + 1vw, 42px); margin-top: 20px; line-height: 1.1; letter-spacing: -.02em; font-variant-numeric: tabular-nums lining-nums; }
+.cobranca { font-size: 16px; line-height: 1.4; color: var(--muted); margin-top: 6px; }
 .preco small { font-family: var(--sans); font-weight: 500; font-size: 16px; color: var(--muted); letter-spacing: 0; }
 .menu-lista { display: grid; gap: 12px; margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--linha); }
 .menu-lista li { display: flex; align-items: flex-end; gap: 10px; line-height: 1.45; }
+.menu-lista .mais { font-weight: 700; }
+.menu-lista .mais::before { display: none; }
 .menu-lista li::before { content: ''; order: 1; flex: 1; min-width: 14px; border-bottom: 2px dotted var(--linha-2); transform: translateY(-6px); }
-.menu-lista .forno { order: 2; font-style: normal; font-weight: 700; font-size: 13px; line-height: 1.4; white-space: nowrap; background: #EFE3CF; color: var(--muted); border-radius: 6px; padding: 2px 8px; }
 .plano .fino { margin-top: 18px; }
 @media (min-width: 1001px) {
   .planos { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: none; gap: 24px; align-items: stretch; }
@@ -430,7 +409,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
   .menu-lista { margin-bottom: 28px; }
 }
 
-/* ---------- Comparativo dos planos ---------- */
 .comparar { margin-top: clamp(40px, 5vw, 64px); border: 1px solid var(--linha-2); border-radius: var(--r); background: var(--papel); }
 .comparar summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; padding: 14px clamp(20px, 3vw, 32px); cursor: pointer; list-style: none; font-family: var(--serif); font-weight: 700; font-size: clamp(20px, 17px + .8vw, 26px); letter-spacing: -.015em; }
 .comparar summary::-webkit-details-marker { display: none; }
@@ -453,7 +431,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
   .tabela td:nth-child(3) { outline: 1.5px solid var(--laranja); outline-offset: -1.5px; }
 }
 
-/* ---------- LGPD ---------- */
 .lgpd { display: grid; column-gap: 36px; }
 .lgpd li { border-top: 1px solid var(--linha-2); padding-block: 22px; }
 .lgpd p { color: var(--muted); margin-top: 8px; }
@@ -461,7 +438,6 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .links-legais a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; }
 @media (min-width: 561px) { .lgpd { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
-/* ---------- Perguntas ---------- */
 .faq details { border-top: 1px solid var(--linha-2); }
 .faq details:last-child { border-bottom: 1px solid var(--linha-2); }
 .faq summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; padding-block: 14px; cursor: pointer; list-style: none; font-family: var(--serif); font-weight: 650; font-size: clamp(19px, 16px + .7vw, 24px); line-height: 1.25; letter-spacing: -.01em; }
@@ -471,13 +447,11 @@ details::details-content { block-size: 0; overflow: clip; transition: block-size
 details[open]::details-content { block-size: auto; }
 .mascote { display: block; width: min(55%, 220px); margin-top: 32px; }
 
-/* ---------- Chamada final ---------- */
 .final { display: grid; gap: 28px; align-items: center; background: var(--laranja); color: var(--tinta); border-radius: var(--r); padding: clamp(28px, 6vw, 80px); }
 .final .lead { margin: 18px 0 28px; max-width: 32ch; }
 .mascote--final { width: min(64%, 280px); margin: 0 auto; }
 @media (min-width: 801px) { .final { grid-template-columns: minmax(0, 1fr) auto; gap: 40px; } }
 
-/* ---------- Rodapé ---------- */
 .rodape { background: var(--cafe); color: var(--muted-escuro); padding-block: clamp(64px, 8vw, 104px) calc(28px + env(safe-area-inset-bottom)); }
 .rodape-topo { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 28px; padding-bottom: 44px; border-bottom: 1px solid #4A3C31; }
 .rodape-chamada { font-family: var(--serif); font-weight: 700; font-size: clamp(28px, 18px + 2.6vw, 48px); line-height: 1.08; letter-spacing: -.025em; color: var(--creme); max-width: 18ch; text-wrap: balance; }
@@ -495,18 +469,15 @@ details[open]::details-content { block-size: auto; }
 .rodape-fim { padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 15px; line-height: 1.5; color: #B9A892; border-top: 1px solid #4A3C31; }
 @media (min-width: 901px) { .rodape-grid { grid-template-columns: 1.8fr 1fr 1fr 1fr 1.2fr; gap: 40px; } .rodape-marca { grid-column: auto; } }
 
-/* ---------- Aparecer ao rolar: só na TV do KDS ---------- */
 .js [data-r] { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .9s var(--ease); }
 .js [data-r].is-in { opacity: 1; transform: none; }
 .js:not(.js-ok) [data-r] { animation: ddmostra .6s ease 2.5s forwards; }
 @keyframes ddmostra { to { opacity: 1; transform: none; } }
 .js [data-r].done { transition: none; }
 
-/* ---------- Passar de uma página para outra com um fundido suave ---------- */
 @view-transition { navigation: auto; }
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .22s; animation-timing-function: ease; }
 
-/* ---------- Movimento reduzido: tudo descansa e nada fica escondido ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
