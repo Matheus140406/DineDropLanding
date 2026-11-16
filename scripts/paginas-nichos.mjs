@@ -5,17 +5,16 @@ import { resolve, dirname } from 'node:path';
 import { NICHOS, GRUPOS } from '../src/nichos.js';
 
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-const seta = '<svg class="seta" width="22" height="22" aria-hidden="true"><use href="#i-seta"/></svg>';
 
 // Seção "Nichos" da página inicial: para cada nicho, o que o DineDrop resolve + link para a página dele
 export function secaoNichos() {
   return '<div class="nichos">' + GRUPOS.map((g, i) => `
-   <article class="bloco${i ? ' bloco--cafe' : ''}" data-r="1"${i ? ' data-d="100"' : ''}>
+   <article class="bloco${i ? ' bloco--cafe' : ''}">
     <p class="demo-tipo">${esc(g.titulo)}</p>
     <h3 class="h3 h3--g">${esc(g.subtitulo)}</h3>
     <p>${esc(g.texto)}</p>
     <ul class="nicho-lista">${NICHOS.filter((n) => n.grupo === g.id).map((n) => `
-     <li id="nicho-${n.slug}"><a href="/nichos/${n.slug}/" title="${esc(n.titulo)}"><span class="nicho-nome">${esc(n.nome)}</span><span class="nicho-ajuda">${esc(n.ajuda)}</span>${seta}</a></li>`).join('')}
+     <li id="nicho-${n.slug}"><a href="/nichos/${n.slug}/" title="${esc(n.titulo)}"><span class="nicho-nome">${esc(n.nome)}</span><span class="nicho-ajuda">${esc(n.ajuda)}</span></a></li>`).join('')}
     </ul>
    </article>`).join('') + '\n  </div>';
 }
@@ -68,7 +67,6 @@ ${base.cabecalho}
 <section class="sec nicho-topo">
  <div class="wrap">
   <nav class="trilha" aria-label="Você está em"><a href="/">Início</a><span aria-hidden="true">/</span><a href="/#nichos">Nichos</a><span aria-hidden="true">/</span><span aria-current="page">${esc(n.nome)}</span></nav>
-  <p class="eyebrow"><span>DineDrop</span>${esc(n.nome)}</p>
   <h1 class="h2 nicho-h1">${esc(n.titulo)}</h1>
   <p class="sub">${esc(n.intro)}</p>
   <div class="acoes">
@@ -81,11 +79,10 @@ ${base.cabecalho}
 <section class="sec sec--cafe" aria-labelledby="dores-h">
  <div class="wrap">
   <div class="cab">
-   <p class="eyebrow"><span>Nº 01</span>As dores e a solução</p>
    <h2 class="h2" id="dores-h">O que trava ${esc(n.negocio)}, e o que o DineDrop resolve</h2>
   </div>
-  <ol class="curas">${n.dores.map(([dor, cura], i) => `
-   <li class="cura"><p class="cura-n">${String(i + 1).padStart(2, '0')}</p><div class="cura-dor"><p class="painel-rot">A dor</p><h3 class="h3">${esc(dor)}</h3></div><div class="cura-sol"><p class="painel-rot">Com o DineDrop</p><p>${esc(cura)}</p></div></li>`).join('')}
+  <ol class="curas">${n.dores.map(([dor, cura]) => `
+   <li class="cura"><div class="cura-dor"><p class="painel-rot">A dor</p><h3 class="h3">${esc(dor)}</h3></div><div class="cura-sol"><p class="painel-rot">Com o DineDrop</p><p>${esc(cura)}</p></div></li>`).join('')}
   </ol>
  </div>
 </section>
@@ -93,13 +90,12 @@ ${base.cabecalho}
 <section class="sec sec--areia" aria-labelledby="plano-h">
  <div class="wrap duas">
   <div class="cab">
-   <p class="eyebrow"><span>Nº 02</span>Plano indicado</p>
    <h2 class="h2" id="plano-h">Plano ${esc(n.plano)}</h2>
    <p class="sub">Teste tudo por 2 semanas, sem cartão e sem fidelidade. Depois, escolha o plano que cabe na sua operação.</p>
    <p class="links-legais"><a href="/#planos">Comparar os planos</a><a href="/#perguntas">Perguntas frequentes</a></p>
   </div>
   <div>
-   <p class="rodape-tit rodape-tit--escuro">Outros nichos</p>
+   <p class="rotulo rotulo--escuro">Outros nichos</p>
    <div class="chips">${outros.map((o) => `<a class="chip" href="/nichos/${o.slug}/" title="${esc(o.titulo)}">${esc(o.curto)}</a>`).join('')}</div>
   </div>
  </div>

@@ -1,26 +1,26 @@
+// Barra de progresso e cabeçalho: ganha borda ao rolar, some ao descer e volta ao subir.
+// Só mexe em transform e opacity; com movimento reduzido o cabeçalho fica sempre à vista.
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 export function initMotion() {
   const prog = document.getElementById('prog');
   const head = document.getElementById('topo');
-  const pars = [...document.querySelectorAll('[data-par]')];
+  let ultimo = window.scrollY;
   let tick = false;
+
   const update = () => {
     tick = false;
-    const y = window.scrollY;
+    const y = Math.max(0, window.scrollY);
     const h = document.documentElement.scrollHeight - window.innerHeight;
-    if (prog) prog.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
-    if (head) head.classList.toggle('borda', y > 10);
-    if (!reduce) pars.forEach((p) => { p.style.translate = '0 ' + y * parseFloat(p.dataset.par) + 'px'; });
+    if (prog) prog.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, y / h) : 0) + ')';
+    if (!head) return;
+    head.classList.toggle('borda', y > 10);
+    const dy = y - ultimo;
+    const preso = head.classList.contains('aberto') || head.contains(document.activeElement);
+    if (reduce || preso || y < 120 || dy < -4) head.classList.remove('some');
+    else if (dy > 6) head.classList.add('some');
+    if (Math.abs(dy) > 2) ultimo = y;
   };
   window.addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(update); } }, { passive: true });
   update();
-  if (reduce) return;
-
-  const mq = document.getElementById('mq');
-  if (mq) mq.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-50%)' }], { duration: 52000, iterations: Infinity, easing: 'linear' });
-  document.querySelectorAll('img[alt^="Pierre"]').forEach((im, k) => im.animate(
-    [{ transform: 'translateY(0) rotate(-1.5deg)' }, { transform: 'translateY(-12px) rotate(1.5deg)' }],
-    { duration: 3800 + k * 500, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' }
-  ));
 }
