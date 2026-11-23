@@ -8,8 +8,9 @@ export function initPlans() {
     btns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.plan === plan)));
     if (grupo) grupo.dataset.plano = plan;
     const troca = () => {
-      prices.forEach((p) => { p.textContent = 'R$ ' + (plan === 'anual' ? p.dataset.a : p.dataset.m); p.classList.remove('troca'); });
+      prices.forEach((p) => { p.textContent = 'R$\u00a0' + (plan === 'anual' ? p.dataset.a : p.dataset.m); p.classList.remove('troca'); });
       cobrancas.forEach((c) => { c.textContent = plan === 'anual' ? c.dataset.a : c.dataset.m; });
+      prices.forEach((p) => { const de = p.parentElement.querySelector('.preco-de'); if (!de) return; de.hidden = plan !== 'anual'; de.textContent = 'R$\u00a0' + p.dataset.m; });
     };
     if (animar && !reduce) { prices.forEach((p) => p.classList.add('troca')); setTimeout(troca, 150); } else troca();
   };
