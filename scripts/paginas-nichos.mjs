@@ -70,7 +70,7 @@ ${base.cabecalho}
   <h1 class="h2 nicho-h1">${esc(n.titulo)}</h1>
   <p class="sub">${esc(n.intro)}</p>
   <div class="acoes">
-   <a href="${app}" class="btn btn--cafe" title="Comece com 2 semanas grátis" target="_blank" rel="noopener">Comece com 2 semanas grátis</a>
+   <a href="${app}" class="btn btn--cafe" title="Testar grátis por 2 semanas" target="_blank" rel="noopener">Testar grátis por 2 semanas</a>
    <a href="/#teste" class="btn btn--contorno" title="Ver o cardápio de exemplo">Ver o cardápio de exemplo</a>
   </div>
  </div>
@@ -107,7 +107,7 @@ ${base.cabecalho}
    <div>
     <h2 class="h2">Comece com 2 semanas grátis</h2>
     <p class="lead">Sem cartão e sem fidelidade. Crie o cardápio, imprima os QR Codes e receba o primeiro pedido.</p>
-    <a href="${app}" class="btn btn--cafe" title="Criar minha conta" target="_blank" rel="noopener">Criar minha conta</a>
+    <a href="${app}" class="btn btn--cafe" title="Testar grátis por 2 semanas" target="_blank" rel="noopener">Testar grátis por 2 semanas</a>
    </div>
    <img class="mascote mascote--final" src="/mascote/rato-comemorando.svg" alt="Pierre, o mascote, comemorando" width="300" height="321" loading="lazy" decoding="async">
   </div>

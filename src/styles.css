@@ -484,3 +484,5 @@ details[open]::details-content { block-size: auto; }
   .js [data-r] { opacity: 1; transform: none; }
   @view-transition { navigation: none; }
 }
+.plan-btn .eco { font-size: 13px; font-weight: 700; color: var(--laranja-esc); margin-left: 4px; }
+.plan-btn[aria-pressed="true"] .eco { color: var(--laranja); }
