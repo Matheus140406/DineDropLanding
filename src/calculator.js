@@ -1,6 +1,6 @@
 import { GARCOM_PRICE } from './config.js';
 
-const fmt = (n) => 'R$ ' + Math.round(n).toLocaleString('pt-BR');
+const fmt = (n) => 'R$\u00a0' + Math.round(n).toLocaleString('pt-BR');
 
 export function initCalculator() {
   const fat = document.getElementById('fat');

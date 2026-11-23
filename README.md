@@ -57,6 +57,8 @@ Definidas no `.env` ou na hospedagem. Sem elas valem os padrões abaixo (veja `.
 - **Planos e preços**: ficam no `index.html` (cards e tabela comparativa) e devem bater com as assinaturas do app.
 - **Vídeo do cardápio**: coloque o arquivo em `public/video/cardapio.mp4` (vertical, até uns 10 MB). No build, o player aparece na aba "Seu cliente" no lugar da imagem; sem o arquivo, a imagem continua.
 
+- **Depoimentos**: edite `src/depoimentos.js`. Vazio, a seção não aparece. Cada item precisa de texto, nome, cargo, negócio, cidade e data, e pode ter foto em `public/img/depoimentos/`. Publique só relatos de clientes reais que autorizaram.
+
 ## Segurança (CSP)
 
 A `Content-Security-Policy` libera um único script embutido (a marcação da classe `js` no `<head>`), identificado pelo hash. Se esse script mudar, rode `npm run check:csp`: ele mostra o hash novo para colocar no `vercel.json` e no `public/_headers`, e confere que os dois arquivos têm os mesmos cabeçalhos.

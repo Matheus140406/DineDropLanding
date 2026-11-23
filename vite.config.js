@@ -3,6 +3,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import QRCode from 'qrcode';
 import { secaoNichos, gerarPaginasNichos } from './scripts/paginas-nichos.mjs';
+import { secaoDepoimentos } from './scripts/depoimentos.mjs';
 
 // Endereços (10/11/2026): o app e os cardápios em appdinedrop.com; a landing em www.dinedrop.com.br (dinedrop.com.br redireciona para o www na Vercel).
 // Os links do index.html usam %VITE_APP_URL% e %VITE_SITE_URL%; na hospedagem, basta definir as variáveis. Sem elas, valem estes padrões.
@@ -41,7 +42,7 @@ const cardapiosDeExemplo = () => {
       const video = existsSync(resolve('public/video/cardapio.mp4'))
         ? `<video class="papel-video" controls playsinline preload="metadata" poster="/img/cardapio-app-720.webp" aria-label="Vídeo do prato aberto no cardápio do DineDrop"><source src="/video/cardapio.mp4" type="video/mp4"></video>`
         : '';
-      return html.replace('<!--video:cardapio-->', video).replace('<!--nichos-->', secaoNichos());
+      return html.replace('<!--video:cardapio-->', video).replace('<!--nichos-->', secaoNichos()).replace('<!--depoimentos-->', secaoDepoimentos());
     },
   };
 };

@@ -45,14 +45,21 @@ try {
   await celular.evaluate(() => document.getElementById('planos').scrollIntoView());
   await celular.click('.plan-btn[data-plan="anual"]');
   await celular.waitForTimeout(500);
-  confere((await celular.textContent('[data-m="89"]')) === 'R$ 69', 'plano anual mostra R$ 69');
+  confere((await celular.textContent('[data-m="89"]')) === 'R$ 69', 'plano anual mostra R$ 69');
+  const riscado = await celular.$$eval('.preco-de', (els) => els.filter((e) => !e.hidden && e.textContent.includes('R$')).length);
+  confere(riscado === 3, 'plano anual mostra o preço cheio riscado nos 3 planos', String(riscado));
+  confere((await celular.$$('#dores .painel .btn')).length === 8, 'cada dor termina com um botão de cadastro');
+  confere((await celular.$$('#depoimentos')).length === 0, 'sem depoimentos reais, a seção não aparece');
+  await celular.evaluate(() => document.getElementById('papel-2').click());
+  await celular.click('[data-kds-pausa]');
+  confere((await celular.getAttribute('[data-kds-pausa]', 'aria-pressed')) === 'true', 'botão pausa a animação do KDS');
 
   await celular.fill('#fat', '');
   await celular.type('#fat', '50000');
   await celular.fill('#com', '');
   await celular.type('#com', '20');
   await celular.waitForTimeout(800);
-  confere((await celular.textContent('[data-out="comissaoMes"]')) === 'R$ 10.000', 'calculadora: comissão do mês');
+  confere((await celular.textContent('[data-out="comissaoMes"]')) === 'R$ 10.000', 'calculadora: comissão do mês');
 
   const linhas = await celular.$$eval('.tabela tbody tr', (r) => r.length);
   confere(linhas === 15, 'tabela comparativa com 15 linhas', String(linhas));
