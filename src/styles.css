@@ -17,6 +17,8 @@
   --serif: 'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif;   --sans: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   --r: 14px;
+  --r-lg: 22px;
+  --r-sm: 8px;
   --r-btn: 10px;
   --sombra-img: 0 20px 40px rgba(43, 33, 26, .24);
   --gutter: clamp(20px, 5vw, 80px);
@@ -206,7 +208,7 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .duas > .cab { margin-bottom: 0; }
 @media (min-width: 901px) { .duas { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 72px; } }
 
-.exp { display: grid; gap: 28px; align-items: center; background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: clamp(24px, 4vw, 48px); margin-bottom: clamp(48px, 6vw, 72px); }
+.exp { display: grid; gap: 28px; align-items: center; background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r-lg); padding: clamp(24px, 4vw, 48px); margin-bottom: clamp(48px, 6vw, 72px); }
 .exp-passos { display: grid; gap: 22px; }
 .exp-passos li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 16px; align-items: start; }
 .exp-passos li > span { width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--laranja); color: var(--tinta); font-family: var(--serif); font-weight: 700; font-size: 20px; }
@@ -247,7 +249,7 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
   .papeis-lista button { flex: 1 1 0; min-width: 0; padding: 0 8px; font-size: 16px; line-height: 1.15; text-wrap: balance; }
 }
 .papeis-paineis { display: grid; gap: 20px; margin-top: 24px; }
-.papel { display: grid; gap: 32px; align-items: center; background: var(--areia); border-radius: var(--r); padding: clamp(24px, 4vw, 56px); }
+.papel { display: grid; gap: 32px; align-items: center; background: var(--areia); border-radius: var(--r-lg); padding: clamp(24px, 4vw, 56px); }
 .js-ok .papel.entra { animation: painel .4s var(--ease) both; }
 .papel-txt { display: grid; gap: 16px; justify-items: start; }
 .papel-txt > p { color: var(--muted); max-width: 56ch; }
@@ -255,7 +257,7 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .papel-txt .lista-ok li { gap: 12px; }
 .papel-txt .lista-ok svg { width: 22px; height: 22px; margin-top: 2px; }
 .papel-vis { display: flex; flex-direction: column; align-items: center; gap: 14px; min-width: 0; }
-.papel-vis img { display: block; width: 100%; border-radius: 12px; border: 1px solid var(--linha-2); background: var(--creme); }
+.papel-vis img { display: block; width: 100%; border-radius: var(--r-sm); border: 1px solid var(--linha-2); background: var(--creme); }
 .papel-vis--cel img { max-width: 480px; }
 .papel-vis--painel img { max-width: 560px; }
 .papel-vis--tv { align-items: stretch; padding-bottom: 12px; }
@@ -294,7 +296,7 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 
 .abas-lista { display: none; }
 .abas-paineis { display: grid; gap: 16px; }
-.painel { display: grid; border-radius: var(--r); overflow: hidden; background: var(--cafe-2); }
+.painel { display: grid; border-radius: var(--r-lg); overflow: hidden; background: var(--cafe-2); }
 .painel-dor, .painel-cura { padding: clamp(24px, 3.4vw, 40px); }
 .painel-dor p:last-child { color: var(--muted-escuro); margin-top: 12px; }
 .painel-cura { background: var(--laranja); color: var(--tinta); display: flex; flex-direction: column; gap: 12px; }
@@ -321,7 +323,7 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 }
 
 .nichos { display: grid; gap: 20px; }
-.bloco { display: flex; flex-direction: column; gap: 14px; background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r); padding: clamp(24px, 3.4vw, 44px); }
+.bloco { display: flex; flex-direction: column; gap: 14px; background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r-lg); padding: clamp(24px, 3.4vw, 44px); }
 .bloco > p:not(.demo-tipo) { color: var(--muted); margin-bottom: 12px; }
 .bloco--cafe { background: var(--cafe); border-color: var(--cafe); color: var(--creme); }
 .bloco--cafe > p:not(.demo-tipo) { color: var(--muted-escuro); }
@@ -346,7 +348,7 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .nicho-h1 { max-width: 18ch; }
 .nicho-topo .acoes .btn--contorno { color: var(--cafe); }
 .curas { display: grid; gap: 16px; }
-.cura { display: grid; border-radius: var(--r); overflow: hidden; background: var(--cafe-2); }
+.cura { display: grid; border-radius: var(--r-lg); overflow: hidden; background: var(--cafe-2); }
 .cura-dor { padding: 24px; }
 .cura-dor .painel-rot { color: var(--laranja); }
 .cura-sol { background: var(--laranja); color: var(--tinta); padding: 24px; }
@@ -363,7 +365,7 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
 .como-txt { min-width: 0; }
 .facil { margin-top: 32px; padding-top: 20px; border-top: 1px dashed var(--linha-2); color: var(--muted); max-width: 56ch; }
 .facil strong { color: var(--cafe); }
-.como-img { display: flex; justify-content: center; background: var(--laranja); border-radius: var(--r); padding: clamp(28px, 4vw, 48px); }
+.como-img { display: flex; justify-content: center; background: var(--laranja); border-radius: var(--r-lg); padding: clamp(28px, 4vw, 48px); }
 .como-img img { width: min(100%, 260px); border-radius: 28px; border: 6px solid var(--cafe); box-shadow: var(--sombra-img); }
 @media (min-width: 901px) { .como { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 64px; } }
 
@@ -412,7 +414,7 @@ use, symbol { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linec
   .menu-lista { margin-bottom: 28px; }
 }
 
-.comparar { margin-top: clamp(40px, 5vw, 64px); border: 1px solid var(--linha-2); border-radius: var(--r); background: var(--papel); }
+.comparar { margin-top: clamp(40px, 5vw, 64px); border: 1px solid var(--linha-2); border-radius: var(--r-lg); background: var(--papel); }
 .comparar summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; padding: 14px clamp(20px, 3vw, 32px); cursor: pointer; list-style: none; font-family: var(--serif); font-weight: 700; font-size: clamp(20px, 17px + .8vw, 26px); letter-spacing: -.015em; }
 .comparar summary::-webkit-details-marker { display: none; }
 .comparar summary::after, .faq summary::after { content: '+'; flex-shrink: 0; font-family: var(--sans); font-weight: 400; font-size: 30px; line-height: 1; color: var(--laranja-esc); transition: transform .3s var(--ease); }
@@ -450,7 +452,7 @@ details::details-content { block-size: 0; overflow: clip; transition: block-size
 details[open]::details-content { block-size: auto; }
 .mascote { display: block; width: min(55%, 220px); margin-top: 32px; }
 
-.final { display: grid; gap: 28px; align-items: center; background: var(--laranja); color: var(--tinta); border-radius: var(--r); padding: clamp(28px, 6vw, 80px); }
+.final { display: grid; gap: 28px; align-items: center; background: var(--laranja); color: var(--tinta); border-radius: var(--r-lg); padding: clamp(28px, 6vw, 80px); }
 .final .lead { margin: 18px 0 28px; max-width: 32ch; }
 .mascote--final { width: min(64%, 280px); margin: 0 auto; }
 @media (min-width: 801px) { .final { grid-template-columns: minmax(0, 1fr) auto; gap: 40px; } }
@@ -507,6 +509,6 @@ details[open]::details-content { block-size: auto; }
 
 .telas-reais { display: grid; gap: 28px; }
 .tela { margin: 0; display: grid; gap: 14px; align-content: start; }
-.tela img { display: block; width: 100%; height: auto; border-radius: var(--r); border: 1px solid var(--linha-2); background: var(--papel); }
+.tela img { display: block; width: 100%; height: auto; border-radius: var(--r-sm); border: 1px solid var(--linha-2); background: var(--papel); }
 .tela figcaption p { color: var(--muted); margin-top: 6px; max-width: 52ch; }
 @media (min-width: 761px) { .telas-reais { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; } }
