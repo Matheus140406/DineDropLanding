@@ -504,3 +504,9 @@ details[open]::details-content { block-size: auto; }
 .depo .depo-data { font-size: 15px; }
 @media (min-width: 761px) { .depos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1101px) { .depos { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+.telas-reais { display: grid; gap: 28px; }
+.tela { margin: 0; display: grid; gap: 14px; align-content: start; }
+.tela img { display: block; width: 100%; height: auto; border-radius: var(--r); border: 1px solid var(--linha-2); background: var(--papel); }
+.tela figcaption p { color: var(--muted); margin-top: 6px; max-width: 52ch; }
+@media (min-width: 761px) { .telas-reais { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; } }
