@@ -595,3 +595,10 @@ details[open]::details-content { block-size: auto; }
 .numeros dt { font-family: var(--serif); font-weight: 800; font-stretch: 90%; font-size: clamp(32px, 20px + 3.4vw, 60px); line-height: 1; letter-spacing: -.03em; color: var(--laranja-esc); }
 .numeros dd { margin: 8px 0 0; color: var(--muted); font-size: 16px; line-height: 1.35; }
 @media (min-width: 761px) { .numeros-grade { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; } }
+
+/* Venda dos serviços da Team Dev Tech no rodapé */
+.rodape-venda { max-width: 640px; }
+.rodape-sub { margin-top: 14px; max-width: 54ch; color: #E9DCC8; }
+.rodape-servicos { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.rodape-servicos li { padding: 8px 16px; border: 1px solid #6B5B4E; border-radius: 999px; color: var(--creme); font-weight: 700; font-size: 15px; }
+.rodape-topo .btn { align-self: center; }
