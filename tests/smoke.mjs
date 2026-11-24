@@ -49,7 +49,8 @@ try {
   const riscado = await celular.$$eval('.preco-de', (els) => els.filter((e) => !e.hidden && e.textContent.includes('R$')).length);
   confere(riscado === 3, 'plano anual mostra o preço cheio riscado nos 3 planos', String(riscado));
   confere((await celular.$$('#dores .painel .btn')).length === 8, 'cada dor termina com um botão de cadastro');
-  confere((await celular.$$('#depoimentos')).length === 0, 'sem depoimentos reais, a seção não aparece');
+  confere((await celular.$$('#depoimentos')).length === 0, 'sem depoimentos de clientes reais, essa seção não aparece');
+  confere((await celular.$$('#comentarios .coment')).length === 20, 'comentários dos donos aparecem na página');
   await celular.evaluate(() => document.getElementById('papel-2').click());
   await celular.click('[data-kds-pausa]');
   confere((await celular.getAttribute('[data-kds-pausa]', 'aria-pressed')) === 'true', 'botão pausa a animação do KDS');
