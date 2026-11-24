@@ -3,6 +3,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { NICHOS, GRUPOS } from '../src/nichos.js';
+import { GUIAS } from '../src/guias.js';
 
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -121,6 +122,73 @@ ${base.rodape}
 `;
 }
 
+
+function paginaGuia(g, base, site, app) {
+  const url = `${site}/guias/${g.slug}/`;
+  const titulo = `${g.titulo} | DineDrop`;
+  const outros = GUIAS.filter((o) => o.slug !== g.slug);
+  const ld = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'Article', '@id': `${url}#artigo`, headline: g.titulo, description: g.descricao, inLanguage: 'pt-BR', mainEntityOfPage: url, image: `${site}/img/og-1200x630.png`, author: { '@type': 'Organization', name: 'Team Dev Tech' }, publisher: { '@type': 'Organization', name: 'DineDrop', url: `${site}/` }, isPartOf: { '@id': `${site}/#site` } },
+      { '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Início', item: `${site}/` },
+        { '@type': 'ListItem', position: 2, name: 'Guias', item: url },
+        { '@type': 'ListItem', position: 3, name: g.curto, item: url },
+      ] },
+    ],
+  };
+  return `<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+${JS_CLASSE}
+<title>${esc(titulo)}</title>
+<meta name="description" content="${esc(g.descricao)}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#F57C00">
+<link rel="canonical" href="${url}">
+<meta property="og:type" content="article"><meta property="og:locale" content="pt_BR"><meta property="og:site_name" content="DineDrop"><meta property="og:url" content="${url}">
+<meta property="og:title" content="${esc(titulo)}"><meta property="og:description" content="${esc(g.descricao)}">
+<meta property="og:image" content="${site}/img/og-1200x630.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(titulo)}"><meta name="twitter:description" content="${esc(g.descricao)}"><meta name="twitter:image" content="${site}/img/og-1200x630.png">
+<script type="application/ld+json">${JSON.stringify(ld)}</script>
+${base.fontes}
+<link rel="icon" type="image/png" href="/img/dinedrop-icon.png">
+<link rel="apple-touch-icon" href="/img/dinedrop-icon.png">
+${base.assets}
+</head>
+<body>
+${base.sprite}
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+${base.cabecalho}
+
+<main id="conteudo">
+<section class="sec nicho-topo">
+ <div class="wrap">
+  <nav class="trilha" aria-label="Você está em"><a href="/">Início</a><span aria-hidden="true">/</span><span>Guias</span><span aria-hidden="true">/</span><span aria-current="page">${esc(g.curto)}</span></nav>
+  <h1 class="h2 nicho-h1">${esc(g.titulo)}</h1>
+  <p class="sub">${esc(g.intro)}</p>
+ </div>
+</section>
+
+<article class="sec sec--sem-topo">
+ <div class="wrap guia">
+  ${g.secoes.map((x) => `<h2 class="h3">${esc(x.h)}</h2>${x.p.map((t) => `<p>${esc(t)}</p>`).join('')}`).join('\n  ')}
+  <aside class="guia-ficha" aria-label="O que o DineDrop oferece para isso"><p class="painel-rot">Com o DineDrop</p><ul class="lista-ok">${g.ficha.map((f) => `<li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg><span>${esc(f)}</span></li>`).join('')}</ul></aside>
+  <div class="acoes"><a href="${app}" class="btn btn--cafe" title="Testar grátis por 2 semanas" target="_blank" rel="noopener">Testar grátis por 2 semanas</a><a href="/#planos" class="btn btn--contorno">Ver os planos</a></div>
+  <p class="guia-mais"><strong>Continue lendo:</strong> ${outros.map((o) => `<a href="/guias/${o.slug}/">${esc(o.curto)}</a>`).join(' · ')}</p>
+ </div>
+</article>
+</main>
+
+${base.rodape}
+</body>
+</html>
+`;
+}
+
 // Depois do build: escreve dist/nichos/<slug>/index.html e coloca as páginas no sitemap
 export function gerarPaginasNichos(dist, site, app) {
   const idx = readFileSync(resolve(dist, 'index.html'), 'utf8');
@@ -138,9 +206,14 @@ export function gerarPaginasNichos(dist, site, app) {
     mkdirSync(dirname(arq), { recursive: true });
     writeFileSync(arq, pagina(n, base, site, app));
   }
+  for (const g of GUIAS) {
+    const arq = resolve(dist, 'guias', g.slug, 'index.html');
+    mkdirSync(dirname(arq), { recursive: true });
+    writeFileSync(arq, paginaGuia(g, base, site, app));
+  }
   const sm = resolve(dist, 'sitemap.xml');
   if (existsSync(sm)) {
-    const urls = NICHOS.map((n) => `  <url><loc>${site}/nichos/${n.slug}/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>`).join('\n');
+    const urls = [...NICHOS.map((n) => `  <url><loc>${site}/nichos/${n.slug}/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>`), ...GUIAS.map((g) => `  <url><loc>${site}/guias/${g.slug}/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>`)].join('\n');
     writeFileSync(sm, readFileSync(sm, 'utf8').replace('</urlset>', urls + '\n</urlset>'));
   }
 }

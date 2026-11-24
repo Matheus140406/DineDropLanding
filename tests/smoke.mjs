@@ -90,6 +90,19 @@ try {
     await pagina.close();
   }
 
+  for (const slug of ['delivery-proprio-sem-ifood', 'cardapio-digital-com-qr-code', 'pedidos-do-whatsapp-organizados']) {
+    const pagina = await navegador.newPage({ viewport: { width: 390, height: 844 } });
+    const resposta = await pagina.goto(`${BASE}/guias/${slug}/`, { waitUntil: 'domcontentloaded' });
+    const info = await pagina.evaluate(() => ({
+      h1: document.querySelectorAll('h1').length,
+      descricao: document.querySelector('meta[name=description]')?.content.length ?? 0,
+      ld: [...document.querySelectorAll('script[type="application/ld+json"]')].every((s) => { try { JSON.parse(s.textContent); return true; } catch { return false; } }),
+      secoes: document.querySelectorAll('.guia h2').length,
+    }));
+    confere(resposta.status() === 200 && info.h1 === 1 && info.ld && info.secoes >= 4 && info.descricao > 0 && info.descricao <= 170, `guia /guias/${slug}/`, JSON.stringify(info));
+    await pagina.close();
+  }
+
   for (const largura of LARGURAS) {
     for (const caminho of ['/', '/nichos/bar/']) {
       const pagina = await navegador.newPage({ viewport: { width: largura, height: 800 }, isMobile: largura < 1000 });
