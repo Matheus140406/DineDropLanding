@@ -1,0 +1,24 @@
+// Comentários que donos e gerentes de restaurantes fizeram ao conhecer o DineDrop, antes do lançamento.
+// Não são avaliações de uso: a seção diz isso. Sobrenome abreviado. Avaliações de clientes de verdade vão em depoimentos.js.
+export const COMENTARIOS = [
+  ['Gostei da ideia. Hoje a gente perde muito tempo organizando pedido, principalmente quando começa a encher.', 'Lucas M.', 'Dono de hamburgueria'],
+  ['Tem como colocar vídeo dos produtos no cardápio? Acho que seria muito bom para mostrar os cafés e sobremesas.', 'Mariana C.', 'Dona de cafeteria'],
+  ['Estou procurando um sistema assim faz um tempo. Hoje controlo muita coisa separada e acaba virando uma bagunça.', 'Rafael O.', 'Proprietário de restaurante'],
+  ['Achei interessante, principalmente a parte do cardápio digital. Facilita bastante para o cliente visualizar os produtos.', 'Camila R.', 'Dona de doceria'],
+  ['O sistema também organiza os pedidos que chegam pelo delivery ou é mais voltado para o atendimento presencial?', 'Pedro A.', 'Dono de pizzaria'],
+  ['Quem trabalha com restaurante sabe como é complicado controlar mesa, pedido e cozinha ao mesmo tempo.', 'Fernanda M.', 'Gerente de restaurante'],
+  ['Gostei bastante da proposta, principalmente por reunir várias funções em uma plataforma só.', 'Gustavo R.', 'Dono de bar'],
+  ['Estou montando meu negócio e já estou pesquisando sistemas para não começar dependendo de papel e planilha.', 'Juliana F.', 'Empreendedora de alimentação'],
+  ['O cardápio ficou bonito! Hoje ter uma apresentação boa dos produtos faz muita diferença.', 'Bianca S.', 'Proprietária de confeitaria'],
+  ['Se tiver como acompanhar os pedidos da cozinha em tempo real, já ajuda demais na operação.', 'Thiago M.', 'Dono de restaurante'],
+  ['Esse controle de mesas funciona também para quem trabalha com comandas?', 'André C.', 'Dono de cafeteria'],
+  ['Gostei da ideia de colocar vídeos nos produtos. Hoje o cliente gosta de ver o que está comprando.', 'Letícia O.', 'Dona de lanchonete'],
+  ['Consigo administrar mais de uma unidade pelo mesmo acesso? Tenho interesse em expandir futuramente.', 'Marcelo F.', 'Empresário de gastronomia'],
+  ['Estou precisando organizar melhor meus pedidos. Faço muita coisa pelo WhatsApp e isso toma bastante tempo.', 'Ana Clara R.', 'Dona de doceria'],
+  ['Gostaria de testar, principalmente essa parte de integrar cozinha e delivery.', 'Diego M.', 'Dono de hamburgueria'],
+  ['O que faz falta em muitos sistemas é ter tudo organizado sem precisar abrir várias telas diferentes.', 'Patrícia G.', 'Gerente de cafeteria'],
+  ['Quando precisar mudar o preço de um produto, consigo atualizar direto no cardápio?', 'Bruno L.', 'Dono de pizzaria'],
+  ['Estou acompanhando! Acho que soluções assim podem ajudar bastante quem está começando no ramo de alimentação.', 'Isabela C.', 'Empreendedora'],
+  ['O KDS é uma parte que me interessa bastante. Organização dos pedidos na cozinha faz muita diferença no atendimento.', 'Felipe A.', 'Proprietário de restaurante'],
+  ['Gostei da proposta por pensar na experiência do cliente e também na organização de quem trabalha no estabelecimento.', 'Carolina M.', 'Dona de cafeteria'],
+];
