@@ -573,9 +573,17 @@ details[open]::details-content { block-size: auto; }
     }
     @keyframes sobe { from { opacity: 0; transform: translateY(36px) scale(.985); } to { opacity: 1; transform: none; } }
     .hero-cel { animation: gira linear both; animation-timeline: scroll(root); animation-range: 0 60vh; }
-    @keyframes gira { to { transform: translateY(-24px) rotate(2deg); } }
+    @keyframes gira { to { translate: 0 -24px; rotate: 2deg; } }
   }
 }
 .sec--cafe, .sec--areia { border-radius: var(--r-lg) var(--r-lg) 0 0; }
 
 @media (max-width: 760px) { #painel .tela { flex-basis: 150vw; } #painel .tela figcaption { position: sticky; left: 0; max-width: 92vw; } }
+
+/* 3D: perspectiva, repouso inclinado e giro com o ponteiro */
+.hero-tela { perspective: 1100px; }
+.hero--quente .hero-cel { transform: rotateY(calc(-9deg + var(--ry, 0deg))) rotateX(calc(4deg + var(--rx, 0deg))); transform-style: preserve-3d; transition: transform .25s var(--ease); box-shadow: 18px 34px 60px rgba(43, 33, 26, .4), 2px 0 0 #3A2E25; }
+.hero-aviso { transform: translateZ(60px); }
+#painel .telas-reais { perspective: 1400px; }
+#painel .tela { transform: rotateY(calc(-3deg + var(--ry, 0deg))) rotateX(var(--rx, 0deg)); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+@media (prefers-reduced-motion: reduce) { .hero--quente .hero-cel, #painel .tela { transform: none; } }
