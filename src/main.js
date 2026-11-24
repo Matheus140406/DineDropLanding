@@ -8,6 +8,7 @@ import { initHeader } from './header.js';
 import { initAbas } from './abas.js';
 import { initKds } from './kds.js';
 import { initTilt } from './tilt.js';
+import { initConta } from './conta.js';
 
 // O script rodou: desliga a rede de segurança do CSS e deixa o reveal no controle
 document.documentElement.classList.add('js-ok');
@@ -19,6 +20,7 @@ initHeader();
 initAbas();
 initKds();
 initTilt();
+initConta();
 initReveal();
 initCalculator();
 initPlans();

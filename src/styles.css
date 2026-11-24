@@ -638,3 +638,43 @@ details[open]::details-content { block-size: auto; }
 .coment:nth-child(3n+2) .coment-av { background: var(--tinta); color: var(--laranja); }
 .coment figcaption span:not(.coment-av) { display: block; font-size: 15px; opacity: .8; line-height: 1.3; }
 @media (min-width: 761px) { .coment:nth-child(odd) { transform: rotate(-.8deg); } .coment:nth-child(even) { transform: rotate(.8deg); } }
+
+/* Guias */
+.guia { max-width: 760px; margin-inline: auto; }
+.guia h2 { margin-top: 40px; }
+.guia p { margin-top: 12px; color: var(--muted); font-size: clamp(17px, 16px + .3vw, 19px); }
+.guia-ficha { margin-top: 40px; padding: clamp(20px, 3vw, 28px); border: 2px solid var(--cafe); border-radius: var(--r-lg); background: var(--papel); box-shadow: 6px 6px 0 var(--laranja); }
+.guia .acoes { margin-top: 32px; }
+.guia-mais { margin-top: 32px; }
+.guia-mais a { display: inline-block; min-height: 44px; line-height: 44px; font-weight: 700; }
+@media (min-width: 901px) { .rodape-grid { grid-template-columns: 1.6fr repeat(4, 1fr) 1.2fr; gap: 32px; } }
+
+/* Mais movimento: só transform e opacidade, e só com mouse nos efeitos de passar por cima */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-pierre { animation: balanca 4.5s ease-in-out infinite; transform-origin: 50% 100%; }
+  @keyframes balanca { 50% { transform: rotate(-4deg) translateY(-6px); } }
+  .selo { animation: gira-selo 9s ease-in-out infinite; }
+  @keyframes gira-selo { 50% { transform: rotate(-4deg) scale(1.04); } }
+  .chip, .btn { will-change: auto; }
+  .hero .hero-para .chip { animation: entra .6s var(--ease) both; }
+  .hero .hero-para .chip:nth-of-type(2) { animation-delay: .46s; }
+  .hero .hero-para .chip:nth-of-type(3) { animation-delay: .52s; }
+  .hero .hero-para .chip:nth-of-type(4) { animation-delay: .58s; }
+  .hero .hero-para .chip:nth-of-type(5) { animation-delay: .64s; }
+  .hero .hero-para .chip:nth-of-type(6) { animation-delay: .70s; }
+  @supports (animation-timeline: view()) {
+    .numeros-grade > div, .coment, .facil, .guia-ficha { animation: sobe linear both; animation-timeline: view(); animation-range: entry 0% entry 45%; }
+    .numeros-grade > div:nth-child(2) { animation-range: entry 5% entry 50%; }
+    .numeros-grade > div:nth-child(3) { animation-range: entry 10% entry 55%; }
+    .numeros-grade > div:nth-child(4) { animation-range: entry 15% entry 60%; }
+    .passo-n { animation: aparece-n linear both; animation-timeline: view(); animation-range: entry 10% entry 70%; }
+    @keyframes aparece-n { from { opacity: 0; transform: translateX(-24px) scale(.8); } to { opacity: 1; transform: none; } }
+  }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .coment, .plano, .bloco, .numeros-grade > div { transition: translate .25s var(--ease), box-shadow .25s var(--ease); }
+  .coment:hover, .plano:hover, .bloco:hover, .numeros-grade > div:hover { translate: 0 -6px; }
+  .numeros-grade > div:hover { box-shadow: 0 14px 28px rgba(160, 74, 20, .18); }
+  .btn { transition-property: background-color, color, border-color, transform, translate, box-shadow; }
+  .btn--laranja:hover, .btn--cafe:hover { translate: 0 -2px; box-shadow: 0 8px 18px rgba(43, 33, 26, .22); }
+}
