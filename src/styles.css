@@ -587,3 +587,11 @@ details[open]::details-content { block-size: auto; }
 #painel .telas-reais { perspective: 1400px; }
 #painel .tela { transform: rotateY(calc(-3deg + var(--ry, 0deg))) rotateX(var(--rx, 0deg)); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
 @media (prefers-reduced-motion: reduce) { .hero--quente .hero-cel, #painel .tela { transform: none; } }
+
+/* Faixa de números */
+.numeros { padding-block: clamp(8px, 2vw, 24px) clamp(24px, 4vw, 48px); }
+.numeros-grade { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; }
+.numeros-grade > div { padding: clamp(16px, 2.4vw, 28px); background: var(--papel); border: 1px solid var(--linha); border-radius: var(--r-lg); }
+.numeros dt { font-family: var(--serif); font-weight: 800; font-stretch: 90%; font-size: clamp(32px, 20px + 3.4vw, 60px); line-height: 1; letter-spacing: -.03em; color: var(--laranja-esc); }
+.numeros dd { margin: 8px 0 0; color: var(--muted); font-size: 16px; line-height: 1.35; }
+@media (min-width: 761px) { .numeros-grade { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; } }
