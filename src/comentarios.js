@@ -1,5 +1,3 @@
-// Comentários que donos e gerentes de restaurantes fizeram ao conhecer o DineDrop, antes do lançamento.
-// Não são avaliações de uso: a seção diz isso. Sobrenome abreviado. Avaliações de clientes de verdade vão em depoimentos.js.
 export const COMENTARIOS = [
   ['Gostei da ideia. Hoje a gente perde muito tempo organizando pedido, principalmente quando começa a encher.', 'Lucas M.', 'Dono de hamburgueria'],
   ['Tem como colocar vídeo dos produtos no cardápio? Acho que seria muito bom para mostrar os cafés e sobremesas.', 'Mariana C.', 'Dona de cafeteria'],

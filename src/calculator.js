@@ -9,7 +9,7 @@ export function initCalculator() {
   const yes = document.getElementById('sc-economiza');
   const no = document.getElementById('sc-naoEconomiza');
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // número que corre até o valor novo (450 ms, desacelera no fim); com movimento reduzido, troca direto
+
   const out = (k, n) => document.querySelectorAll('[data-out="' + k + '"]').forEach((e) => {
     const de = Number(e.dataset.v ?? n), para = Math.round(n);
     e.dataset.v = String(para);

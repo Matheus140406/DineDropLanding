@@ -1,4 +1,3 @@
-// Efeito 3D: o celular do topo e as janelas do painel acompanham o ponteiro. Só com mouse e sem "reduzir movimento".
 export function initTilt() {
   const ok = matchMedia('(hover: hover) and (pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!ok) return;

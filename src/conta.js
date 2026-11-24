@@ -1,4 +1,3 @@
-// Números da faixa contam até o valor quando entram na tela. Sem script ou com "reduzir movimento", ficam como estão no HTML.
 export function initConta() {
   const els = [...document.querySelectorAll('[data-conta]')];
   if (!els.length || matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;

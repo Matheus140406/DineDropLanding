@@ -1,5 +1,3 @@
-// Barra de progresso e cabeçalho: ganha borda ao rolar, some ao descer e volta ao subir.
-// Só mexe em transform e opacity; com movimento reduzido o cabeçalho fica sempre à vista.
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 export function initMotion() {

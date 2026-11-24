@@ -1,5 +1,3 @@
-// Nichos: a lista da página inicial (<!--nichos-->) e as páginas /nichos/<slug>/, geradas de src/nichos.js.
-// As páginas reaproveitam do dist/index.html já pronto: CSS e JS com hash, ícones (sprite) e rodapé.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { NICHOS, GRUPOS } from '../src/nichos.js';
@@ -7,7 +5,6 @@ import { GUIAS } from '../src/guias.js';
 
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-// Seção "Nichos" da página inicial: para cada nicho, o que o DineDrop resolve + link para a página dele
 export function secaoNichos() {
   return '<div class="nichos">' + GRUPOS.map((g, i) => `
    <article class="bloco${i ? ' bloco--cafe' : ''}">
@@ -20,7 +17,7 @@ export function secaoNichos() {
    </article>`).join('') + '\n  </div>';
 }
 
-const JS_CLASSE = '<script>document.documentElement.classList.add("js")</script>'; // igual ao index.html: o hash está na CSP
+const JS_CLASSE = '<script>document.documentElement.classList.add("js")</script>';
 
 function pagina(n, base, site, app) {
   const url = `${site}/nichos/${n.slug}/`;
@@ -122,7 +119,6 @@ ${base.rodape}
 `;
 }
 
-
 function paginaGuia(g, base, site, app) {
   const url = `${site}/guias/${g.slug}/`;
   const titulo = `${g.titulo} | DineDrop`;
@@ -189,7 +185,6 @@ ${base.rodape}
 `;
 }
 
-// Depois do build: escreve dist/nichos/<slug>/index.html e coloca as páginas no sitemap
 export function gerarPaginasNichos(dist, site, app) {
   const idx = readFileSync(resolve(dist, 'index.html'), 'utf8');
   const pega = (re, nome) => { const m = idx.match(re); if (!m) throw new Error('nichos: não achei ' + nome + ' no index.html'); return m[0]; };

@@ -1,4 +1,3 @@
-// Abas acessíveis (seção "As dores"): setas, Home e End trocam de aba. Sem script, todos os painéis aparecem.
 export function initAbas() {
   document.querySelectorAll('[data-abas]').forEach((box) => {
     const abas = [...box.querySelectorAll('[role="tab"]')];
@@ -12,7 +11,7 @@ export function initAbas() {
         paineis[k].classList.toggle('entra', sel);
       });
       if (foco) abas[i].focus();
-      // no celular a lista rola de lado: deixa a aba escolhida à vista, sem mexer na rolagem da página
+
       const lista = abas[i].parentElement;
       if (lista.scrollWidth > lista.clientWidth) lista.scrollTo({ left: abas[i].offsetLeft - lista.offsetLeft - 20, behavior: 'smooth' });
     };
