@@ -512,3 +512,70 @@ details[open]::details-content { block-size: auto; }
 .tela img { display: block; width: 100%; height: auto; border-radius: var(--r-sm); border: 1px solid var(--linha-2); background: var(--papel); }
 .tela figcaption p { color: var(--muted); margin-top: 6px; max-width: 52ch; }
 @media (min-width: 761px) { .telas-reais { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; } }
+
+/* Redesenho quente: toalha xadrez, pratos grandes, faixa de telas, Pierre */
+.hero--quente { background: var(--creme); color: var(--cafe); --fg: var(--cafe); --fg-2: var(--muted); --rule: var(--linha-2); --acc: var(--laranja-txt); }
+.hero--quente::before { content: ''; position: absolute; inset: 0 0 auto auto; width: min(58vw, 720px); aspect-ratio: 1; transform: translate(26%, -30%) rotate(-8deg); background: repeating-conic-gradient(var(--laranja) 0 25%, #FFA94D 0 50%) 0 0 / 56px 56px; opacity: .22; border-radius: 0 0 0 48%; pointer-events: none; }
+.hero--quente .hero-grid { position: relative; }
+.hero--quente .lead { color: var(--cafe); }
+.hero--quente .h1 { font-size: clamp(42px, 22px + 5.2vw, 92px); }
+.hero--quente .logo--g span { color: var(--cafe); }
+.hero--quente .logo--g { margin-bottom: clamp(16px, 2.4vw, 28px); }
+.hero--quente .btn--contorno:hover { color: var(--creme); }
+.hero--quente .hero-para .chip { color: var(--cafe); border-color: var(--linha-2); background: var(--papel); }
+.hero--quente .hero-para .chip:hover { background: var(--laranja); border-color: var(--laranja); }
+.hero--quente .nota--forte { color: var(--cafe); }
+.hero--quente .hero-tela::before { width: min(96%, 520px); background: var(--laranja); box-shadow: inset 0 0 0 16px #FFA94D, inset 0 0 0 18px rgba(21, 19, 15, .15), 0 30px 60px rgba(160, 74, 20, .28); }
+.hero--quente .hero-cel { width: min(66%, 330px); box-shadow: 0 34px 60px rgba(43, 33, 26, .38); }
+.hero-aviso { position: absolute; z-index: 2; display: flex; align-items: center; gap: 8px; margin: 0; padding: 10px 16px 10px 12px; background: var(--papel); color: var(--cafe); border: 1px solid var(--linha-2); border-radius: 999px; font-weight: 700; font-size: 15px; line-height: 1.2; box-shadow: 0 12px 28px rgba(43, 33, 26, .2); }
+.hero-aviso svg { flex-shrink: 0; width: 24px; height: 24px; padding: 4px; border-radius: 50%; background: var(--laranja); color: var(--tinta); stroke-width: 2.4; }
+.hero-aviso--1 { top: 12%; left: 0; }
+.hero-aviso--2 { bottom: 20%; right: 0; }
+.hero-pierre { position: absolute; z-index: 3; left: 2%; bottom: -2%; width: clamp(84px, 16vw, 150px); height: auto; }
+@media (min-width: 981px) { .hero-aviso--1 { left: -4%; } .hero-aviso--2 { right: -2%; } .hero-pierre { left: 4%; } }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-aviso--1 { animation: flutua 6s ease-in-out infinite; }
+  .hero-aviso--2 { animation: flutua 7s ease-in-out -2s infinite; }
+  @keyframes flutua { 50% { transform: translateY(-8px); } }
+}
+
+/* Vantagens em abas */
+.abas--carta .abas-lista button { border-color: var(--linha-2); color: var(--cafe); background: var(--papel); font-weight: 700; }
+.abas--carta .abas-lista button:hover { border-color: var(--laranja); }
+.abas--carta .abas-lista button[aria-selected="true"] { background: var(--cafe); border-color: var(--cafe); color: var(--creme); }
+.js-ok .abas--carta { display: block; }
+.js-ok .abas--carta .abas-lista { flex-direction: row; overflow: visible; margin: 0 0 28px; padding: 0; gap: 8px; flex-wrap: wrap; }
+.abas--carta .abas-lista button { width: auto; min-height: 52px; padding: 0 26px; border-radius: 999px; font-size: 17px; border: 2px solid var(--linha-2); }
+.abas--carta .carta-sec[hidden] { display: none; }
+.js-ok .abas--carta .carta { display: block; }
+.js-ok .abas--carta .carta-tit { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); padding: 0; border: 0; }
+.js-ok .abas--carta .carta-sec { animation: painel .4s var(--ease) both; }
+.js-ok .abas--carta .carta-sec dl { display: grid; gap: 0 56px; }
+@media (min-width: 761px) { .js-ok .abas--carta .carta-sec dl { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Painel por dentro: faixa horizontal de janelas grandes */
+#painel .telas-reais { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; margin-inline: calc(-1 * var(--gutter)); padding: 8px var(--gutter) 24px; }
+#painel .tela { flex: 0 0 min(92vw, 760px); scroll-snap-align: center; padding: 0; background: var(--papel); border: 1px solid var(--linha-2); border-radius: var(--r-lg); overflow: hidden; box-shadow: 0 24px 48px rgba(43, 33, 26, .12); gap: 0; }
+#painel .tela::before { content: ''; display: block; height: 34px; background: radial-gradient(circle at 18px 17px, #E5604D 5px, transparent 6px), radial-gradient(circle at 38px 17px, #F2B544 5px, transparent 6px), radial-gradient(circle at 58px 17px, #6DB36B 5px, transparent 6px), var(--areia); border-bottom: 1px solid var(--linha-2); }
+#painel .tela img { border: 0; border-radius: 0; }
+#painel .tela figcaption { padding: 20px 24px 26px; }
+
+/* Pierre nas seções */
+#dores .wrap { position: relative; }
+.pierre-lado { position: absolute; right: var(--gutter); top: -20px; width: clamp(80px, 12vw, 140px); height: auto; }
+.pierre-facil { width: 84px; height: auto; margin-top: 24px; display: block; }
+
+/* Animação ao rolar: só opacidade e transform, só onde o navegador suporta */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .cab, .papel, .bloco, .passos li, .plano, .final, .como-img, .comparar, #painel .tela, .cura, .depo {
+      animation: sobe linear both; animation-timeline: view(); animation-range: entry 0% entry 38%;
+    }
+    @keyframes sobe { from { opacity: 0; transform: translateY(36px) scale(.985); } to { opacity: 1; transform: none; } }
+    .hero-cel { animation: gira linear both; animation-timeline: scroll(root); animation-range: 0 60vh; }
+    @keyframes gira { to { transform: translateY(-24px) rotate(2deg); } }
+  }
+}
+.sec--cafe, .sec--areia { border-radius: var(--r-lg) var(--r-lg) 0 0; }
+
+@media (max-width: 760px) { #painel .tela { flex-basis: 150vw; } #painel .tela figcaption { position: sticky; left: 0; max-width: 92vw; } }

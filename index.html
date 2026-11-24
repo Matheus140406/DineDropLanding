@@ -91,7 +91,7 @@
 </header>
 
 <main id="conteudo">
-<section class="hero sec--noite">
+<section class="hero hero--quente">
  <div class="wrap hero-grid">
   <div class="hero-txt">
    <div class="logo logo--g" id="logo-grande"><picture><source srcset="/img/dinedrop-icon-256.webp" type="image/webp"><img src="/img/dinedrop-icon.png" alt="" width="104" height="104" decoding="async" fetchpriority="high"></picture><span translate="no">DineDrop</span></div>
@@ -107,6 +107,9 @@
   </div>
   <div class="hero-tela">
    <picture><source type="image/webp" srcset="/img/cardapio-app-460.webp 460w, /img/cardapio-app-720.webp 720w" sizes="(max-width: 980px) 62vw, 300px"><img class="hero-cel" src="/img/cardapio-app.jpg" alt="Cardápio digital de um restaurante aberto no celular, com Delivery e Retirada, categorias e destaques com foto" width="230" height="385" decoding="async"></picture>
+   <p class="hero-aviso hero-aviso--1" aria-hidden="true"><svg width="20" height="20"><use href="#i-check"/></svg>Mesa 7: pedido novo</p>
+   <p class="hero-aviso hero-aviso--2" aria-hidden="true"><svg width="20" height="20"><use href="#i-check"/></svg>Pizza pronta</p>
+   <img class="hero-pierre" src="/mascote/rato-oferecendo.svg" alt="" width="150" height="160" decoding="async">
   </div>
  </div>
 </section>
@@ -239,9 +242,15 @@
    <h2 class="h2">O cardápio completo da sua operação</h2>
    <p class="sub">Do pedido à prestação de contas, num painel só. Sem planilha, sem caderno e sem aplicativo para o cliente baixar.</p>
   </div>
-  <div class="carta">
-   <section class="carta-sec" aria-labelledby="carta-vender">
-    <h3 class="carta-tit" id="carta-vender">Para vender</h3>
+  <div class="abas abas--carta" data-abas>
+   <div class="abas-lista" role="tablist" aria-label="O que o painel faz">
+    <button type="button" role="tab" id="carta-aba-1" aria-controls="carta-vender" aria-selected="true">Para vender</button>
+    <button type="button" role="tab" id="carta-aba-2" aria-controls="carta-operar" aria-selected="false" tabindex="-1">Para operar</button>
+    <button type="button" role="tab" id="carta-aba-3" aria-controls="carta-decidir" aria-selected="false" tabindex="-1">Para decidir</button>
+   </div>
+   <div class="carta">
+   <section class="carta-sec" role="tabpanel" id="carta-vender" aria-labelledby="carta-aba-1">
+    <h3 class="carta-tit">Para vender</h3>
     <dl>
      <div><dt>Cardápio com a sua marca</dt><dd>Cores, capa e logo do restaurante, com prévia antes de publicar.</dd></div>
      <div><dt>Vídeo do produto <span class="tag">Cozinheiro</span></dt><dd>O vídeo toca quando o cliente abre o prato: o que dá água na boca, em movimento.</dd></div>
@@ -251,8 +260,8 @@
      <div><dt>Pix e Mercado Pago</dt><dd>Pix direto na chave do restaurante, ou cartão e Pix pelo Mercado Pago.</dd></div>
     </dl>
    </section>
-   <section class="carta-sec" aria-labelledby="carta-operar">
-    <h3 class="carta-tit" id="carta-operar">Para operar</h3>
+   <section class="carta-sec" role="tabpanel" id="carta-operar" aria-labelledby="carta-aba-2">
+    <h3 class="carta-tit">Para operar</h3>
     <dl>
      <div><dt>Pedidos num painel só</dt><dd>Mesa, delivery e retirada, com status até a entrega. Pedido novo toca um som.</dd></div>
      <div><dt>Cozinha (KDS) <span class="tag">Cozinheiro</span></dt><dd>Quadro grande dos pedidos por status, de Recebido a Em preparo e Pronto, feito para ficar na TV ou no tablet da cozinha.</dd></div>
@@ -262,8 +271,8 @@
      <div><dt>Até 3 unidades <span class="tag">Cozinheiro</span></dt><dd>Todas as filiais no mesmo login, com seletor de unidade e &ldquo;Nova unidade&rdquo; no painel.</dd></div>
     </dl>
    </section>
-   <section class="carta-sec" aria-labelledby="carta-decidir">
-    <h3 class="carta-tit" id="carta-decidir">Para decidir</h3>
+   <section class="carta-sec" role="tabpanel" id="carta-decidir" aria-labelledby="carta-aba-3">
+    <h3 class="carta-tit">Para decidir</h3>
     <dl>
      <div><dt>Relatório de vendas</dt><dd>Resumido ou detalhado, com forma de pagamento (Pix, dinheiro, Mercado Pago), mais vendidos por tipo de pedido, ticket médio e horário de pico. Exporte em PDF e CSV.</dd></div>
      <div><dt>Relatórios avançados <span class="tag">Cozinheiro</span></dt><dd>Dia da semana, horário de pico e comparação com o período anterior.</dd></div>
@@ -272,12 +281,14 @@
      <div><dt>Food News</dt><dd>Uma aba dentro do painel que avisa cada atualização da plataforma: o que mudou e o que chegou de novo, sem você precisar procurar.</dd></div>
     </dl>
    </section>
+   </div>
   </div>
  </div>
 </section>
 
 <section id="dores" class="sec sec--cafe">
  <div class="wrap">
+  <img class="pierre-lado" src="/mascote/rato-pensando.svg" alt="" width="150" height="160" loading="lazy" decoding="async">
   <div class="cab">
    <h2 class="h2">Onde a operação perde tempo, pedido e dinheiro</h2>
    <p class="sub">Sexta, 20h. O WhatsApp acumula áudios, a comanda de papel some entre a mesa e a cozinha, o entregador liga pedindo o endereço e a mesa 7 continua esperando. Não é falta de esforço da equipe, é falta de processo. Escolha uma dor e veja o que muda.</p>
@@ -358,6 +369,7 @@
     <li><span class="passo-n">2</span><div><h3 class="h3">Imprima os QR Codes e compartilhe o link</h3><p>Um QR para cada mesa e um para o cardápio geral, em PDF.</p></div></li>
     <li><span class="passo-n">3</span><div><h3 class="h3">Receba os pedidos no painel</h3><p>Pedido novo toca um som. Você acompanha do preparo até a entrega.</p></div></li>
    </ol>
+   <img class="pierre-facil" src="/mascote/rato-oferecendo.svg" alt="" width="110" height="117" loading="lazy" decoding="async">
    <p class="facil"><strong>Feito para usar sozinho.</strong> O cadastro leva 6 passos e o painel foi pensado para quem nunca usou um sistema. O DineDrop não tem atendimento de suporte.</p>
    </div>
    <div class="como-img">
