@@ -5,7 +5,7 @@
   "description": "Landing page do DineDrop: cardápio digital com QR Code, pedidos, delivery próprio e Cozinha (KDS).",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "vite",
