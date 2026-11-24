@@ -45,4 +45,32 @@ export const GUIAS = [
     ],
     ficha: ['Pedido item por item, sem áudio', 'Mesa, delivery e retirada num painel', 'Som de pedido novo', 'Cozinha (KDS) no plano Cozinheiro'],
   },
+  {
+    slug: 'kds-cozinha-digital',
+    curto: 'KDS: cozinha digital',
+    titulo: 'KDS na cozinha: o que é e quando vale a pena para o seu restaurante',
+    descricao: 'O que é KDS (Kitchen Display System), como funciona o quadro de pedidos da cozinha e como saber se o seu restaurante já precisa de um.',
+    intro: 'KDS é a sigla em inglês de Kitchen Display System: uma tela na cozinha que mostra os pedidos, no lugar da comanda de papel. A ideia é simples, e o efeito no dia a dia do salão é grande.',
+    secoes: [
+      { h: 'O que o KDS mostra', p: ['Um quadro grande com os pedidos separados por status. No DineDrop, as colunas são Recebido, Em preparo e Pronto, e cada cartão traz a mesa ou o tipo de pedido e os itens.', 'Ele é feito para ficar numa TV ou num tablet na cozinha, à vista de toda a equipe.'] },
+      { h: 'Que problemas ele resolve', p: ['A comanda de papel some, molha, é mal escrita ou fica esquecida no balcão. Sem ela, ninguém precisa gritar o pedido da mesa para a cozinha, e quem prepara enxerga o que está na fila e o que já ficou pronto.'] },
+      { h: 'Quando vale a pena', p: ['Vale quando a cozinha deixa de ser uma pessoa só: salão com várias mesas, delivery rodando junto, mais de um cozinheiro ou horário de pico com fila de pedidos. Num negócio pequeno, tocado por uma pessoa, o painel de pedidos no celular já resolve.'] },
+      { h: 'O que você precisa para usar', p: ['Só uma tela com navegador: uma TV, um tablet ou um computador. Não precisa instalar programa. No DineDrop, a Cozinha (KDS) faz parte do plano Cozinheiro.'] },
+    ],
+    ficha: ['Quadro por status: Recebido, Em preparo e Pronto', 'Para TV ou tablet da cozinha', 'Sem papel e sem gritar o pedido', 'Plano Cozinheiro'],
+  },
+  {
+    slug: 'quanto-custa-a-comissao-do-aplicativo',
+    curto: 'Quanto custa a comissão do aplicativo',
+    titulo: 'Quanto custa a comissão do aplicativo de entrega por ano? Faça a conta',
+    descricao: 'Aprenda a calcular quanto o seu restaurante paga de comissão de aplicativo de entrega por mês e por ano, e compare com uma mensalidade fixa.',
+    intro: 'Comissão de aplicativo é fácil de ignorar porque ela é descontada antes de o dinheiro chegar. Somada no ano, costuma ser um dos maiores custos do restaurante. Dá para calcular em um minuto.',
+    secoes: [
+      { h: 'A conta básica', p: ['Pegue o faturamento do mês que vem dos aplicativos e multiplique pelo percentual de comissão do seu contrato. Esse é o valor da comissão do mês. Multiplique por 12 e você tem o custo do ano.', 'Exemplo só para ilustrar: R$ 20.000 de vendas no aplicativo com 20% de comissão são R$ 4.000 por mês e R$ 48.000 por ano. Use o percentual e o faturamento do seu contrato.'] },
+      { h: 'O que mais entra no custo', p: ['Confira no seu contrato se há taxa de entrega repassada, taxa de pagamento online e mensalidade além da comissão. Cada item reduz o que sobra no caixa.'] },
+      { h: 'Compare com uma mensalidade fixa', p: ['Num canal próprio, o custo é uma mensalidade que não cresce com as vendas. No DineDrop, os planos vão de R$ 49 a R$ 297 por mês. No Pix, o dinheiro cai direto na chave do restaurante; no Mercado Pago, na conta do restaurante, descontada a tarifa do próprio Mercado Pago.'] },
+      { h: 'Use a calculadora', p: ['Na página inicial, a calculadora "Faça a conta" faz esse cálculo com os seus números e mostra a comparação com a mensalidade.'] },
+    ],
+    ficha: ['Mensalidade fixa de R$ 49 a R$ 297', 'Pix direto na chave do restaurante', 'Delivery próprio com taxa por bairro', 'Calculadora na página inicial'],
+  },
 ];

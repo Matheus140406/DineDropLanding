@@ -90,7 +90,7 @@ try {
     await pagina.close();
   }
 
-  for (const slug of ['delivery-proprio-sem-ifood', 'cardapio-digital-com-qr-code', 'pedidos-do-whatsapp-organizados']) {
+  for (const slug of ['delivery-proprio-sem-ifood', 'cardapio-digital-com-qr-code', 'pedidos-do-whatsapp-organizados', 'kds-cozinha-digital', 'quanto-custa-a-comissao-do-aplicativo']) {
     const pagina = await navegador.newPage({ viewport: { width: 390, height: 844 } });
     const resposta = await pagina.goto(`${BASE}/guias/${slug}/`, { waitUntil: 'domcontentloaded' });
     const info = await pagina.evaluate(() => ({
