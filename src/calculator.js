@@ -13,6 +13,7 @@ export function initCalculator() {
   const out = (k, n) => document.querySelectorAll('[data-out="' + k + '"]').forEach((e) => {
     const de = Number(e.dataset.v ?? n), para = Math.round(n);
     e.dataset.v = String(para);
+    if (!reduce && de !== para) { e.classList.remove('pulsa'); void e.offsetWidth; e.classList.add('pulsa'); }
     cancelAnimationFrame(e._raf);
     if (reduce || de === para) { e.textContent = fmt(para); return; }
     const t0 = performance.now();

@@ -667,3 +667,22 @@ details[open]::details-content { block-size: auto; }
   .btn { transition-property: background-color, color, border-color, transform, translate, box-shadow; }
   .btn--laranja:hover, .btn--cafe:hover { translate: 0 -2px; box-shadow: 0 8px 18px rgba(43, 33, 26, .22); }
 }
+
+.coments.rola { scroll-snap-type: none; }
+.coments { scroll-behavior: auto; }
+.coment { transition: translate .3s var(--ease), box-shadow .3s var(--ease); }
+
+[data-out].pulsa { display: inline-block; animation: pulsa-valor .5s var(--ease); }
+@keyframes pulsa-valor { 35% { transform: scale(1.06); } }
+
+.js-ok .papel.entra, .js-ok .carta-sec.entra { animation: painel .45s var(--ease) both; }
+.js-ok .papel[hidden], .js-ok .carta-sec[hidden] { display: none; }
+a, .chip, .btn, summary, .menu-btn, .nav a { transition-property: color, background-color, border-color, opacity, transform, translate, box-shadow; transition-duration: .2s; transition-timing-function: var(--ease); }
+.topo { transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero .acoes .btn--laranja { position: relative; isolation: isolate; }
+  .hero .acoes .btn--laranja::after { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--laranja); animation: pulso-cta 3.2s ease-out 2s infinite; }
+  @keyframes pulso-cta { 0% { transform: scale(1); opacity: .55; } 60%, 100% { transform: scale(1.14, 1.38); opacity: 0; } }
+  .coment:hover { translate: 0 -8px; box-shadow: 0 18px 32px rgba(0, 0, 0, .3); }
+}
