@@ -121,16 +121,19 @@ ${base.rodape}
 
 function paginaGuia(g, base, site, app) {
   const url = `${site}/guias/${g.slug}/`;
+  const guiasUrl = `${site}/guias/`;
   const titulo = `${g.titulo} | DineDrop`;
   const outros = GUIAS.filter((o) => o.slug !== g.slug);
+  const dataPublicacao = '2026-11-01T00:00:00-03:00';
+  const dataAtualizacao = new Date().toISOString();
   const ld = {
     '@context': 'https://schema.org',
     '@graph': [
-      { '@type': 'Article', '@id': `${url}#artigo`, headline: g.titulo, description: g.descricao, inLanguage: 'pt-BR', mainEntityOfPage: url, image: `${site}/img/og-1200x630.png`, author: { '@type': 'Organization', name: 'Team Dev Tech' }, publisher: { '@type': 'Organization', name: 'DineDrop', url: `${site}/` }, isPartOf: { '@id': `${site}/#site` } },
+      { '@type': 'Article', '@id': `${url}#artigo`, headline: g.titulo, description: g.descricao, inLanguage: 'pt-BR', mainEntityOfPage: url, image: `${site}/img/og-1200x630.png`, datePublished: dataPublicacao, dateModified: dataAtualizacao, author: { '@type': 'Organization', name: 'DineDrop', url: `${site}/` }, publisher: { '@type': 'Organization', name: 'DineDrop', url: `${site}/`, logo: { '@type': 'ImageObject', url: `${site}/img/dinedrop-icon.png` } }, isPartOf: { '@id': `${site}/#site` } },
       ...(g.faq ? [{ '@type': 'FAQPage', mainEntity: g.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] : []),
-      { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'BreadcrumbList', '@id': `${url}#trilha`, itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Início', item: `${site}/` },
-        { '@type': 'ListItem', position: 2, name: 'Guias', item: url },
+        { '@type': 'ListItem', position: 2, name: 'Guias', item: guiasUrl },
         { '@type': 'ListItem', position: 3, name: g.curto, item: url },
       ] },
     ],
@@ -164,7 +167,7 @@ ${base.cabecalho}
 <main id="conteudo">
 <section class="sec nicho-topo">
  <div class="wrap">
-  <nav class="trilha" aria-label="Você está em"><a href="/">Início</a><span aria-hidden="true">/</span><span>Guias</span><span aria-hidden="true">/</span><span aria-current="page">${esc(g.curto)}</span></nav>
+  <nav class="trilha" aria-label="Você está em"><a href="/">Início</a><span aria-hidden="true">/</span><a href="/guias/">Guias</a><span aria-hidden="true">/</span><span aria-current="page">${esc(g.curto)}</span></nav>
   <h1 class="h2 nicho-h1">${esc(g.titulo)}</h1>
   <p class="sub">${esc(g.intro)}</p>
  </div>
@@ -179,6 +182,89 @@ ${base.cabecalho}
   <p class="guia-mais"><strong>Continue lendo:</strong> ${outros.map((o) => `<a href="/guias/${o.slug}/">${esc(o.curto)}</a>`).join(' · ')}</p>
  </div>
 </article>
+</main>
+
+${base.rodape}
+</body>
+</html>
+`;
+}
+
+function paginaHubGuias(guias, base, site, app) {
+  const url = `${site}/guias/`;
+  const titulo = 'Guias para restaurantes e delivery | DineDrop';
+  const descricao = 'Guias práticos sobre cardápio digital, delivery próprio, QR Code, KDS e como reduzir a comissão do aplicativo de entrega. Leia e aplique hoje no seu restaurante.';
+  const ld = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      { '@type': 'CollectionPage', '@id': `${url}#pagina`, url, name: titulo, description: descricao, inLanguage: 'pt-BR', isPartOf: { '@id': `${site}/#site` } },
+      { '@type': 'BreadcrumbList', '@id': `${url}#trilha`, itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Início', item: `${site}/` },
+        { '@type': 'ListItem', position: 2, name: 'Guias', item: url },
+      ] },
+      { '@type': 'ItemList', name: 'Guias DineDrop', itemListElement: guias.map((g, i) => ({ '@type': 'ListItem', position: i + 1, url: `${site}/guias/${g.slug}/`, name: g.titulo })) },
+    ],
+  };
+  return `<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+${JS_CLASSE}
+<title>${esc(titulo)}</title>
+<meta name="description" content="${esc(descricao)}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#F57C00">
+<link rel="canonical" href="${url}">
+<meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:site_name" content="DineDrop"><meta property="og:url" content="${url}">
+<meta property="og:title" content="${esc(titulo)}"><meta property="og:description" content="${esc(descricao)}">
+<meta property="og:image" content="${site}/img/og-1200x630.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${esc(titulo)}"><meta name="twitter:description" content="${esc(descricao)}"><meta name="twitter:image" content="${site}/img/og-1200x630.png">
+<script type="application/ld+json">${JSON.stringify(ld)}</script>
+${base.fontes}
+<link rel="icon" type="image/png" href="/img/dinedrop-icon.png">
+<link rel="apple-touch-icon" href="/img/dinedrop-icon.png">
+${base.assets}
+</head>
+<body>
+${base.sprite}
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+${base.cabecalho}
+
+<main id="conteudo">
+<section class="sec nicho-topo">
+ <div class="wrap">
+  <nav class="trilha" aria-label="Você está em"><a href="/">Início</a><span aria-hidden="true">/</span><span aria-current="page">Guias</span></nav>
+  <h1 class="h2 nicho-h1">Guias para restaurantes e delivery</h1>
+  <p class="sub">Conteúdo prático sobre cardápio digital, delivery próprio, QR Code e como reduzir comissão de aplicativo. Leia, aplique e veja o resultado.</p>
+ </div>
+</section>
+
+<section class="sec sec--sem-topo">
+ <div class="wrap">
+  <ul class="guia-lista" style="list-style:none;padding:0;display:grid;gap:1.5rem;max-width:800px">${guias.map((g) => `
+   <li style="border:1px solid var(--borda, #e5e5e5);border-radius:12px;padding:1.5rem">
+    <a href="/guias/${g.slug}/" style="text-decoration:none;color:inherit">
+     <h2 class="h3" style="margin:0 0 .5rem">${esc(g.titulo)}</h2>
+     <p style="margin:0;color:var(--texto-2,#666);font-size:.95rem">${esc(g.descricao)}</p>
+    </a>
+   </li>`).join('')}
+  </ul>
+ </div>
+</section>
+
+<section class="sec">
+ <div class="wrap">
+  <div class="final">
+   <div>
+    <h2 class="h2">Comece com 2 semanas grátis</h2>
+    <p class="lead">Sem cartão e sem fidelidade. Crie o cardápio, imprima os QR Codes e receba o primeiro pedido.</p>
+    <a href="${app}" class="btn btn--cafe" title="Testar grátis por 2 semanas" target="_blank" rel="noopener">Testar grátis por 2 semanas</a>
+   </div>
+   <img class="mascote mascote--final" src="/mascote/rato-comemorando.svg" alt="Pierre, o mascote, comemorando" width="300" height="321" loading="lazy" decoding="async">
+  </div>
+ </div>
+</section>
 </main>
 
 ${base.rodape}
@@ -208,9 +294,18 @@ export function gerarPaginasNichos(dist, site, app) {
     mkdirSync(dirname(arq), { recursive: true });
     writeFileSync(arq, paginaGuia(g, base, site, app));
   }
+  // Página hub /guias/ — lista todos os guias
+  const hubArq = resolve(dist, 'guias', 'index.html');
+  mkdirSync(dirname(hubArq), { recursive: true });
+  writeFileSync(hubArq, paginaHubGuias(GUIAS, base, site, app));
+
   const sm = resolve(dist, 'sitemap.xml');
   if (existsSync(sm)) {
-    const urls = [...NICHOS.map((n) => `  <url><loc>${site}/nichos/${n.slug}/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>`), ...GUIAS.map((g) => `  <url><loc>${site}/guias/${g.slug}/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>`)].join('\n');
+    const urls = [
+      `  <url><loc>${site}/guias/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>`,
+      ...NICHOS.map((n) => `  <url><loc>${site}/nichos/${n.slug}/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>`),
+      ...GUIAS.map((g) => `  <url><loc>${site}/guias/${g.slug}/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>`),
+    ].join('\n');
     writeFileSync(sm, readFileSync(sm, 'utf8').replace('</urlset>', urls + '\n</urlset>'));
   }
 }
