@@ -9,6 +9,7 @@ import { initAbas } from './abas.js';
 import { initKds } from './kds.js';
 import { initTilt } from './tilt.js';
 import { initConta } from './conta.js';
+import { initComent } from './coment.js';
 
 document.documentElement.classList.add('js-ok');
 
@@ -20,6 +21,7 @@ initAbas();
 initKds();
 initTilt();
 initConta();
+initComent();
 initReveal();
 initCalculator();
 initPlans();
