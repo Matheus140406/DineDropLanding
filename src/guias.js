@@ -1,5 +1,3 @@
-// Guias: artigos curtos que respondem buscas comuns de quem tem restaurante. Cada um vira /guias/<slug>/.
-// Só descrevem o que o DineDrop faz hoje e o que vale para qualquer restaurante. Nada de número inventado.
 export const GUIAS = [
   {
     slug: 'delivery-proprio-sem-ifood',

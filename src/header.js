@@ -1,4 +1,3 @@
-// Cabeçalho fixo: menu no celular (mesma ordem do computador) e destaque da seção que está na tela.
 export function initHeader() {
   const head = document.getElementById('topo');
   if (!head) return;
@@ -20,7 +19,6 @@ export function initHeader() {
     window.matchMedia('(min-width: 1181px)').addEventListener('change', (e) => { if (e.matches) set(false); });
   }
 
-  // Seção atual destacada no menu (só links da própria página, "#secao")
   const links = nav ? [...nav.querySelectorAll('a[href^="#"]')].filter((a) => a.getAttribute('href').length > 1) : [];
   const alvos = links.map((a) => document.querySelector(a.getAttribute('href'))).filter(Boolean);
   if (!alvos.length || !('IntersectionObserver' in window)) return;

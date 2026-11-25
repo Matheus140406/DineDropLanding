@@ -5,13 +5,9 @@ import QRCode from 'qrcode';
 import { secaoNichos, gerarPaginasNichos } from './scripts/paginas-nichos.mjs';
 import { secaoDepoimentos, secaoComentarios } from './scripts/depoimentos.mjs';
 
-// Endereços (10/11/2026): o app e os cardápios em appdinedrop.com; a landing em www.dinedrop.com.br (dinedrop.com.br redireciona para o www na Vercel).
-// Os links do index.html usam %VITE_APP_URL% e %VITE_SITE_URL%; na hospedagem, basta definir as variáveis. Sem elas, valem estes padrões.
 process.env.VITE_APP_URL ||= 'https://appdinedrop.com';
 process.env.VITE_SITE_URL ||= 'https://www.dinedrop.com.br';
 
-// Cardápio de exemplo da seção "Teste agora": VITE_DEMO (padrão: o restaurante de demonstração /devteam2026tech).
-// Opcional: VITE_DEMO_MESA, VITE_DEMO_DELIVERY e VITE_DEMO_BALCAO põem um QR próprio em cada vertente; vazios, a vertente fica só com o texto.
 const demos = (env) => {
   const app = (env.VITE_APP_URL || process.env.VITE_APP_URL).replace(/\/$/, '');
   return { principal: env.VITE_DEMO || `${app}/devteam2026tech`, mesa: env.VITE_DEMO_MESA || '', delivery: env.VITE_DEMO_DELIVERY || '', balcao: env.VITE_DEMO_BALCAO || '' };
@@ -21,7 +17,6 @@ const esc = (t) => t.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g
 const qrSvg = async (url, nome) => (await QRCode.toString(url, { type: 'svg', margin: 0, errorCorrectionLevel: 'M', color: { dark: '#2B211A', light: '#FFFFFF' } }))
   .replace('<svg ', `<svg role="img" aria-label="QR Code do cardápio de exemplo de ${nome}" `);
 
-// Troca <!--demo:principal--> e <!--demo:mesa|delivery|balcao--> pelos QR Codes, e <!--nichos--> pela lista de nichos
 const cardapiosDeExemplo = () => {
   let env = {};
   return {
@@ -38,7 +33,6 @@ const cardapiosDeExemplo = () => {
         }
         html = html.replace(`<!--demo:${chave}-->`, bloco);
       }
-      // Vídeo do cardápio: se existir public/video/cardapio.mp4, o player aparece no lugar da imagem; senão, fica a imagem.
       const video = existsSync(resolve('public/video/cardapio.mp4'))
         ? `<video class="papel-video" controls playsinline preload="metadata" poster="/img/cardapio-app-720.webp" aria-label="Vídeo do prato aberto no cardápio do DineDrop"><source src="/video/cardapio.mp4" type="video/mp4"></video>`
         : '';
@@ -47,7 +41,6 @@ const cardapiosDeExemplo = () => {
   };
 };
 
-// robots.txt e sitemap.xml (em public/) levam __SITE_URL__: troca pelo endereço da landing depois do build
 const enderecoNosArquivos = () => ({
   name: 'endereco-nos-arquivos',
   closeBundle() {
@@ -58,7 +51,6 @@ const enderecoNosArquivos = () => ({
   },
 });
 
-// Páginas /nichos/<slug>/ (dores e soluções de cada nicho) e entradas no sitemap, depois do build
 const paginasNichos = () => ({
   name: 'paginas-nichos',
   closeBundle() {

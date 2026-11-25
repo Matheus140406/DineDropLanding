@@ -21,7 +21,6 @@ export function secaoDepoimentos() {
 </section>`;
 }
 
-// Comentários de donos antes do lançamento: faixa que rola de lado, sem script e sem estrelas
 export function secaoComentarios() {
   if (!COMENTARIOS.length) return '';
   const cards = COMENTARIOS.map(([texto, nome, cargo], i) => `<figure class="coment" style="--i:${i % 3}"><blockquote><p>${esc(texto)}</p></blockquote><figcaption><span class="coment-av" aria-hidden="true">${esc(nome[0])}</span><div><strong>${esc(nome)}</strong><span>${esc(cargo)}</span></div></figcaption></figure>`).join('\n   ');

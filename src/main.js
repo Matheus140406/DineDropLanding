@@ -10,7 +10,6 @@ import { initKds } from './kds.js';
 import { initTilt } from './tilt.js';
 import { initConta } from './conta.js';
 
-// O script rodou: desliga a rede de segurança do CSS e deixa o reveal no controle
 document.documentElement.classList.add('js-ok');
 
 const flag = document.getElementById('sc-semComissao');

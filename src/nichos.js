@@ -1,8 +1,3 @@
-// Nichos atendidos: cada um vira uma página em /nichos/<slug>/ (scripts/gerar-nichos.mjs)
-// e uma linha na seção "Nichos" da página inicial (o campo "ajuda").
-// negocio: como o texto se refere ao negócio ("O que trava a pizzaria").
-// Só recursos que o DineDrop já tem: nada de prometer o que está "no forno".
-
 export const GRUPOS = [
   { id: 'pequenos', titulo: 'Negócios pequenos', subtitulo: 'Comece sem complicar', texto: 'Para quem está começando ou toca o negócio sozinho. Plano Cliente.' },
   { id: 'grandes', titulo: 'Operações grandes', subtitulo: 'Salão cheio, equipe e entregadores', texto: 'Para muitas mesas, equipe com funções diferentes e delivery em volume. Plano Garçom.' },

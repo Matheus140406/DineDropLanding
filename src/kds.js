@@ -1,5 +1,3 @@
-// Ilustração da Cozinha (KDS): os pedidos andam de Recebido a Em preparo e Pronto.
-// Só anda quando está na tela e a aba está aberta; com movimento reduzido ou sem script, fica parada.
 const PASSO = 2800;
 
 export function initKds() {
@@ -15,7 +13,7 @@ export function initKds() {
     tks.forEach((t) => {
       const c = Number(t.dataset.c);
       if (c < 2) { poe(t, c + 1); return; }
-      // saiu de "Pronto": some, volta invisível para "Recebido" e entra como pedido novo
+
       t.classList.add('sai');
       setTimeout(() => {
         t.style.transition = 'transform 0s, opacity .5s ease';
