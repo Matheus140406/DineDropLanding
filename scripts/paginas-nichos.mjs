@@ -127,6 +127,7 @@ function paginaGuia(g, base, site, app) {
     '@context': 'https://schema.org',
     '@graph': [
       { '@type': 'Article', '@id': `${url}#artigo`, headline: g.titulo, description: g.descricao, inLanguage: 'pt-BR', mainEntityOfPage: url, image: `${site}/img/og-1200x630.png`, author: { '@type': 'Organization', name: 'Team Dev Tech' }, publisher: { '@type': 'Organization', name: 'DineDrop', url: `${site}/` }, isPartOf: { '@id': `${site}/#site` } },
+      ...(g.faq ? [{ '@type': 'FAQPage', mainEntity: g.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] : []),
       { '@type': 'BreadcrumbList', itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Início', item: `${site}/` },
         { '@type': 'ListItem', position: 2, name: 'Guias', item: url },
@@ -171,7 +172,8 @@ ${base.cabecalho}
 
 <article class="sec sec--sem-topo">
  <div class="wrap guia">
-  ${g.secoes.map((x) => `<h2 class="h3">${esc(x.h)}</h2>${x.p.map((t) => `<p>${esc(t)}</p>`).join('')}`).join('\n  ')}
+  ${[...g.secoes, ...(g.extra || [])].map((x) => `<h2 class="h3">${esc(x.h)}</h2>${x.p.map((t) => `<p>${esc(t)}</p>`).join('')}`).join('\n  ')}
+  ${g.faq ? `<h2 class="h3">Perguntas frequentes</h2><div class="faq guia-faq">${g.faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</div>` : ''}
   <aside class="guia-ficha" aria-label="O que o DineDrop oferece para isso"><p class="painel-rot">Com o DineDrop</p><ul class="lista-ok">${g.ficha.map((f) => `<li><svg width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg><span>${esc(f)}</span></li>`).join('')}</ul></aside>
   <div class="acoes"><a href="${app}" class="btn btn--cafe" title="Testar grátis por 2 semanas" target="_blank" rel="noopener">Testar grátis por 2 semanas</a><a href="/#planos" class="btn btn--contorno">Ver os planos</a></div>
   <p class="guia-mais"><strong>Continue lendo:</strong> ${outros.map((o) => `<a href="/guias/${o.slug}/">${esc(o.curto)}</a>`).join(' · ')}</p>
